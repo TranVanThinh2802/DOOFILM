@@ -1,0 +1,37 @@
+.box{
+    width: 100%;
+}
+.voucher{
+    background: lightblue;
+    height: 50px;
+    width: 100px;
+    display: flex;
+}
+.promosion{
+    width: 100%;
+    display: flex;
+}
+.list{
+    width: 100%;
+    margin:10px 0;
+    width: 25%;
+}
+.promosion img{
+    width: 100%;
+    padding-right: 10px;
+    height: 487.39px;
+}
+
+.movie{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.listVoucher{
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+}
+.listVoucher ul li{
+    margin-right: 50px;
+}
