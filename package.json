@@ -10,7 +10,6 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "flatlist-react": "^1.4.1",
-    "font-awesome": "^4.7.0",
     "history": "^4.10.1",
     "node-sass": "^4.14.1",
     "rc-drawer": "^3.2.0",
