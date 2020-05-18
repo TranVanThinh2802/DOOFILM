@@ -16,7 +16,7 @@ const Router = [
     },
     {
       path: "/all-film",
-      component: AllFilm,
+      component: AllFilm
     //   routes: [
     //     {
     //       path: "/tacos/bus",
