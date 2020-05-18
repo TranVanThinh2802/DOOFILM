@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import style from './style.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faSearch} from '@fortawesome/free-solid-svg-icons'
-
+import { faSearch, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons'
+import CustomMyList from '../../Components/CustomMyList'
 
 function CustomMain() {
     return (
@@ -19,165 +19,19 @@ function CustomMain() {
                 <p>Tất cả đánh giá</p>
                 <p>Sắp xếp</p>
             </div>
-            <div className={style.content}>
-                <div className={style.row}>
-                    <div className={style.col}>
-                        <div className={style.box}>
-                            <img src="imgs/dskm(1).jpg"></img>
-                            <p className = {style.infor_film}>đây là thịnh</p>
-                            <div className = {style.infor}>
-                                <div className = {style.title}>
-                                    <p>Ác Mộng Bên Hồ</p>
-                                    <p>Action</p>
-                                </div>
-                                <div className = {style.start}>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={style.col}>
-                        <div className={style.box}>
-                            <img src="imgs/dskm(2).jpg"></img>
-                            <p className = {style.infor_film}>đây là thịnh</p>
-                            <div className = {style.infor}>
-                                <div className = {style.title}>
-                                    <p>Ác Mộng Bên Hồ</p>
-                                    <p>Action</p>
-                                </div>
-                                <div className = {style.start}>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.col}>
-                        <div className={style.box}>
-                            <img src="imgs/dskm(3).jpg"></img>
-                            <p className = {style.infor_film}>đây là thịnh</p>
-                            <div className = {style.infor}>
-                                <div className = {style.title}>
-                                    <p>Ác Mộng Bên Hồ</p>
-                                    <p>Action</p>
-                                </div>
-                                <div className = {style.start}>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.col}>
-                        <div className={style.box}>
-                            <img src="imgs/dskm(4).jpg"></img>
-                            <p className = {style.infor_film}>đây là thịnh</p>
-                            <div className = {style.infor}>
-                                <div className = {style.title}>
-                                    <p>Ác Mộng Bên Hồ</p>
-                                    <p>Action</p>
-                                </div>
-                                <div className = {style.start}>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className={style.row}>
-                    <div className={style.col}>
-                        <div className={style.box}>
-                            <img src="imgs/dskm(5).jpg"></img>
-                            <p className = {style.infor_film}>đây là thịnh</p>
-                            <div className = {style.infor}>
-                                <div className = {style.title}>
-                                    <p>Ác Mộng Bên Hồ</p>
-                                    <p>Action</p>
-                                </div>
-                                <div className = {style.start}>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.col}>
-                        <div className={style.box}>
-                            <img src="imgs/dskm(1).jpg"></img>
-                            <p className = {style.infor_film}>đây là thịnh</p>
-                            <div className = {style.infor}>
-                                <div className = {style.title}>
-                                    <p>Ác Mộng Bên Hồ</p>
-                                    <p>Action</p>
-                                </div>
-                                <div className = {style.start}>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.col}>
-                        <div className={style.box}>
-                            <img src="imgs/dskm(2).jpg"></img>
-                            <p className = {style.infor_film}>đây là thịnh</p>
-                            <div className = {style.infor}>
-                                <div className = {style.title}>
-                                    <p>Ác Mộng Bên Hồ</p>
-                                    <p>Action</p>
-                                </div>
-                                <div className = {style.start}>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.col}>
-                        <div className={style.box}>
-                            <img src="imgs/dskm(3).jpg"></img>
-                            <p className = {style.infor_film}>đây là thịnh</p>
-                            <div className = {style.infor}>
-                                <div className = {style.title}>
-                                    <p>Ác Mộng Bên Hồ</p>
-                                    <p>Action</p>
-                                </div>
-                                <div className = {style.start}>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                <FontAwesomeIcon icon = {faStar}> </FontAwesomeIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <CustomMyList />
+            <div className = {style.next_page}>
+            <a href = "#" ><FontAwesomeIcon icon = {faAngleLeft}> </FontAwesomeIcon></a>
+            <a href = "#">1</a>
+            <a href = "#">2</a>
+            <a href = "#">3</a>
+            <a href = "#">4</a>
+            <a href = "#">5</a>
+            <a href = "#">6</a>
+            <a href = "#"><FontAwesomeIcon icon = {faAngleRight}> </FontAwesomeIcon></a>
             </div>
+
+
         </div >
     )
 }

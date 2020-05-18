@@ -24,7 +24,7 @@ function CustomHeader() {
                 <div className={style.left_top}>
                   <Link style={{ paddingTop: "30px" }} className={style.text_link} to='/Film'>Phim</Link>
                   <Link className={style.text_link} to='/Film'>Series</Link>
-                  <Link className={style.text_link} to='/My List'>Danh sách của tôi</Link>
+                  <Link className={style.text_link} to='/MyList'>Danh sách của tôi</Link>
                 </div>
 
 
