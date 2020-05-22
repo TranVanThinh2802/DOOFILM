@@ -1,89 +1,75 @@
-import React, { useState, useEffect } from 'react';
-import style from './style.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons'
-import CustomMyList from '../../Components/CustomMyList'
+import React, { useState, useEffect } from "react";
+import style from "./style.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSearch,
+  faAngleLeft,
+  faAngleRight,
+} from "@fortawesome/free-solid-svg-icons";
+import ItemFilm from "../../Components/ItemFilm";
+import { GridList, GridListTile } from "@material-ui/core";
+import DataFilm from "./data";
+import { Pagination, Autocomplete } from "@material-ui/lab";
+import TextField from '@material-ui/core/TextField';
+import Datacombobox from './datacombobox';
+import Combobox from '../../Components/ComboBox'
+
 
 function CustomMain() {
-    return (
+  return (
+    <div className={style.nav_right}>
+      <div className={style.search}>
+        <FontAwesomeIcon
+          className={style.icon_search}
+          icon={faSearch}
+        ></FontAwesomeIcon>{" "}
+        <input placeholder="Find a film" type={"text"}></input>
+      </div>
+      <div className={style.header_right}>
+        <p>Tất cả phim</p>
+        <p>Phim trò chơi</p>
+        <p>Tất cả ngôn ngư</p>
+        <p>Tất cả quốc gia</p>
+        <p>Tất cả đánh giá</p>
+        <p>Sắp xếp</p>
+        
+        
+          {/* <Autocomplete
+            id="combo-box-demo"
+            options={Datacombobox}
+            getOptionLabel={(option) => option.title}
+            style={{ width: 120}}
+            renderInput={(params) => (
+              <TextField {...params} label="" variant="outlined" />
+            )}
+          /> */}
 
-        <div className={style.nav_right}>
-            <div className = {style.search}>
-                <FontAwesomeIcon className = {style.icon_search} icon = {faSearch}></FontAwesomeIcon> <input placeholder="Find a film" type={'text'}></input>
-            </div>
-            <div className={style.header_right}>
-                <p>Tất cả phim</p>
-                <p>Phim trò chơi</p>
-                <p>Tất cả ngôn ngư</p>
-                <p>Tất cả quốc gia</p>
-                <p>Tất cả đánh giá</p>
-                <p>Sắp xếp</p>
-            </div>
-            <CustomMyList />
-            <div className = {style.next_page}>
-            <a href = "#" ><FontAwesomeIcon icon = {faAngleLeft}> </FontAwesomeIcon></a>
-            <a href = "#">1</a>
-            <a href = "#">2</a>
-            <a href = "#">3</a>
-            <a href = "#">4</a>
-            <a href = "#">5</a>
-            <a href = "#">6</a>
-            <a href = "#"><FontAwesomeIcon icon = {faAngleRight}> </FontAwesomeIcon></a>
-            </div>
+ 
+      </div>
 
 
-        </div >
-    )
+
+      {/* <ItemFilm /> */}
+      <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
+        {DataFilm.map((item, k) => (
+          <GridListTile>
+            <ItemFilm
+              nameFilm={item.nameFilm}
+              image={item.image}
+              content={item.content}
+              Category={item.Category}
+              key={k}
+            ></ItemFilm>
+          </GridListTile>
+        ))}
+      </GridList>
+      <div className={style.pagination}>
+        <Pagination count={10} color="secondary" />
+      </div>
+    </div>
+  );
 }
-
 export default CustomMain;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -182,4 +168,3 @@ export default CustomMain;
 //         </div>
 //     )
 // }
-

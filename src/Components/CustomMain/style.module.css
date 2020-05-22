@@ -3,7 +3,7 @@
     width: 76%;
     position: absolute;
     left: 20%;
-    top: 5%;
+    top: 3%;
   }
   .taitle h1{
     background: #f3da4e;
@@ -30,7 +30,7 @@
   .header_right{
     display: flex;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .header_right p{
     padding-right: 90px;
@@ -42,12 +42,9 @@
     font-size: 15px;
   }
   
-  .next_page{
-    text-align: center;
-    padding-right: 20px;
-  }
-  .next_page a{
-    padding-right: 10px;
-    text-decoration: none;
-    color: black;
-  }
+  .pagination{
+    position: absolute;
+    top: 100%;
+    left: 29%;
+    margin-bottom: 20px;
+}

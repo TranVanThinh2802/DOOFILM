@@ -20,16 +20,16 @@ function CustomHeader() {
           <div className={style.nav_left}>
             <div style={{ height: height - 100 }} className={style.title}>
               <div className={style.left}>
-                <h1 style={{ paddingTop: 50 }}>DOO.NET</h1>
+                <h1 style={{ paddingTop: 50 }}><a href = "Home"> DOO.NET</a></h1>
                 <div className={style.left_top}>
-                  <Link style={{ paddingTop: "30px" }} className={style.text_link} to='/Film'>Phim</Link>
-                  <Link className={style.text_link} to='/Film'>Series</Link>
+                  {/* <Link style={{ paddingTop: "30px" }} className={style.text_link} to='/Film'>Phim</Link> */}
+                  <Link style={{ paddingTop: "30px" }} className={style.text_link} to='/Seris'>Seris</Link>
                   <Link className={style.text_link} to='/MyList'>Danh sách của tôi</Link>
                 </div>
 
 
                 <div className={style.left_center}>
-                  <Link className={style.text_link} to='/all-film' ><FontAwesomeIcon className={style.icon_child_center} icon={faFilm}></FontAwesomeIcon> Tất cả phim</Link>
+                  {/* <Link className={style.text_link} to='/all-film' ><FontAwesomeIcon className={style.icon_child_center} icon={faFilm}></FontAwesomeIcon> Tất cả phim</Link> */}
                   <Link className={style.text_link} to='/Features'><FontAwesomeIcon className={style.icon_child_center} icon={faStar}></FontAwesomeIcon>Phim truyện</Link>
                   <Link className={style.text_link} to='/Documents'><FontAwesomeIcon className={style.icon_child_center} icon={faVideo}></FontAwesomeIcon>Phim tài liệu</Link>
                   <Link className={style.text_link} to='/Shorsy'><FontAwesomeIcon className={style.icon_child_center} icon={faVideoSlash}></FontAwesomeIcon>Phim ngắn</Link>

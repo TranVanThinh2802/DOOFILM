@@ -1,21 +1,20 @@
-import React from 'react'
-import CustomHeader from '../../Components/CustomHeader/index'
-import style from './style.module.css'
+import React, { useState, useEffect } from "react";
+import CustomHeader from "../../Components/CustomHeader/index";
+import ItemFilm from "../../Components/ItemFilm/index";
+import Flatlist, { PlainList } from "flatlist-react";
+import style from "./style.module.css";
 import { GridList, GridListTile } from "@material-ui/core";
 import DataFilm from "./data";
 import { Pagination } from "@material-ui/lab";
-import ItemFilm from "../../Components/ItemFilm/index";
 
-
-
-function Features(){
-    return(
-        <div className = {style.main}>
+function Show(props) {
+  return (
+    <div className = {style.main}>
             <div className = {style.left}>
                 <CustomHeader/>
             </div>
             <div className={style.right}>
-      <h1>Phim Truyện</h1>
+      <h1>Chương Trình Ti Vi</h1>
         <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
           {DataFilm.map((item, k) => (
             <GridListTile>
@@ -34,7 +33,7 @@ function Features(){
         </div>
       </div>
         </div>
-    )
+  );
 }
 
-export default Features;
+export default Show;

@@ -17,7 +17,7 @@
     outline: none;
     border: none;
     box-shadow: 0px 0px 10px 0px rgba(0, 0,0,0.37);
-    /* object-fit: fill; */
+    object-fit: fill;
   }
   .infor{
     display: flex;
@@ -36,25 +36,25 @@
     float: right;
     color: #E6C460;
     font-size: 10px;
-    margin-left: 15px;
+    margin-left: 20px;
   }
   .infor_film{
     width: 75%;
     display: none;
     position: absolute;
-    top: 10%;
-    left: 5%;
+    bottom: 100%;
+    left: 10%;
     color: white;
     font-size: 15px;
     text-align: left;
   }
   @keyframes content_film{
     from{
-      top: 70%;
+      bottom: -600%;
       
     }
     to{
-      top: 10%;
+      bottom: 100%;
     }
   }
   .box{
@@ -64,3 +64,6 @@
     display: block;
     animation: content_film 2s;
   }
+  
+  
+  
