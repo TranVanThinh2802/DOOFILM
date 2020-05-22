@@ -4,9 +4,10 @@ import Film from '../../containers/Film'
 import Home from '../../containers/Home'
 import MyList from '../../containers/MyList'
 import Seris from '../../containers/Seris'
-import Shorsts from '../../containers/Shorsts'
-import Shows from '../../containers/Shows'
+import Shorsy from '../../containers/Shorsy'
+import Show from '../../containers/Show'
 import About from '../../containers/About'
+import Documents from '../../containers/Documents'
 
 
 const Router = [
@@ -29,7 +30,7 @@ const Router = [
     //   ]
     },
     {
-        path: "/features",
+        path: "/Features",
         component: Features
     },
     {
@@ -45,20 +46,24 @@ const Router = [
         component: MyList
     },
     {
-        path: "Seris",
+        path: "/Seris",
         component: Seris
     },
     {
-        path: "/Shorsts",
-        component: Shorsts
+        path: "/Shorsy",
+        component: Shorsy
     },
     {
-        path: "/Shows",
-        component: Shows
+        path: "/Show",
+        component: Show
     },
     {
         path: "/About",
         component: About
+    },
+    {
+        path: "/Documents",
+        component: Documents
     }
 
   ];
