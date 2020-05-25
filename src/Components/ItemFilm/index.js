@@ -8,7 +8,7 @@ function CustomMyList(props) {
 
     return (
         <span className={style.box}>
-            <img src={props.image}></img>
+            <a href = 'PlayMovie'><img src={props.image}></img></a>
             <p className={style.infor_film}>{props.content}</p>
             <div className={style.infor}>
                 <div className={style.title}>

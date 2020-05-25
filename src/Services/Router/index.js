@@ -8,6 +8,7 @@ import Shorsy from '../../containers/Shorsy'
 import Show from '../../containers/Show'
 import About from '../../containers/About'
 import Documents from '../../containers/Documents'
+import PlayMovie from '../../containers/PlayMovie'
 
 
 const Router = [
@@ -64,6 +65,10 @@ const Router = [
     {
         path: "/Documents",
         component: Documents
+    },
+    {
+        path: "/PlayMovie",
+        component: PlayMovie
     }
 
   ];

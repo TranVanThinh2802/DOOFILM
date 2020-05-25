@@ -11,9 +11,10 @@ import { GridList, GridListTile } from "@material-ui/core";
 import DataFilm from "./data";
 import { Pagination, Autocomplete } from "@material-ui/lab";
 import TextField from '@material-ui/core/TextField';
-import Datacombobox from './datacombobox';
+import Datafilm from './datafilm';
 import Combobox from '../../Components/ComboBox'
-
+import DatanStylefilm from './stylefilm'
+import Datangongu from './datangongu'
 
 function CustomMain() {
   return (
@@ -26,23 +27,23 @@ function CustomMain() {
         <input placeholder="Find a film" type={"text"}></input>
       </div>
       <div className={style.header_right}>
-        <p>Tất cả phim</p>
+        {/* <p>Tất cả phim</p>
         <p>Phim trò chơi</p>
         <p>Tất cả ngôn ngư</p>
         <p>Tất cả quốc gia</p>
         <p>Tất cả đánh giá</p>
-        <p>Sắp xếp</p>
+        <p>Sắp xếp</p> */}
         
         
-          {/* <Autocomplete
-            id="combo-box-demo"
-            options={Datacombobox}
-            getOptionLabel={(option) => option.title}
-            style={{ width: 120}}
-            renderInput={(params) => (
-              <TextField {...params} label="" variant="outlined" />
-            )}
-          /> */}
+          <div className = {style.navHeader} >
+          <h1 className = {style.homePage}>Trang Chủ</h1>
+            <Combobox className = "navChild" data = {Datafilm} nameCbb = "Thể loại"/>
+            <Combobox nameCbb = "Ngôn ngữ" data = {Datangongu}/>
+            <Combobox nameCbb = "Kiểu Phim" data = {DatanStylefilm} />
+            <Combobox nameCbb = "Đánh giá"/>
+            <Combobox nameCbb = "Sắp Xếp"/>
+          </div>
+      
 
  
       </div>

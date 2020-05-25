@@ -35,3 +35,20 @@
 .listVoucher ul li{
     margin-right: 50px;
 }
+.progress{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.overlay{
+    animation: overlay 5s;
+}
+
+@keyframes overlay{
+    from{
+        background: rgba(0, 0, 0, 0.6);
+    }
+    to{
+        background: white;
+    }
+}
