@@ -6,6 +6,8 @@ import CustomMain from '../../Components/CustomMain/index'
 import Footer from '../../Components/CustomFooter/index'
 import ReactList from 'react-list';
 import List from '../../Components/CustomList'
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
@@ -16,6 +18,7 @@ import style from './style.module.css'
 
 function Home(props) {
 
+  const [isLoading, setIsLoading] = useState(true)
   const _renderVoucher = (item, index) => {
     return (
         <div className= {style.voucher}>{index + 1}</div>
@@ -29,9 +32,14 @@ function Home(props) {
         </div>
     )
   }
+  React.useEffect(()=>{
+    setTimeout(()=>{
+        setIsLoading(false)
+    },3000)
+  },[])
   return (
     
-    <div style = {{padding: '50px', flexDirection:"row"}}>
+    <div className = {style.overlay} style = {{padding: '50px', flexDirection:"row"}}>
      
       <CustomHeader />
       <CustomMain />
@@ -63,6 +71,7 @@ function Home(props) {
        />
         </div> */}
       {/* <Footer />  */}
+      <CircularProgress className = {style.progress} variant = {isLoading ? 'indeterminate' : 'determinate'} color = {'secondary'} />;
     </div>
 
   );

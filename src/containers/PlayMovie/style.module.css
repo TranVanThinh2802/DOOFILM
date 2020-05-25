@@ -1,0 +1,23 @@
+.right{
+    margin: 0;
+    width: 80%;
+    position: absolute;
+    top: 1.5%;
+    left: 20%;
+    background: lightcoral;
+    height: 100vh;
+}
+.main{
+    padding: 50px;
+}
+.left{
+    position: fixed;
+    width: 95%;
+}
+.playfilm{
+    background: lightblue;
+    width: 50%;
+    height: 50vh;
+    margin: auto;
+    margin-top: 200px;
+}

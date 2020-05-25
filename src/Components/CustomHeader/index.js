@@ -35,6 +35,7 @@ function CustomHeader() {
                   <Link className={style.text_link} to='/Shorsy'><FontAwesomeIcon className={style.icon_child_center} icon={faVideoSlash}></FontAwesomeIcon>Phim ngắn</Link>
                   <Link className={style.text_link} to='/Show'><FontAwesomeIcon className={style.icon_child_center} icon={faTv}></FontAwesomeIcon>Chương trình TV</Link>
                   <Link className={style.text_link} to='/About'><FontAwesomeIcon className={style.icon_child_center} icon={faTablet}></FontAwesomeIcon>Về chúng tôi</Link>
+                  <Link className={style.text_link} to='/PlayMovie'></Link>
                 </div>
                 <div className={style.icon}>
 
