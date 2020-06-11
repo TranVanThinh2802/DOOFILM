@@ -1,0 +1,36 @@
+.left{
+    background: #00adef;
+    height: 500px;
+    width: 15%;
+    position: absolute;
+    top: 8%;
+    left: 3%;
+    border-radius: 10px;
+}
+h1{
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+}
+.listAdmin{
+  padding-top: 70px;
+  line-height: 30px;
+  text-align: left;
+  margin-left: 20%;
+}
+.text_link{
+    display: flex;
+}
+/* .right{
+    background: lightblue;
+    min-height: 76vh;
+    width: 75%;
+    position: absolute;
+    top: 8%;
+    left: 20%;
+    border-radius: 10px;
+}
+.title{
+    color:white;
+    margin-left: 50px;
+} */

@@ -6,8 +6,8 @@
   /* font-family: 'Titillium Web', sans-serif; */
 }
 .text_link{
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
   display: flex;
   padding-left: 30px;
   align-items: center;
@@ -42,14 +42,16 @@
 .icon{
   padding:10px;
   margin-top: 60px;
+  font-size: 50px;
 }
 .icon_child{
   font-size: 25px;
   margin-right: 10px;
   background: white;
   color: green;
-  padding: 2px;
+  padding: 3px;
   border-radius: 10px;
+ 
 }
 .icon_child_center{
   text-align: left;
@@ -57,6 +59,6 @@
   color: white;
 }
 a{
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
 }

@@ -15,6 +15,9 @@ import Datafilm from './datafilm';
 import Combobox from '../../Components/ComboBox'
 import DatanStylefilm from './stylefilm'
 import Datangongu from './datangongu'
+import Sapxep from './sapxep'
+import Datadanhgia from './datadanhgia'
+
 
 function CustomMain() {
   return (
@@ -27,21 +30,14 @@ function CustomMain() {
         <input placeholder="Find a film" type={"text"}></input>
       </div>
       <div className={style.header_right}>
-        {/* <p>Tất cả phim</p>
-        <p>Phim trò chơi</p>
-        <p>Tất cả ngôn ngư</p>
-        <p>Tất cả quốc gia</p>
-        <p>Tất cả đánh giá</p>
-        <p>Sắp xếp</p> */}
-        
         
           <div className = {style.navHeader} >
           <h1 className = {style.homePage}>Trang Chủ</h1>
             <Combobox className = "navChild" data = {Datafilm} nameCbb = "Thể loại"/>
             <Combobox nameCbb = "Ngôn ngữ" data = {Datangongu}/>
             <Combobox nameCbb = "Kiểu Phim" data = {DatanStylefilm} />
-            <Combobox nameCbb = "Đánh giá"/>
-            <Combobox nameCbb = "Sắp Xếp"/>
+            <Combobox nameCbb = "Đánh giá" data = {Datadanhgia}/>
+            <Combobox nameCbb = "Sắp Xếp"  data = {Sapxep}/>
           </div>
       
 

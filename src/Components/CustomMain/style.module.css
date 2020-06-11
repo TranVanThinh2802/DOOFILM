@@ -72,4 +72,8 @@
   align-items: center;
   margin-right: 10px;
 }
+h1{
+  color: black !important;
+  padding: 0 !important;
+}
 
