@@ -9,6 +9,11 @@ import Show from '../../containers/Show'
 import About from '../../containers/About'
 import Documents from '../../containers/Documents'
 import PlayMovie from '../../containers/PlayMovie'
+import Admin from '../../containers/Admin'
+import { Route } from 'react-router-dom'
+import Add from '../../containers/Add'
+import Remove from '../../containers/Remove'
+import Fix from '../../containers/Fix'
 
 
 const Router = [
@@ -69,6 +74,10 @@ const Router = [
     {
         path: "/PlayMovie",
         component: PlayMovie
+    },
+    {
+        path: "/Admin",
+        component: Admin,
     }
 
   ];
