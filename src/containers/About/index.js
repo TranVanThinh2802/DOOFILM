@@ -6,7 +6,7 @@ import CustomHeader from '../../Components/CustomHeader'
 function Abouts(){
     return(
         <div className = {style.main}>
-            <div className = {style.left}>
+            <div>
                 <CustomHeader />
             </div>
             <div className = {style.right}>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import CustomHeader from "../../Components/CustomHeader/index";
 import style from "./style.module.css";
 import { GridList, GridListTile } from "@material-ui/core";
@@ -6,15 +6,14 @@ import DataFilm from "./data";
 import { Pagination } from "@material-ui/lab";
 import ItemFilm from "../../Components/ItemFilm/index";
 
-
-function Documents(){
-    return(
-        <div className = {style.main}>
-            <div className={style.left}>
+function Documents() {
+  return (
+    <div className={style.main}>
+      <div>
         <CustomHeader />
       </div>
       <div className={style.right}>
-      <h1>Phim Tài Liệu</h1>
+        <h1>Phim Tài Liệu</h1>
         <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
           {DataFilm.map((item, k) => (
             <GridListTile>
@@ -32,7 +31,7 @@ function Documents(){
           <Pagination count={10} color="secondary" />
         </div>
       </div>
-        </div>
-    )
+    </div>
+  );
 }
 export default Documents;

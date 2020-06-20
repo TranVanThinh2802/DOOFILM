@@ -52,3 +52,7 @@
         background: white;
     }
 }
+.header{
+    position: fixed;
+    left: 1.5%;
+}

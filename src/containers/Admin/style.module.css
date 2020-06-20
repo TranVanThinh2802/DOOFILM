@@ -21,16 +21,38 @@ h1{
 .text_link{
     display: flex;
 }
-/* .right{
-    background: lightblue;
+ .right{
     min-height: 76vh;
-    width: 75%;
+    width: 520%;
     position: absolute;
-    top: 8%;
-    left: 20%;
+    top: 0%;
+    left: 102%;
     border-radius: 10px;
 }
+.admin{
+    color: white !important;
+    margin-top: 20px;
+}
 .title{
-    color:white;
-    margin-left: 50px;
-} */
+    text-align: center;
+}
+.icon{
+    position: relative;
+    font-size: 250px;
+    color: #0f75bd;
+    animation: flicker 2s infinite alternate;
+    animation-timing-function: linear;
+}
+@keyframes flicker{
+    0%   {color:#0f75bd; left:0px; top:0px;}
+    25% {color:#6699FF; left:-75px; top:0px;}
+    50%  {color:#9999FF; left:-150px; top:0px;}
+    75% {color:#3399FF; left:-225px; top:0px;}
+    100%  {color:#0f75bd; left:-300px; top:0px;}
+    /* 50%  {color:blue; left:200px; top:200px;}
+    75%  {color:green; left:0px; top:200px;}
+    100% {color:red; left:0px; top:0px;} */
+}
+a{
+    color: white;
+}
