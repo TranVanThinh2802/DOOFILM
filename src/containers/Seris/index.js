@@ -14,7 +14,7 @@ import Datafilmngan from './datafilmngan'
 function Seris() {
   return (
     <div className={style.main}>
-      <div className={style.left}>
+      <div>
         <CustomHeader />
       </div>
 

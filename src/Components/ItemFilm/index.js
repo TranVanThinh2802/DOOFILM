@@ -12,8 +12,8 @@ function CustomMyList(props) {
             <p className={style.infor_film}>{props.content}</p>
             <div className={style.infor}>
                 <div className={style.title}>
-                    <p>  {props.nameFilm}</p>
-                    <p>{props.Category}</p>
+                    <p className = {style.name} >  {props.nameFilm}</p>
+                    <p className = {style.catagrory}>{props.Category}</p>
                 </div>
                 <div className={style.start}>
                     <FontAwesomeIcon icon={faStar}> </FontAwesomeIcon>

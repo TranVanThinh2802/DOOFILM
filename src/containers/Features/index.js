@@ -11,7 +11,7 @@ import ItemFilm from "../../Components/ItemFilm/index";
 function Features(){
     return(
         <div className = {style.main}>
-            <div className = {style.left}>
+            <div>
                 <CustomHeader/>
             </div>
             <div className={style.right}>

@@ -17,6 +17,11 @@ import DatanStylefilm from './stylefilm'
 import Datangongu from './datangongu'
 import Sapxep from './sapxep'
 import Datadanhgia from './datadanhgia'
+import {Link } from "react-router-dom";
+
+
+
+
 
 
 function CustomMain() {
@@ -39,9 +44,7 @@ function CustomMain() {
             <Combobox nameCbb = "Đánh giá" data = {Datadanhgia}/>
             <Combobox nameCbb = "Sắp Xếp"  data = {Sapxep}/>
           </div>
-      
 
- 
       </div>
 
 
@@ -62,6 +65,9 @@ function CustomMain() {
       </GridList>
       <div className={style.pagination}>
         <Pagination count={10} color="secondary" />
+      </div>
+      <div className = {style.login}>
+      <button className = "btn btn-primary hw"><Link style = {{color:"white"}} to = '/Login'>Login</Link></button>
       </div>
     </div>
   );

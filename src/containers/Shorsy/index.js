@@ -9,7 +9,7 @@ import ItemFilm from "../../Components/ItemFilm/index";
 function Shorsts() {
   return (
     <div className={style.main}>
-      <div className={style.left}>
+      <div>
         <CustomHeader />
       </div>
       <div className={style.right}>

@@ -1,4 +1,5 @@
-import React, { useState, useEffect, Fl } from 'react';
+import React, { useState, useEffect } from 'react';
+import {useDispatch} from 'react-redux'
 
 //component
 import CustomHeader from '../../Components/CustomHeader/index'
@@ -8,16 +9,14 @@ import ReactList from 'react-list';
 import List from '../../Components/CustomList'
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
-
-
-
 import FlatList from 'flatlist-react';
 import style from './style.module.css'
 
 
+
 function Home(props) {
 
+  const dispatch = useDispatch()//khoi tao function thuc thi action
   const [isLoading, setIsLoading] = useState(true)
   const _renderVoucher = (item, index) => {
     return (
@@ -36,13 +35,18 @@ function Home(props) {
     setTimeout(()=>{
         setIsLoading(false)
     },3000)
+    
   },[])
   return (
     
     <div className = {style.overlay} style = {{padding: '50px', flexDirection:"row"}}>
      
-      <CustomHeader />
-      <CustomMain />
+      <div className = {style.header}>
+        <CustomHeader />
+      </div>
+      <div className = {style.main}>
+        <CustomMain />
+      </div>
        {/* <div className={style.list}>
         <h3>
           Danh Sách Khuyễn Mãi

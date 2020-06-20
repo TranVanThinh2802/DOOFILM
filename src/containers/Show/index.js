@@ -10,7 +10,7 @@ import { Pagination } from "@material-ui/lab";
 function Show(props) {
   return (
     <div className = {style.main}>
-            <div className = {style.left}>
+            <div>
                 <CustomHeader/>
             </div>
             <div className={style.right}>

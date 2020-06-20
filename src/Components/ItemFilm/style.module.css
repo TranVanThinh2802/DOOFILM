@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
 .row{
     margin-top: 10px;
     width: 100%;
@@ -11,7 +15,7 @@
     width: 100%;
   }
   img{
-    width: 200px;
+    width: 90%;
     height: 200px;
     border-radius: 10px;
     outline: none;
@@ -21,7 +25,16 @@
   }
   .infor{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 10px;
+  }
+  .catagrory{
+    margin-top: 0px !important;
+    /* margin-bottom: 0px !important; */
+  }
+  .name{
+    margin-bottom: 0px !important;
   }
   .title{
     font-size: 15px;
@@ -29,7 +42,6 @@
     float: left;
   }
   .title :nth-child(2){
-    margin-top: 10px;
     font-size: 10px;
     font-weight: normal;
   }

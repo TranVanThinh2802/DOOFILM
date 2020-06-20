@@ -5,7 +5,7 @@
   box-sizing: border-box;
   /* font-family: 'Titillium Web', sans-serif; */
 }
-.text_link{
+/* .text_link{
   text-decoration: none !important;
   color: white !important;
   display: flex;
@@ -17,7 +17,7 @@
 .title{
   width: 16.5%;
   text-align: center;
-  /* position: fixed; */
+  
 }
 .nav_left{
   width: 100%;
@@ -61,4 +61,16 @@
 a{
   text-decoration: none !important;
   color: white !important;
+} */
+.left{
+  position: fixed;
+  top: 8%;
+  left: 1%;
+  height: 550px;
 }
+Link{
+  color: white;
+}
+
+
+
