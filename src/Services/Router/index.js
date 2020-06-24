@@ -79,38 +79,6 @@ const Router = [
   {
     path: "/Admin",
     component: Admin,
-    routes: [
-        {
-            path: "/",
-            exact: true,
-            component: Admin,
-          },
-      {
-        path: "/Admin/Add/:id",
-        exact: true,
-        component: Add,
-      },
-      {
-        path: "/Admin/Add",
-        exact: true,
-        component: Add,
-      },
-      {
-        path: "/AdMin/Remove/:id",
-        exact: true,
-        component: Remove,
-      },
-      {
-        path: "/AdMin/Fix/:id",
-        exact: true,
-        component: Fix,
-      },
-      {
-        path: "/AdMin/ListFilm/:id",
-        exact: true,
-        component: ListFilm,
-      },
-    ],
   },
   {
     path: "/Login",

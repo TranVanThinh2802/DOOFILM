@@ -1,0 +1,39 @@
+{
+    "film": [
+        {
+            "id": "1",
+            "title": "Tasty Plastic Tuna",
+            "img": "http://lorempixel.com/640/480/cats",
+            "loai_phim_id": "1",
+            "ngon_ngu": "ngonngu 1"
+            },
+            {
+                "id": "2",
+                "title": "Ergonomic Frozen Soap",
+                "img": "http://lorempixel.com/640/480/people",
+                "loai_phim_id": "2",
+                "ngon_ngu": "ngonngu 2"
+            },
+            {
+                "id": "3",
+                "title": "Refined Granite Car",
+                "img": "http://lorempixel.com/640/480/abstract",
+                "loai_phim_id": "3",
+                "ngon_ngu": "ngonngu 3"
+            }
+    ],
+    "loai_phim": [
+        {
+            "id": 1,
+            "ten_loai": "Hanh dong"
+        },
+        {
+            "id": 2,
+            "ten_loai": "Kinh di"
+        },
+        {
+            "id": 3,
+            "ten_loai": "Tinh cam"
+        }
+    ]
+}

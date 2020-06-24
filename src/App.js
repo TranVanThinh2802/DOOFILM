@@ -29,15 +29,12 @@ function App() {
 function RouteWithSubRoutes(route) {
   return (
     <Route
-      exact 
-      {...route}
-       path={route.path}
-        component = {route.component}
-        routes={route.routes}
-      
-      
-    >
-    </Route>
+    exact 
+     path={route.path}
+    component = {route.component}
+    
+  >
+  </Route>
   );
 }
 

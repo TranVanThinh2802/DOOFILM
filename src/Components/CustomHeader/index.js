@@ -43,6 +43,7 @@ function CustomHeader() {
         
             <SideNav style = {{background:'#00adef', borderRadius:'10px'}}
                 onSelect={(selected) => {
+
                     const to = '/' + selected;
                     if (location.pathname !== to) {
                         history.push(to);
@@ -115,6 +116,7 @@ function CustomHeader() {
                             <Link to  = "/About">Về chúng tôi</Link>
                         </NavText>
                     </NavItem>
+                    
                 </SideNav.Nav>
             </SideNav>
             {/* <div className={style.icon}>
