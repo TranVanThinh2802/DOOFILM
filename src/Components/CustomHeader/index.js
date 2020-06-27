@@ -40,8 +40,8 @@ function CustomHeader() {
         
     <Route render={({ location, history }) => (
         <React.Fragment>
-        
-            <SideNav style = {{background:'#00adef', borderRadius:'10px'}}
+          {/* expanded={true} */} bat tat sideNav
+            <SideNav  style = {{background:'#00adef', borderRadius:'10px'}}
                 onSelect={(selected) => {
 
                     const to = '/' + selected;

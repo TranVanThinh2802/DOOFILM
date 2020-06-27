@@ -14,6 +14,9 @@ import AddFilm from "../Add";
 import RemoveFilm from "../Remove";
 import FixFilm from "../Fix";
 import ListFilm from "../ListFilm"
+import User from '../User'
+
+
 
 const children = {
   Add: {
@@ -34,7 +37,12 @@ const children = {
   ListFilm: {
     path: "ListFilm",
     component: ListFilm,
-    name: "Danh Sach Phim",
+    name: "Danh Sách Phim",
+  },
+  User: {
+    path: "User",
+    component: User,
+    name: "Người Dùng"
   }
 };
 
