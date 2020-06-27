@@ -2,10 +2,13 @@ import {combineReducers} from 'redux';
 import {DESTROY_SESSION} from '../Constant/actionTypes';
 
 import Film from './Film';
+import User from './User';
 
 
 const appReducer = combineReducers({
-    film: Film
+    film: Film,
+    user: User
+
 });
 
 const rootReducer = (state, action) => {
