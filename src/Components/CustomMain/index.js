@@ -26,48 +26,51 @@ import {Link } from "react-router-dom";
 
 function CustomMain() {
   return (
-    <div className={style.nav_right}>
-      <div className={style.search}>
-        <FontAwesomeIcon
-          className={style.icon_search}
-          icon={faSearch}
-        ></FontAwesomeIcon>{" "}
-        <input placeholder="Find a film" type={"text"}></input>
-      </div>
-      <div className={style.header_right}>
-        
-          <div className = {style.navHeader} >
-          <h1 className = {style.homePage}>Trang Chủ</h1>
-            <Combobox className = "navChild" data = {Datafilm} nameCbb = "Thể loại"/>
-            <Combobox nameCbb = "Ngôn ngữ" data = {Datangongu}/>
-            <Combobox nameCbb = "Kiểu Phim" data = {DatanStylefilm} />
-            <Combobox nameCbb = "Đánh giá" data = {Datadanhgia}/>
-            <Combobox nameCbb = "Sắp Xếp"  data = {Sapxep}/>
-          </div>
-
-      </div>
-
-
-
-      {/* <ItemFilm /> */}
-      <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
-        {DataFilm.map((item, k) => (
-          <GridListTile>
-            <ItemFilm
-              nameFilm={item.nameFilm}
-              image={item.image}
-              content={item.content}
-              Category={item.Category}
-              key={k}
-            ></ItemFilm>
-          </GridListTile>
-        ))}
-      </GridList>
-      <div className={style.pagination}>
-        <Pagination count={10} color="secondary" />
-      </div>
-      <div className = {style.login}>
-      <button className = "btn btn-primary hw"><Link style = {{color:"white"}} to = '/Login'>Login</Link></button>
+    <div>
+    
+      <div className={style.nav_right}>
+        <div className={style.search}>
+          <FontAwesomeIcon
+            className={style.icon_search}
+            icon={faSearch}
+          ></FontAwesomeIcon>{" "}
+          <input className = {style.finFm} placeholder="Find movie, TV shows" type={"text"}></input>
+        </div>
+        <div className={style.header_right}>
+          
+            <div className = {style.navHeader} >
+            <h1 className = {style.homePage}>Trang Chủ</h1>
+              <Combobox className = "navChild" data = {Datafilm} nameCbb = "Thể loại"/>
+              <Combobox nameCbb = "Ngôn ngữ" data = {Datangongu}/>
+              <Combobox nameCbb = "Kiểu Phim" data = {DatanStylefilm} />
+              <Combobox nameCbb = "Đánh giá" data = {Datadanhgia}/>
+              <Combobox nameCbb = "Sắp Xếp"  data = {Sapxep}/>
+            </div>
+      
+        </div>
+      
+      
+      
+        {/* <ItemFilm /> */}
+        <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
+          {DataFilm.map((item, k) => (
+            <GridListTile>
+              <ItemFilm
+                nameFilm={item.nameFilm}
+                image={item.image}
+                content={item.content}
+                Category={item.Category}
+                key={k}
+              ></ItemFilm>
+            </GridListTile>
+          ))}
+        </GridList>
+        <div className={style.pagination}>
+          <Pagination count={10} color="secondary" />
+        </div>
+        <div className = {style.login}>
+        <button className = "btn btn-primary hw"><Link style = {{color:"white"}} to = '/Login'>Login</Link></button>
+        </div>
       </div>
     </div>
   );

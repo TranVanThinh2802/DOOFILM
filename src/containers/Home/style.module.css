@@ -1,4 +1,13 @@
-.box{
+body{
+    background: gray;
+}
+.slideshow{
+    position: absolute;
+    left: 4.6%;
+    top:0;
+}
+
+/* .box{
     width: 100%;
 }
 .voucher{
@@ -34,7 +43,7 @@
 }
 .listVoucher ul li{
     margin-right: 50px;
-}
+} */
 .progress{
     position: absolute;
     top: 50%;
@@ -44,14 +53,14 @@
     animation: overlay 5s;
 }
 
-@keyframes overlay{
+/* @keyframes overlay{
     from{
         background: rgba(0, 0, 0, 0.6);
     }
     to{
         background: white;
     }
-}
+} */
 .header{
     position: fixed;
     left: 1.5%;

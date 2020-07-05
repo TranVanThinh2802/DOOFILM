@@ -21,3 +21,16 @@
 .like btn{
     width: 65px;
 }
+a:hover{
+    text-decoration: none;
+}
+.start{
+    color: pink;
+    display: flex;
+    margin-right: 5px;
+}
+.start :hover{
+    color: yellowgreen;
+}
+
+
