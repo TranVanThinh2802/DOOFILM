@@ -16,6 +16,9 @@ import Remove from "../../containers/Remove";
 import Fix from "../../containers/Fix";
 import Login from "../../containers/Login";
 import ListFilm from "../../containers/ListFilm";
+import ActionFilm from "../../containers/ActionFilm"
+
+
 
 const Router = [
   {
@@ -83,6 +86,10 @@ const Router = [
   {
     path: "/Login",
     component: Login,
+  },
+  {
+    path: "/ActionFilm",
+    component: ActionFilm,
   },
 ];
 
