@@ -25,3 +25,8 @@
 .HTDS{
     margin-top: 20px;
 }
+
+.right .pagination{
+    position: absolute;
+    left: 35%;
+}

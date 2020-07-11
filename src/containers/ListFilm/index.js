@@ -13,6 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPen, faTrash} from '@fortawesome/free-solid-svg-icons'
 import {loadListFilmAction} from '../../Redux/Action/filmActions'
+import { Pagination } from "@material-ui/lab";
 
 
 
@@ -72,65 +73,9 @@ const ListFilm = ()=> {
         </TableBody>
       </Table>
     </TableContainer>
-  
-        {/* <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <Link to = "/Admin/Add" className="btn btn-info mb-10">
-                Thêm Film
-              </Link>
-              <div className="panel panel-primary">
-                <div className="panel-heading">
-                  <h3 className="panel-title">Danh Sach Phim</h3>
-                </div>
-                <div className="panel-body">
-                  <table className="table table-bordered table-hover">
-                    <thead>
-                      <tr>
-                        <th>STT</th>
-                        <th>Ten Flim</th>
-                        <th>Hinh anh</th>
-                        <th>The loai</th>
-                        <th>Ngon ngu phim</th>
-                        <th>noi dung </th>
-                        <th>danh gia</th>
-                        <th>quoc gia</th>
-                        <th>Trang Thai</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {Add.map(function (items, index) {
-                        return (
-                          <tr>
-                            <td>{items.id}</td>
-                            <td>{items.ten_phim}</td>
-                            <td><img src = {items.avatar}></img></td>
-                            <td>{items.loai_phim}</td>
-                            <td>{items.ngon_ngu}</td>
-                            <td>{items.noi_dung}</td>
-                            <td>{items.danh_gia}</td>
-                            <td>{items.quoc_gia}</td>
-                            <td className="mr-1">
-                              <button
-                                type="button"
-                                className="btn btn-primary mr"
-                              >
-                                Sửa
-                              </button>
-                              <button className="btn btn-danger">
-                                 Xóa
-                              </button>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+    <div className={style.pagination}>
+          <Pagination count={10} color="secondary" />
+        </div>
       </div>
     );
       }
