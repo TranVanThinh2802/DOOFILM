@@ -4,6 +4,9 @@ import { Route } from "react-router-dom";
 import axios from "axios";
 import ListFilm from "../ListFilm";
 import { useForm } from "react-hook-form";
+import swal from "sweetalert";
+
+
 
 const Add = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -29,6 +32,16 @@ const Add = () => {
     console.log(e);
   };
 
+  const sweetalert = (data) => {
+    swal({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success",
+      buttons: true,
+      dangerMode: true,
+    });
+    console.log(data);
+  };
  
   return (
     <div className={style.right}>
@@ -68,7 +81,7 @@ const Add = () => {
           
           {errors.exampleRequired && <span>This field is required</span>}
 
-          <input className="btn btn-success" type="submit" value="Đăng phim" />
+          <input className="btn btn-success" type="submit" value="Đăng phim" onClick={handleSubmit(sweetalert)} />
         </form>
       </div>
     </div>
