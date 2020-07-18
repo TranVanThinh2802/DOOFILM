@@ -15,6 +15,7 @@ import RemoveFilm from "../Remove";
 import FixFilm from "../Fix";
 import ListFilm from "../ListFilm"
 import User from '../User'
+import Chart from '../Chart'
 
 
 
@@ -43,6 +44,11 @@ const children = {
     path: "User",
     component: User,
     name: "Người Dùng"
+  },
+  Chart:{
+    path:"Chart",
+    component: Chart,
+    name: "Biểu Đồ"
   }
 };
 
