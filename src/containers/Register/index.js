@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 import FacebookLoginBtn from "react-facebook-login";
 import GoogleLogin from "react-google-login";
 import FormControl from "@material-ui/core/FormControl";
@@ -6,29 +6,22 @@ import style from "./style.module.css";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import {Link} from "react-router-dom";
-import {loadLoginAction} from '../../Redux/Action/loginAction'
-import {useDispatch, useSelector} from 'react-redux'
 
 
 
-
-const Login = () => {
-  const {showAlert} = useSelector(state => state.login)
-
-  const { register, handleSubmit, errors, watch } = useForm();
-
-
-  const dispatch = useDispatch()
+const Register = () =>{
+    const { register, handleSubmit, errors, watch } = useForm();
 
   const onSubmit = (data) => {
-    dispatch(loadLoginAction(data))
+    console.log(data);
   };
   const handleChange = (e) => {
-    
+    console.log(e);
   };
-  
-  
-  
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
+  console.log(errors);
 
   const state = {
     auth: false,
@@ -57,9 +50,6 @@ const Login = () => {
     console.log(data);
   };
 
- 
-
-
   let facebookData;
   let googleData;
   state.auth
@@ -85,20 +75,20 @@ const Login = () => {
     />
   );
 
-  useEffect(() => {
-    if(showAlert==true){
-      sweetalert();
-    }else{
-     
-    }
-    console.log(showAlert)
-  }, [showAlert]);
-
   return (
     <div className={style.loginBox}>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={style.left}>
-          <h1 className={style.singup}>Sign in</h1>
+          <h1 className={style.singup}>Sign up</h1>
+          <input
+            className={style.txtEmail}
+            type="text"
+            placeholder="User"
+            name="user"
+            ref={register({ required: true, maxLength: 50 })}
+          ></input>
+          {errors.email?.type === "required" && "bạn chưa nhập User"}
+          {errors.email?.type === "maxLength" && "User của bạn quá dài"}
           <input
             className={style.txtEmail}
             type="text"
@@ -118,7 +108,7 @@ const Login = () => {
           ></input>
           {errors.password1?.type === "required" && "bạn chưa nhập email"}
           {errors.password1?.type === "maxLength" && "password của bạn quá dài"}
-          {/* <input
+          <input
             style={{ display: "flex" }}
             type="password"
             placeholder="Confirm password"
@@ -128,26 +118,26 @@ const Login = () => {
               required: true,
             })}
             placeholder="confim password"
-          ></input> */}
+          ></input>
 
           {errors.password2 && "password không đúng"}
           <button
-            onClick={handleSubmit(onSubmit)}
+            onClick={handleSubmit(sweetalert)}
             className={style.submit}
             type="submit"
             value=""
           >
-            singn in
+            singn up me
           </button>
-          <Link className = {style.register} to = "/Register">Register</Link>
+          
         </div>
         <div className={style.right}>
           <div className={style.loginwith}>
-            Sign in with
+            Well come
             <br />
-            social network
+            DOOFILM
           </div>
-          <button
+          {/* <button
             style={{ width: "100%", height: "40px" }}
             className={style.socialSignin}
           >
@@ -158,11 +148,12 @@ const Login = () => {
             className={style.socialSsignin}
           >
             {googleData}
-          </button>
+          </button> */}
         </div>
-        <div className={style.or}>OR</div>
+        {/* <div className={style.or}>OR</div> */}
       </form>
     </div>
   );
-};
-export default Login;
+}
+
+export default Register;
