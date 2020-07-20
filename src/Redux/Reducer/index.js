@@ -3,11 +3,13 @@ import {DESTROY_SESSION} from '../Constant/actionTypes';
 
 import Film from './Film';
 import User from './User';
+import Login from './Login';
 
 
 const appReducer = combineReducers({
     film: Film,
-    user: User
+    user: User,
+    login: Login
 
 });
 

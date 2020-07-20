@@ -17,7 +17,7 @@ import Fix from "../../containers/Fix";
 import Login from "../../containers/Login";
 import ListFilm from "../../containers/ListFilm";
 import ActionFilm from "../../containers/ActionFilm"
-
+import Register from '../../containers/Register'
 
 
 const Router = [
@@ -91,6 +91,10 @@ const Router = [
     path: "/ActionFilm",
     component: ActionFilm,
   },
+  {
+    path: "/Register",
+    component: Register,
+  }
 ];
 
 export default Router;
