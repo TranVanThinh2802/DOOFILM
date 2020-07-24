@@ -39,7 +39,7 @@ function CustomMain() {
         <div className={style.header_right}>
           
             <div className = {style.navHeader} >
-            <h1 className = {style.homePage}>Trang Chủ</h1>
+            <h1 style = {{fontWeight:"800"}} className = {style.homePage}>DOOFILM</h1>
               <Combobox className = "navChild" data = {Datafilm} nameCbb = "Thể loại"/>
               <Combobox nameCbb = "Ngôn ngữ" data = {Datangongu}/>
               <Combobox nameCbb = "Kiểu Phim" data = {DatanStylefilm} />
@@ -53,14 +53,14 @@ function CustomMain() {
       
         {/* <ItemFilm /> */}
         <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
-          {DataFilm.map((item, k) => (
-            <GridListTile>
+          {DataFilm.map((item, index) => (
+            <GridListTile key = {index}>
               <ItemFilm
                 nameFilm={item.nameFilm}
                 image={item.image}
                 content={item.content}
                 Category={item.Category}
-                key={k}
+                key={index}
               ></ItemFilm>
             </GridListTile>
           ))}

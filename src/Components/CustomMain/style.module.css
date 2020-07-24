@@ -3,7 +3,7 @@
     width: 76%;
     position: absolute;
     left: 20%;
-    top: 102%;
+    top: 107%;
   }
   .taitle h1{
     background: #f3da4e;
@@ -91,6 +91,7 @@
   justify-content: center;
   align-items: center;
   margin-right: 10px;
+  color: gray !important;
 }
 h1{
   color: black !important;

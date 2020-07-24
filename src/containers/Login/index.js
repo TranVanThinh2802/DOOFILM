@@ -5,23 +5,40 @@ import FormControl from "@material-ui/core/FormControl";
 import style from "./style.module.css";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-import {Link} from "react-router-dom";
 import {loadLoginAction} from '../../Redux/Action/loginAction'
 import {useDispatch, useSelector} from 'react-redux'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch,
+} from "react-router-dom";
 
 
 
 
-const Login = () => {
+const Login = (props) => {
   const {showAlert} = useSelector(state => state.login)
-
+  const {alert: {
+    code, message, type
+  }} = useSelector(state => state.generic);
   const { register, handleSubmit, errors, watch } = useForm();
 
 
   const dispatch = useDispatch()
 
+  
+  console.log(props);
+  const { url, path } = useRouteMatch();
+
+  const handleClick = () => {
+    props.history.push("/Home");
+  };
+
   const onSubmit = (data) => {
-    dispatch(loadLoginAction(data))
+    dispatch(loadLoginAction(data, handleClick ))
   };
   const handleChange = (e) => {
     
@@ -48,13 +65,13 @@ const Login = () => {
 
   const sweetalert = (data) => {
     swal({
-      title: "Good job!",
-      text: "You clicked the button!",
-      icon: "success",
+      title: type,
+      text: message,
+      icon: '',
       buttons: true,
       dangerMode: true,
     });
-    console.log(data);
+    
   };
 
  
@@ -84,15 +101,15 @@ const Login = () => {
       className={style.btnGoogle}
     />
   );
-
+  
   useEffect(() => {
-    if(showAlert==true){
+    if(code !== 0){
       sweetalert();
+
     }else{
-     
     }
-    console.log(showAlert)
-  }, [showAlert]);
+  }, [code]);
+
 
   return (
     <div className={style.loginBox}>
@@ -113,7 +130,7 @@ const Login = () => {
             style={{ display: "flex" }}
             type="password"
             placeholder="Password"
-            name="password1"
+            name="mat_khau"
             ref={register({ required: true, min: 5, maxLength: 80 })}
           ></input>
           {errors.password1?.type === "required" && "bạn chưa nhập email"}
