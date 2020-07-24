@@ -4,12 +4,14 @@ import {DESTROY_SESSION} from '../Constant/actionTypes';
 import Film from './Film';
 import User from './User';
 import Login from './Login';
+import Generic from './Generic'
 
 
 const appReducer = combineReducers({
     film: Film,
     user: User,
-    login: Login
+    login: Login,
+    generic: Generic
 
 });
 

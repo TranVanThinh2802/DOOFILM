@@ -7,17 +7,32 @@ import {
   loadLoginSuccessAction,
   showalertaction
 } from '../../Action/loginAction';
+import {updateAlertAction} from '../../Action/generic/index';
+
+
+
+
 
 
 function* requestAction(action) {
+  
+
   yield put(showalertaction(true))
   // delay(3000)
   // yield put(showalertaction(false))
-  let {payload} = action;
+  let {payload, responseUI} = action;
   try {
     const response = yield call(loadLoginApi, payload);// goi api
-    console.log(response.data, "Response")
+    const {code, message_vn: message} = response.data;
+    if(code === 200){
+      yield responseUI()
+    }else{
+    yield put(updateAlertAction({
+      code, message
+    }));
+  }
     yield put(loadLoginSuccessAction(response.data))
+    
 
     
   } catch (err) {

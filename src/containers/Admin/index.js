@@ -10,12 +10,16 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlus
+} from "@fortawesome/free-solid-svg-icons";
 import AddFilm from "../Add";
 import RemoveFilm from "../Remove";
 import FixFilm from "../Fix";
 import ListFilm from "../ListFilm"
 import User from '../User'
 import Chart from '../Chart'
+
 
 
 
@@ -28,7 +32,7 @@ const children = {
   Remove: {
     path: "Remove",
     component: RemoveFilm,
-    name: "Xóa phim",
+    name: "Phim đã xóa",
   },
   Fix: {
     path: "Fix",
@@ -53,17 +57,22 @@ const children = {
 };
 
 function Admin(props) {
+  
+
+  
   console.log(props);
   const { url, path } = useRouteMatch();
 
-  const handleClick = (page) => {
-    props.history.push(page);
+  const handleClick = (props) => {
+    props.history.push("/Home");
   };
+
   return (
    
     <Router>
       <div className={style.left}>
-        <h1>Admin</h1>
+      <button>asd</button>
+        <h1 className = {style.admin}>Admin</h1>
         <div className={style.listAdmin}>
           {Object.values(children).map((route, i) => (
             <Link className={style.text_link} to={`${url}/${route.path}`}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import './Styles/Style.css';
 // import Header from './Components/CustomHeader/index';
@@ -6,18 +6,21 @@ import { Switch, Route, Router } from 'react-router-dom'
 import Routes from './Services/Router'
 import {createBrowserHistory} from "history"
 import Home from './containers/Home'
-import {Provider} from 'react-redux'
+import {Provider, useSelector} from 'react-redux'
 import {store} from './store'
+
 const history = createBrowserHistory()
 
 function App() {
+
+  
   return (
     <Provider store = {store}>
       <Router history = {history}>
             <Switch>
               <Route exact path = {'/'} component={Home}/>
               {Routes.map((route, i) => (
-                RouteWithSubRoutes(route)
+                RouteWithSubRoutes(route, i)
                 ))}
             </Switch>
       </Router>
@@ -26,12 +29,13 @@ function App() {
 }
 
 
-function RouteWithSubRoutes(route) {
+function RouteWithSubRoutes(route, key) {
   return (
     <Route
+    key = {key}
     exact 
-     path={route.path}
-    component = {route.component}
+     path={route.path} 
+    component = {() => <route.component key = {key}/>}
     
   >
   </Route>

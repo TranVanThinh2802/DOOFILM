@@ -3,7 +3,7 @@ import axios from '../../../config/axios';
 //get : paramset
 export const loadFilmApi = async data => {
   try {
-    const result = await axios(`film`, {
+    const result = await axios(`phim`, {
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -21,6 +21,7 @@ export const loadUserApi = async data => {
       method: 'GET',
       headers: {
         Accept: 'application/json',
+
       },
     });
     return result;
@@ -31,11 +32,12 @@ export const loadUserApi = async data => {
 
 export const loadLoginApi = async data =>{
   try{
-    const result = await axios(`dang-nhap`,{
+    const result = await axios(`quan-tri-vien/login`,{
       method: 'POST',
       data: data,
       headers: {
-        Accept: 'application/json'
+        Accept: 'application/json',
+        
       },
     });
     return result;

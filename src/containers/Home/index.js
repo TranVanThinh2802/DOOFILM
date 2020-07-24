@@ -13,12 +13,13 @@ import FlatList from "flatlist-react";
 import style from "./style.module.css";
 import { Slide } from "react-slideshow-image";
 import SlideShow from '../SlideShow/index'
+import Loader from 'react-loader-spinner'
 
 
 
 function Home(props) {
   const dispatch = useDispatch(); //khoi tao function thuc thi action
-  const [isLoading, setIsLoading] = useState(true);
+  // Loading const [isLoading, setIsLoading] = useState(true);
   const _renderVoucher = (item, index) => {
     return <div className={style.voucher}>{index + 1}</div>;
   };
@@ -29,11 +30,12 @@ function Home(props) {
       </div>
     );
   };
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-  }, []);
+  //Loading 
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 3000);
+  // }, []);
 
   return (
     <div
@@ -51,40 +53,22 @@ function Home(props) {
       <div className={style.main}>
         <CustomMain />
       </div>
-      {/* <div className={style.list}>
-        <h3>
-          Danh Sách Khuyễn Mãi
-        </h3>
-      </div> */}
-      {/* <div className={style.promosion}>
-  
-        <FlatList
-        list={["imgs/dskm(1).jpg", "imgs/dskm(2).jpg", "imgs/dskm(3).jpg","imgs/dskm(4).jpg"]}
-        renderItem={_renderpromosion}
-      />
-      </div> 
-
-         <FlatList
-          display = {{
-            grid: true,
-          }}
-          list={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
-          renderItem={_renderVoucher}
-        /> 
-         <div style={{overflow: 'auto', maxHeight: 400}}>
-      <List
-        list = {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
-        renderItem = {_renderVoucher}
-        styleContain = {style.listVoucher}
-       />
-        </div> */}
-      {/* <Footer />  */}
-      <CircularProgress
+      {/*Loading  <CircularProgress
         className={style.progress}
         variant={isLoading ? "indeterminate" : "determinate"}
         color={"secondary"}
+      /> */}
+
+      {/* Loading */}
+      <Loader className = {style.progress}
+         type="Hearts"
+         color="pink"
+         height={150}
+         width={150}
+         timeout={3000} //3 secs
+ 
       />
-      ;
+      
     </div>
   );
 }
