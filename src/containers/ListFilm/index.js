@@ -41,29 +41,29 @@ const ListFilm = ()=> {
         <TableHead>
           <TableRow>
             <TableCell>STT</TableCell>
-            <TableCell align="right">Tên Phim</TableCell>
+            <TableCell align="right">Tên phim</TableCell>
             <TableCell align="right">Hình ảnh</TableCell>
             <TableCell align="right">Thể loại</TableCell>
-            <TableCell align="right">Ngôn ngữ phim</TableCell>
-            <TableCell align="right">Nội Dung</TableCell>
-            <TableCell align="right">Đánh giá</TableCell>
+            <TableCell align="right">Thời lượng</TableCell>
+            <TableCell align="right">Diễn viên</TableCell>
+            <TableCell align="right">Năm sản xuất</TableCell>
             <TableCell align="right">Quốc gia</TableCell>
             <TableCell align="right">Hành động</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {listFilm.map((item) => (
+          {listFilm.data.map((item) => (
             <TableRow key={item.name}>
               <TableCell component="th" scope="Add">
                 {item.id}
               </TableCell>
               <TableCell align="right">{item.ten_phim}</TableCell>
               <TableCell align="right"><img className = {style.avatar}  src = {item.avatar}></img></TableCell>
-              <TableCell align="right">{item.loai_phim}</TableCell>
-              <TableCell align="right">{item.ngon_ngu}</TableCell>
-              <TableCell align="right">{item.noi_dung}</TableCell>
-              <TableCell align="right">{item.danh_gia}</TableCell>
-              <TableCell align="right">{item.quoc_gia}</TableCell>
+              <TableCell align="right">{item.loai_phim_id}</TableCell>
+              <TableCell align="right">{item.thoi_luong}</TableCell>
+              <TableCell align="right">{item.dien_vien}</TableCell>
+              <TableCell align="right">{item.nam_san_xuat}</TableCell>
+              <TableCell align="right">{item.quoc_gia_id}</TableCell>
               <TableCell align="right">
                 <FontAwesomeIcon  style = {{marginRight:'5px'}} icon = {faPen}></FontAwesomeIcon>
                 <FontAwesomeIcon icon = {faTrash}></FontAwesomeIcon>

@@ -2,7 +2,9 @@ import {LOAD_LIST_FILM_SUCCESS} from '../../Constant/actionTypes';
 
 // Initial State
 const initialState = {
-    listFilm: []
+    listFilm: {
+      data: []
+    }
 };
 // Redux: Counter Reducer
 const userReducer = (state = initialState, action) => {

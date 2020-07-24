@@ -11,8 +11,8 @@ function* requestAction(action) {
   let {payload} = action;
   try {
     const response = yield call(loadFilmApi, payload);// goi api
-    console.log(response.data, "Response")
-    yield put(loadListFilmSuccessAction(response.data))
+    console.log(response.data.data.data, "Response")
+    yield put(loadListFilmSuccessAction(response.data.data))
 
     
   } catch (err) {

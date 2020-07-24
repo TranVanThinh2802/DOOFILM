@@ -42,17 +42,17 @@ const children = {
   ListFilm: {
     path: "ListFilm",
     component: ListFilm,
-    name: "Danh Sách Phim",
+    name: "Danh sách phim",
   },
   User: {
     path: "User",
     component: User,
-    name: "Người Dùng"
+    name: "Người dùng"
   },
   Chart:{
     path:"Chart",
     component: Chart,
-    name: "Biểu Đồ"
+    name: "Biểu đồ"
   }
 };
 
