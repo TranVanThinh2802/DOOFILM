@@ -71,7 +71,6 @@ function Admin(props) {
    
     <Router>
       <div className={style.left}>
-      <button>asd</button>
         <h1 className = {style.admin}>Admin</h1>
         <div className={style.listAdmin}>
           {Object.values(children).map((route, i) => (
