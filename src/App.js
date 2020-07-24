@@ -35,7 +35,7 @@ function RouteWithSubRoutes(route, key) {
     key = {key}
     exact 
      path={route.path} 
-    component = {() => <route.component key = {key}/>}
+    component = {(props) => <route.component {...props} key = {key}/>}
     
   >
   </Route>
