@@ -8,15 +8,34 @@ import {createBrowserHistory} from "history"
 import Home from './containers/Home'
 import {Provider, useSelector} from 'react-redux'
 import {store} from './store'
+import { render } from '@testing-library/react';
 
 const history = createBrowserHistory()
 
-function App() {
+function App(props) {
+  // const isLoggedIn = false
+  const location = props.location.pathname;
+  console.log(location)
 
+
+  React.useEffect(()=>{
+    if(location !== "/Login" ){
+      console.log("asd")
+    }
+    if(location === "/Admin"){
+      history.push("/Login")
+    }
+    // setTimeout(()=>{
+    //   history.push('/Login')
+    // },3000)
+},[]);
+  
+    
+  
   
   return (
     <Provider store = {store}>
-      <Router history = {history}>
+      <Router  history = {history} >
             <Switch>
               <Route exact path = {'/'} component={Home}/>
               {Routes.map((route, i) => (
@@ -36,9 +55,9 @@ function RouteWithSubRoutes(route, key) {
     exact 
      path={route.path} 
     component = {(props) => <route.component {...props} key = {key}/>}
-    
   >
   </Route>
+  
   );
 }
 

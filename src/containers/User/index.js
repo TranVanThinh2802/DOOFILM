@@ -21,6 +21,7 @@ const User = () => {
   const { User } = useSelector(function (state) {
     return state.user;
   });
+  console.log(User)
 
   useEffect(() => {
     dispatch(loadListUserAction());
