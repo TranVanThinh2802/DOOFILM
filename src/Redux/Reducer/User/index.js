@@ -2,7 +2,9 @@ import {LOAD_LIST_USER_SUCCESS} from '../../Constant/actionTypes';
 
 // Initial State
 const initialState = {
-    User: []
+    User: {
+      data:[]
+    }
 };
 // Redux: Counter Reducer
 const userReducer = (state = initialState, action) => {

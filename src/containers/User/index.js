@@ -39,18 +39,20 @@ const User = () => {
               <TableCell align="left">Tài Khoản</TableCell>
               <TableCell align="left">Tên Người Dùng</TableCell>
               <TableCell align="left">Hình Ảnh</TableCell>
+              <TableCell align="left">Email</TableCell>
               <TableCell align="left">Hanh Dong</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {User.map((item) => (
+            {User.data.map((item) => (
               <TableRow key={item.name}>
                 <TableCell>{item.id}</TableCell>
                 <TableCell align="left">{item.tai_khoan}</TableCell>
-                <TableCell align="left">{item.ten_nguoi_dung}</TableCell>
+                <TableCell align="left">{item.ten}</TableCell>
                 <TableCell align="left">
                   <img className={style.avatar} src={item.image}></img>
                 </TableCell>
+                <TableCell align="left">{item.email}</TableCell>
                 <TableCell align="left">
                   <FontAwesomeIcon
                     style={{ marginRight: "5px" }}

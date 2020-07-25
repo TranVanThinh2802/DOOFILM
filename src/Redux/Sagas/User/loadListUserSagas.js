@@ -11,8 +11,8 @@ function* requestAction(action) {
   let {payload} = action;
   try {
     const response = yield call(loadUserApi, payload);// goi api
-    console.log(response.data, "Response")
-    yield put(loadListUserSuccessAction(response.data))
+    console.log(response.data.data.data, "Response")
+    yield put(loadListUserSuccessAction(response.data.data))
 
     
   } catch (err) {
