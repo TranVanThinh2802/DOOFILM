@@ -58,11 +58,8 @@ const children = {
 
 function Admin(props) {
   
-
-  
-  console.log(props);
   const { url, path } = useRouteMatch();
-
+  
   const handleClick = (props) => {
     props.history.push("/Home");
   };

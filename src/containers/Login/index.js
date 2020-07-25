@@ -30,11 +30,11 @@ const Login = (props) => {
   const dispatch = useDispatch()
 
   
-  console.log(props);
+  console.log(props, "ddddd");
   // const { url, path } = useRouteMatch();
 
   const handleClick = () => {
-    props.history.push("/Home");
+    props.history.push("/Admin");
   };
 
   const onSubmit = (data) => {

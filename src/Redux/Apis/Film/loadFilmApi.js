@@ -17,7 +17,8 @@ export const loadFilmApi = async data => {
 
 export const loadUserApi = async data => {
   try {
-    const result = await axios(`nguoi__dung`, {
+    const result = await axios(`admin`, {
+      data:data,
       method: 'GET',
       headers: {
         Accept: 'application/json',
