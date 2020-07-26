@@ -25,8 +25,6 @@ const ListFilm = ()=> {
   const {listFilm} = useSelector(function(state){
     return state.film;
   })
-
-
   useEffect(() => {
     dispatch(loadListFilmAction())
   },[])
@@ -47,7 +45,7 @@ const ListFilm = ()=> {
             <TableCell align="right">Thời lượng</TableCell>
             <TableCell align="right">Diễn viên</TableCell>
             <TableCell align="right">Năm sản xuất</TableCell>
-            <TableCell align="right">Quốc gia</TableCell>
+            <TableCell align="right">Link</TableCell>
             <TableCell align="right">Hành động</TableCell>
           </TableRow>
         </TableHead>
@@ -63,7 +61,9 @@ const ListFilm = ()=> {
               <TableCell align="right">{item.thoi_luong}</TableCell>
               <TableCell align="right">{item.dien_vien}</TableCell>
               <TableCell align="right">{item.nam_san_xuat}</TableCell>
-              <TableCell align="right">{item.quoc_gia_id}</TableCell>
+              <TableCell align="right"><video controls autoPlay = "true" >
+                    <source src = "https://drive.google.com/file/d/0B113z1JTweviRWd6M1lpdzVma3M/view" type = "video/mp4"></source>
+                </video></TableCell>
               <TableCell align="right">
                 <FontAwesomeIcon  style = {{marginRight:'5px'}} icon = {faPen}></FontAwesomeIcon>
                 <FontAwesomeIcon icon = {faTrash}></FontAwesomeIcon>
