@@ -5,8 +5,8 @@ import FormControl from "@material-ui/core/FormControl";
 import style from "./style.module.css";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-import {loadLoginAction} from '../../Redux/Action/loginAction'
-import {useDispatch, useSelector} from 'react-redux'
+import { loadLoginAction } from "../../Redux/Action/loginAction";
+import { useDispatch, useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,21 +15,19 @@ import {
   useParams,
   useRouteMatch,
 } from "react-router-dom";
-
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import Loader from "react-loader-spinner";
 
 const Login = (props) => {
-  const {showAlert} = useSelector(state => state.login)
-  const {alert: {
-    code, message, type
-  }} = useSelector(state => state.generic);
+  const { showAlert } = useSelector((state) => state.login);
+  const {
+    alert: { code, message, type },
+  } = useSelector((state) => state.generic);
   const { register, handleSubmit, errors, watch } = useForm();
 
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-  
   console.log(props, "ddddd");
   // const { url, path } = useRouteMatch();
 
@@ -38,14 +36,10 @@ const Login = (props) => {
   };
 
   const onSubmit = (data) => {
-    dispatch(loadLoginAction(data, handleClick ))
+    dispatch(loadLoginAction(data, handleClick));
+    // setLoading(true);
   };
-  const handleChange = (e) => {
-    
-  };
-  
-  
-  
+  const handleChange = (e) => {};
 
   const state = {
     auth: false,
@@ -67,15 +61,11 @@ const Login = (props) => {
     swal({
       title: type,
       text: message,
-      icon: '',
+      icon: "",
       buttons: true,
       dangerMode: true,
     });
-    
   };
-
- 
-
 
   let facebookData;
   let googleData;
@@ -101,15 +91,17 @@ const Login = (props) => {
       className={style.btnGoogle}
     />
   );
-  
-  useEffect(() => {
-    if(code !== 0){
-      sweetalert();
 
-    }else{
+  useEffect(() => {
+    if (code !== 0) {
+      sweetalert();
+    } else {
     }
   }, [code]);
 
+  // loadingButton
+
+  // const [isLoading, setLoading] = useState(false)
 
   return (
     <div className={style.loginBox}>
@@ -156,7 +148,23 @@ const Login = (props) => {
           >
             singn in
           </button>
-          <Link className = {style.register} to = "/Register">Register</Link>
+          {/* {isLoading &&<button
+           
+            className={style.submit}
+            type="submit"
+            value=""
+            disabled
+          >
+            <Loader
+         type="Puff"
+         color="#00BFFF"
+         height={100}
+         width={100}
+         timeout={1000} //3 secs
+ 
+      />SIGN IN
+          </button>} */}
+          {/* <Link className = {style.register} to = "/Register">Register</Link> */}
         </div>
         <div className={style.right}>
           <div className={style.loginwith}>

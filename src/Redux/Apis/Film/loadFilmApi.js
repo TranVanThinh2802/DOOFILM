@@ -47,5 +47,22 @@ export const loadLoginApi = async data =>{
   }
 };
 
+var url = "https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable"
+
+export const loadfileApi = async data =>{
+  try{
+    const result = await (url,{
+      method: 'POST',
+      data:data,
+      headers:{
+        Accept: 'application/json',
+      },
+    });
+    return result;
+  }catch(error){
+    return Promise.reject(error)
+  }
+}
+
 
 

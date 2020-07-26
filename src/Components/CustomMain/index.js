@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {useSelector, useDispatch} from 'react-redux'
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,13 +19,26 @@ import Datangongu from './datangongu'
 import Sapxep from './sapxep'
 import Datadanhgia from './datadanhgia'
 import {Link } from "react-router-dom";
-
+import {loadListFilmAction} from '../../Redux/Action/filmActions'
 
 
 
 
 
 function CustomMain() {
+
+  const dispatch = useDispatch();
+  
+
+  // call API từ serve
+  const {listFilm} = useSelector(function(state){
+    return state.film;
+  })
+
+  useEffect(() => {
+    dispatch(loadListFilmAction())
+  },[])
+  //--------------
   return (
     <div>
     
@@ -53,6 +67,7 @@ function CustomMain() {
       
         {/* <ItemFilm /> */}
         <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
+        {/* thay DataFilm = listFilm.data.map sẽ lấy được database từ serve */}
           {DataFilm.map((item, index) => (
             <GridListTile key = {index}>
               <ItemFilm

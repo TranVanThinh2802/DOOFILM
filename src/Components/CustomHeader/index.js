@@ -40,7 +40,7 @@ function CustomHeader() {
             {/* expanded={true}  bat tat sideNav */}
             <SideNav
               style={{
-                background: "#363636",
+                background: "#17212B",
                 // borderRadius: "10px",
                 height: "120%",
                 opacity: "0.9"
