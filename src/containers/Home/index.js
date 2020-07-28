@@ -53,11 +53,15 @@ function Home(props) {
       <div className={style.main}>
         <CustomMain />
       </div>
+      <div className = {style.footer}>
+        <Footer />
+      </div>
       {/*Loading  <CircularProgress
         className={style.progress}
         variant={isLoading ? "indeterminate" : "determinate"}
         color={"secondary"}
       /> */}
+
 
       {/* Loading */}
       <Loader className = {style.progress}

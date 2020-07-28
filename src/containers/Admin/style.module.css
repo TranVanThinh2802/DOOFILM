@@ -1,4 +1,4 @@
-.left{
+ .left{
     background: #00adef;
     height: 500px;
     width: 15%;
@@ -6,26 +6,30 @@
     top: 8%;
     left: 3%;
     border-radius: 10px;
-}
+} 
 
-.left .admin{
+ /* .left .admin{
     color: white !important;
-}
+}  */
 h1{
     padding-top: 50px;
     text-align: center;
     color: white;
-}
-.listAdmin{
+} 
+ /* .listAdmin{
   padding-top: 70px;
   line-height: 30px;
   text-align: left;
   margin-left: 20%;
+}  */
+a{
+    color: white;
 }
-.text_link{
-    display: flex;
+.text_link:hover{
+    /* display: flex; */
+    color: orange;
 }
- .right{
+  .right{
     min-height: 76vh;
     width: 520%;
     position: absolute;
@@ -33,14 +37,14 @@ h1{
     left: 102%;
     border-radius: 10px;
 }
-.admin{
+/* .admin{
     color: white !important;
     margin-top: 20px;
 }
 .title{
     text-align: center;
-}
-.icon{
+} */
+/* .icon{
     position: relative;
     font-size: 250px;
     color: #0f75bd;
@@ -53,10 +57,85 @@ h1{
     50%  {color:#9999FF; left:-150px; top:0px;}
     75% {color:#3399FF; left:-225px; top:0px;}
     100%  {color:#0f75bd; left:-300px; top:0px;}
-    /* 50%  {color:blue; left:200px; top:200px;}
+     50%  {color:blue; left:200px; top:200px;}
     75%  {color:green; left:0px; top:200px;}
-    100% {color:red; left:0px; top:0px;} */
+    100% {color:red; left:0px; top:0px;} 
 }
-a{
+ */
+
+
+
+
+/* ---------------------------------------------------------------------
+giao dien moi */
+
+.adminFunction:not([href]){
+    color:white;
+}
+
+.adminSidebar{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #042331;
+    transition: all .5s ease;
+}
+
+.adminHeader{
+    font-size: 22px;
     color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
 }
+
+.adminFunction{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left:40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+}
+
+
+ul li:hover .adminFunction{
+    padding-left: 50px;
+    color: orange;
+}
+
+.check{
+    display: none;
+}
+
+
+
+.check:checked ~ .adminSidebar{
+    left: 0;
+}
+
+.check:checked ~ label .btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.check:checked ~ label .cancel{
+    left: 195px;
+}
+
+
+/* section{
+    background: url(https://www.bgclinicals.com/upload-diaporamas/medium/slider-03_1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 110vh;
+    transition: all .5s;
+} */

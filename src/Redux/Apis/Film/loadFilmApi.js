@@ -5,6 +5,7 @@ export const loadFilmApi = async data => {
   try {
     const result = await axios(`phim`, {
       method: 'GET',
+
       headers: {
         Accept: 'application/json',
       },
@@ -31,6 +32,21 @@ export const loadUserApi = async data => {
   }
 };
 
+export const loadFindFilmApi = async data =>{
+  try{
+    const result = await axios(`nguoi-dung/tiem-kiem`,{
+      params: data,
+      method: 'GET',
+      headers: {
+        Accept: 'application/json'
+      },
+    });
+    return result;
+  }catch(error){
+    return Promise.reject(error);
+  }
+};
+
 export const loadLoginApi = async data =>{
   try{
     const result = await axios(`quan-tri-vien/login`,{
@@ -47,22 +63,22 @@ export const loadLoginApi = async data =>{
   }
 };
 
-var url = "https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable"
+// var url = "https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable"
 
-export const loadfileApi = async data =>{
-  try{
-    const result = await (url,{
-      method: 'POST',
-      data:data,
-      headers:{
-        Accept: 'application/json',
-      },
-    });
-    return result;
-  }catch(error){
-    return Promise.reject(error)
-  }
-}
+// export const loadfileApi = async data =>{
+//   try{
+//     const result = await (url,{
+//       method: 'POST',
+//       data:data,
+//       headers:{
+//         Accept: 'application/json',
+//       },
+//     });
+//     return result;
+//   }catch(error){
+//     return Promise.reject(error)
+//   }
+// }
 
 
 

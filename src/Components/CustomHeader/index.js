@@ -43,7 +43,7 @@ function CustomHeader() {
                 background: "#17212B",
                 // borderRadius: "10px",
                 height: "120%",
-                opacity: "0.9"
+                opacity: "0.9",
               }}
               onSelect={(selected) => {
                 const to = "/" + selected;
