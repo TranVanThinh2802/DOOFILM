@@ -1,5 +1,5 @@
 body{
-    background: gray;
+    /* background: gray; */
 }
 .slideshow{
     position: absolute;
@@ -65,4 +65,12 @@ body{
 .header{
     position: fixed;
     left: 1.5%;
+}
+
+.footer{
+    width: 95.3%;
+    border-top: solid 1px lightpink;
+    position: absolute;
+    top: 250%;
+    left: 4.7%;
 }

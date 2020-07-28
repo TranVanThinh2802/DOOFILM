@@ -37,7 +37,7 @@ const Login = (props) => {
 
   const onSubmit = (data) => {
     dispatch(loadLoginAction(data, handleClick));
-    // setLoading(true);
+    setLoading(true);
   };
   const handleChange = (e) => {};
 
@@ -101,7 +101,7 @@ const Login = (props) => {
 
   // loadingButton
 
-  // const [isLoading, setLoading] = useState(false)
+  const [isLoading, setLoading] = useState(false);
 
   return (
     <div className={style.loginBox}>
@@ -140,30 +140,34 @@ const Login = (props) => {
           ></input> */}
 
           {errors.password2 && "password không đúng"}
-          <button
-            onClick={handleSubmit(onSubmit)}
-            className={style.submit}
-            type="submit"
-            value=""
-          >
-            singn in
-          </button>
-          {/* {isLoading &&<button
-           
-            className={style.submit}
-            type="submit"
-            value=""
-            disabled
-          >
-            <Loader
-         type="Puff"
-         color="#00BFFF"
-         height={100}
-         width={100}
-         timeout={1000} //3 secs
- 
-      />SIGN IN
-          </button>} */}
+          
+            <button
+              onClick={handleSubmit(onSubmit)}
+              className={style.submit}
+              type="submit"
+              value=""
+            >
+              singn in
+            </button>
+          
+          {/* {isLoading && (
+            <button
+              onClick={handleSubmit(onSubmit)}
+              className={style.submit}
+              type="submit"
+              value=""
+              disabled
+            >SIGN IN
+              <Loader
+                type="Puff"
+                color="#00BFFF"
+                height={30}
+                width={30}
+                timeout={1000} //3 secs
+              />
+              
+            </button>
+          )} */}
           {/* <Link className = {style.register} to = "/Register">Register</Link> */}
         </div>
         <div className={style.right}>

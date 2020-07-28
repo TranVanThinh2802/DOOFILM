@@ -20,6 +20,7 @@ import Sapxep from './sapxep'
 import Datadanhgia from './datadanhgia'
 import {Link } from "react-router-dom";
 import {loadListFilmAction} from '../../Redux/Action/filmActions'
+import {loadFindFilmAction} from '../../Redux/Action/findFilmAction'
 
 
 
@@ -29,16 +30,29 @@ function CustomMain() {
 
   const dispatch = useDispatch();
   
+  
+ 
 
-  // call API từ serve
+  // call API film từ serve
   const {listFilm} = useSelector(function(state){
     return state.film;
+    // return state.findFilm
   })
 
   useEffect(() => {
     dispatch(loadListFilmAction())
   },[])
+
+  
+
   //--------------
+
+  const onChange = (event) =>{
+    console.log(event.target.value)
+    dispatch(loadFindFilmAction({key_word:event.target.value}))
+  }
+  
+
   return (
     <div>
     
@@ -48,7 +62,7 @@ function CustomMain() {
             className={style.icon_search}
             icon={faSearch}
           ></FontAwesomeIcon>{" "}
-          <input className = {style.finFm} placeholder="Find movie, TV shows" type={"text"}></input>
+          <input className = {style.finFm} placeholder="Find movie, TV shows" type={"text"} onChange = {onChange}></input>
         </div>
         <div className={style.header_right}>
           
@@ -71,7 +85,7 @@ function CustomMain() {
           {DataFilm.map((item, index) => (
             <GridListTile key = {index}>
               <ItemFilm
-                nameFilm={item.nameFilm}
+                nameFilm={item.ten_phim}
                 image={item.image}
                 content={item.content}
                 Category={item.Category}
@@ -80,9 +94,11 @@ function CustomMain() {
             </GridListTile>
           ))}
         </GridList>
+
         <div className={style.pagination}>
           <Pagination count={10} color="secondary" />
         </div>
+
         <div className = {style.login}>
         <button className = "btn btn-primary hw"><Link style = {{color:"white"}} to = '/Login'>Login</Link></button>
         </div>
@@ -113,79 +129,3 @@ export default CustomMain;
 
 
 
-// function CustomMain() {
-//     const array = ["imgs/venom.jpeg", "imgs/slideshow(5).jpg", "imgs/slideshow(6).jpg"];
-//     const [imgShow, setImageShow] = useState({ value: 0 });
-//     useEffect(() => {
-//         setInterval(function () {
-
-//             if (imgShow.value < 2) {
-
-//                 imgShow.value += 1;
-//                 setImageShow({ ...imgShow });
-//             } else {
-//                 imgShow.value = 0;
-//                 setImageShow({ ...imgShow });
-//             }
-//         }, 3000)
-//     }, [])
-//     return (
-
-//         <div className="slider">
-//             <div className="slideshow">
-//                 <img className="hinh1" src={array[imgShow.value]} alt="" />
-//             </div>
-
-//             <div className="buy-ticked">
-//                 <div className="tab-header">
-//                     <h5>Theo rạp</h5>
-//                     <h5>Theo phim</h5>
-//                 </div>
-//                 <div className="tab-content">
-//                     <div>
-//                         <form id="frm-cinema">
-//                             <select name="" id="select-cinema">
-//                                 <option value="">Chọn rạp</option>
-//                                 <option value="">Quận 10, TP. HCM</option>
-//                                 <option value="">Quận Bình Thạnh, TP. HCM</option>
-//                                 <option value="">Quận 2, TP. HCM</option>
-//                                 <option value="">Quận 1, TP. HCM</option>
-//                             </select>
-//                             <select name="" id="select-cinema">
-//                                 <option value="">Chọn ngày</option>
-//                             </select>
-//                             <select name="" id="select-cinema">
-//                                 <option value="">Chọn suất</option>
-//                             </select>
-//                             <select name="" id="select-cinema">
-//                                 <option value="">Chọn phim</option>
-//                             </select>
-//                             <button type="submit" className="buy-cinema">$Mua vé</button>
-//                         </form>
-//                     </div>
-//                     <div>
-//                         <form id="frm-cinema">
-//                             <select name="" id="select-cinema">
-//                                 <option value="">Chọn phim</option>
-//                                 <option value="">Quận 10, TP. HCM</option>
-//                                 <option value="">Quận Bình Thạnh, TP. HCM</option>
-//                                 <option value="">Quận 2, TP. HCM</option>
-//                                 <option value="">Quận 1, TP. HCM</option>
-//                             </select>
-//                             <select name="" id="select-cinema">
-//                                 <option value="">Chọn rạp</option>
-//                             </select>
-//                             <select name="" id="select-cinema">
-//                                 <option value="">Chọn ngày</option>
-//                             </select>
-//                             <select name="" id="select-cinema">
-//                                 <option value="">Chọn xuất</option>
-//                             </select>
-//                             <button type="submit" className="buy-cinema">$Mua vé</button>
-//                         </form>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }

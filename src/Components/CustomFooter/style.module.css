@@ -1,0 +1,7 @@
+.footerA{
+    color:black;
+}
+
+.footerA:hover{
+    color: orange;
+}
