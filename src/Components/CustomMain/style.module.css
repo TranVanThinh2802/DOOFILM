@@ -9,7 +9,7 @@
     background: #f3da4e;
     min-height: 90vh;
   }
-  input[type="text"]{
+  .search input[type="text"]{
     outline: none;
     border: none;
     width: 80%;

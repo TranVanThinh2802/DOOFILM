@@ -101,7 +101,7 @@ function Admin(props) {
     // -----------------------------------------------------
     <Router>
       <input className={style.check} type="checkbox" id="check"></input>
-      <label for="check">
+      <label for="check" style= {{position:'absolute'}}>
         <i
           style={{
             position: "absolute",
@@ -213,8 +213,11 @@ function Admin(props) {
             <Topic routes={props.routes} />
           </Route>
         </Switch>
+        <section></section>
       </div>
+      <section></section>
     </Router>
+    
   );
 }
 

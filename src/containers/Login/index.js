@@ -28,7 +28,7 @@ const Login = (props) => {
 
   const dispatch = useDispatch();
 
-  console.log(props, "ddddd");
+  // console.log(props, "ddddd");
   // const { url, path } = useRouteMatch();
 
   const handleClick = () => {

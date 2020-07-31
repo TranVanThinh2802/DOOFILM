@@ -9,7 +9,7 @@ function CustomFooter(){
         <MDBRow>
           <MDBCol className = "ml-5" md="3">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              DOOFILM
+              <img style = {{width:'158px' ,height:'95px'}} src= "imgs/logo1.png" />
             </h5>
             <p>
               WELCOME DOOFLIM

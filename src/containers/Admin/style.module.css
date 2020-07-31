@@ -75,6 +75,7 @@ giao dien moi */
 
 .adminSidebar{
     position: fixed;
+    top: 3%;
     left: -250px;
     width: 250px;
     height: 100%;
@@ -132,10 +133,10 @@ ul li:hover .adminFunction{
 }
 
 
-/* section{
-    background: url(https://www.bgclinicals.com/upload-diaporamas/medium/slider-03_1.jpg);
+section{
+    background: url(https://thumbs.dreamstime.com/z/cinema-event-background-vector-seamless-pattern-flat-movie-background-cinema-attributes-film-strip-camera-reel-masks-popcorn-129374847.jpg);
     background-position: center;
     background-size: cover;
-    height: 110vh;
+    height: 100vh;
     transition: all .5s;
-} */
+}
