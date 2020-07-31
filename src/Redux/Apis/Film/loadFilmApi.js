@@ -63,6 +63,21 @@ export const loadLoginApi = async data =>{
   }
 };
 
+export const loadAddFilmApi = async data =>{
+  try{
+    const result = await axios(`nguoi-dung/them-phim`,{
+      method: 'POST',
+      data:data,
+      headers:{
+        Accept: 'application/json',
+      },
+    });
+    return result;
+  }catch(error){
+    return Promise.reject(error)
+  }
+}
+
 // var url = "https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable"
 
 // export const loadfileApi = async data =>{

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(https://media-exp1.licdn.com/dms/image/C4E12AQHW7Yt1AaSnFA/article-inline_image-shrink_1000_1488/0?e=1601510400&v=beta&t=Vzz_TijiXYxBJKyvsgpAXai1Rbm_3oKDCN0IODQxdiI);
+    background-image: url(https://i.pinimg.com/originals/fa/33/2c/fa332c06f406adf9f4b59a3c82289958.jpg);
     font-size: 16px;
     color: #222;
     font-family: 'Roboto', sans-serif;
@@ -25,24 +25,24 @@ body {
     width: 300px;
     height: 400px;
 }
-input[type="text"],
-input[type="password"] {
-    display: block !important;
-    box-sizing: border-box !important;
-    margin-bottom: 20px !important;
-    padding: 4px !important;
-    width: 220px !important;
-    height: 32px !important;
-    border: none !important;
-    border-bottom: 1px solid #AAA !important;
-    font-family: 'Roboto', sans-serif !important;
-    font-weight: 400 !important;
-    font-size: 15px !important;
-    transition: 0.2s ease !important;
+.singup input[type="text"],
+.singup input[type="password"] {
+    display: block ;
+    box-sizing: border-box ;
+    margin-bottom: 20px ;
+    padding: 4px ;
+    width: 220px ;
+    height: 32px ;
+    border: none ;
+    border-bottom: 1px solid #AAA ;
+    font-family: 'Roboto', sans-serif ;
+    font-weight: 400 ;
+    font-size: 15px ;
+    transition: 0.2s ease ;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+.singup input[type="text"]:focus,
+.singup input[type="password"]:focus {
     border-bottom: 2px solid #16a085;
     color: #16a085;
     transition: 0.2s ease;
@@ -128,11 +128,12 @@ button[type="submit"]:focus {
     font-size: 28px;
   }
 .txtEmail{
+    margin-bottom: 10%;
     display: flex;
-    position: absolute;
-    left: 0 !important;
-    width: 13% !important;
-    border: solid 1px black !important;
+    /* position: absolute; */
+    left: 14%;
+    /* width: 80%; */
+    /* border: solid 1px black !important; */
 }
 
 .register{

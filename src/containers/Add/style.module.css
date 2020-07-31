@@ -3,7 +3,7 @@
     width: 510%;
     position: absolute;
     top: 0%;
-    left: 124%;
+    left: 230%;
 }
 .mb-10{
     margin-bottom: 10px;
@@ -16,6 +16,27 @@
     left: 0 !important;
 }
 
+.inputAdd{
+    display: flex;
+}
+
+.inputAdd input{
+    border: none;
+    margin-left: 20px;
+    background: none;
+    border-bottom: solid 1px;
+    outline: none;
+}
+
+.inputAdd i{
+    margin-right: 10px;
+}
+
+.inputAdd label{
+    width: 33%;
+}
+
+
 
 /* -----------------------------------------------
 giao dien moi */
@@ -23,8 +44,7 @@ giao dien moi */
 /* .formAdd{
     position: absolute;
     width: 200%;
-    height: 1000%;
     top:0;
     left: 124%;
-    background: pink;
 } */
+
