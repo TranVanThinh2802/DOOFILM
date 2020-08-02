@@ -74,11 +74,11 @@ giao dien moi */
 }
 
 .adminSidebar{
-    position: fixed;
+    position: absolute;
     top: 3%;
     left: -250px;
     width: 250px;
-    height: 100%;
+    height: 153%;
     background: #042331;
     transition: all .5s ease;
 }

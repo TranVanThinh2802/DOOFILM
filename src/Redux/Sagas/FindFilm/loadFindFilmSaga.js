@@ -2,10 +2,10 @@ import {takeLatest, call, put, delay} from 'redux-saga/effects';
 import {
   LOAD_FIND_FILM_REQUEST
 } from '../../Constant/actionTypes';
-import {loadFindFilmApi} from '../../Apis/Film/loadFilmApi'
+import {loadFindFilmApi} from '../../Apis'
 import {
   loadListFilmSuccessAction
-} from '../../Action/filmActions';
+} from '../../Action';
 
 function* requestAction(action) {
   let {payload} = action;

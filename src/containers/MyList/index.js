@@ -15,8 +15,8 @@ function MyList() {
         <CustomHeader />
       </div>
 
-      <div className = {style.right}>
-      <h1>Danh Sách Của Tôi</h1>
+      <div className={style.right}>
+        <h1>Danh Sách Của Tôi</h1>
         <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
           {DataFilm.map((item, k) => (
             <GridListTile>

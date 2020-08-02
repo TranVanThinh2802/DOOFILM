@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import CustomHeader from "../../Components/CustomHeader";
+import React from "react";
 import style from "./style.module.css";
 import {
   BrowserRouter as Router,
@@ -9,34 +8,12 @@ import {
   useParams,
   useRouteMatch,
 } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import AddFilm from "../Add";
 import RemoveFilm from "../Remove";
 import FixFilm from "../Fix";
 import ListFilm from "../ListFilm";
 import User from "../User";
 import Chart from "../Chart";
-import {
-  faFilm,
-  faLaptop,
-  faPlayCircle,
-  faDove,
-  faCamera,
-  faStar,
-  faVideo,
-  faVideoSlash,
-  faTv,
-  faTablet,
-  faHome,
-} from "@fortawesome/free-solid-svg-icons";
-import SideNav, {
-  Toggle,
-  Nav,
-  NavItem,
-  NavIcon,
-  NavText,
-} from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 const children = {
@@ -101,7 +78,7 @@ function Admin(props) {
     // -----------------------------------------------------
     <Router>
       <input className={style.check} type="checkbox" id="check"></input>
-      <label for="check" style= {{position:'absolute'}}>
+      <label for="check" style={{ position: "absolute" }}>
         <i
           style={{
             position: "absolute",
@@ -217,7 +194,6 @@ function Admin(props) {
       </div>
       <section></section>
     </Router>
-    
   );
 }
 

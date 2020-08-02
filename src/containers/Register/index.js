@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import FacebookLoginBtn from "react-facebook-login";
 import GoogleLogin from "react-google-login";
 import FormControl from "@material-ui/core/FormControl";
 import style from "./style.module.css";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
-
-const Register = () =>{
-    const { register, handleSubmit, errors, watch } = useForm();
+const Register = () => {
+  const { register, handleSubmit, errors, watch } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -129,7 +127,6 @@ const Register = () =>{
           >
             singn up me
           </button>
-          
         </div>
         <div className={style.right}>
           <div className={style.loginwith}>
@@ -154,6 +151,6 @@ const Register = () =>{
       </form>
     </div>
   );
-}
+};
 
 export default Register;

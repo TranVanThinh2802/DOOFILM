@@ -12,10 +12,8 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import FlatList from "flatlist-react";
 import style from "./style.module.css";
 import { Slide } from "react-slideshow-image";
-import SlideShow from '../SlideShow/index'
-import Loader from 'react-loader-spinner'
-
-
+import SlideShow from "../SlideShow/index";
+import Loader from "react-loader-spinner";
 
 function Home(props) {
   const dispatch = useDispatch(); //khoi tao function thuc thi action
@@ -30,7 +28,7 @@ function Home(props) {
       </div>
     );
   };
-  //Loading 
+  //Loading
   // React.useEffect(() => {
   //   setTimeout(() => {
   //     setIsLoading(false);
@@ -46,14 +44,14 @@ function Home(props) {
         <CustomHeader />
       </div>
       <div className={style.slideshow}>
-      <div>
-        <SlideShow />
-      </div>
+        <div>
+          <SlideShow />
+        </div>
       </div>
       <div className={style.main}>
         <CustomMain />
       </div>
-      <div className = {style.footer}>
+      <div className={style.footer}>
         <Footer />
       </div>
       {/*Loading  <CircularProgress
@@ -62,17 +60,15 @@ function Home(props) {
         color={"secondary"}
       /> */}
 
-
       {/* Loading */}
-      <Loader className = {style.progress}
-         type="Hearts"
-         color="pink"
-         height={150}
-         width={150}
-         timeout={3000} //3 secs
- 
+      <Loader
+        className={style.progress}
+        type="Hearts"
+        color="pink"
+        height={150}
+        width={150}
+        timeout={3000} //3 secs
       />
-      
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import {LOAD_ADD_FIM_SUCCESS} from '../../Constant/actionTypes'
 
 const initialState = {
-      addfilm: []
+      data: []
 };
 
 // Redux: Counter Reducer
