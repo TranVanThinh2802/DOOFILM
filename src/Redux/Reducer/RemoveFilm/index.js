@@ -1,4 +1,4 @@
-import {LOAD_LIST_FILM_SUCCESS} from '../../Constant/actionTypes'
+import {LOAD_DELETE_FILM_SUCCESS} from '../../Constant/actionTypes'
 
 const initialState = {
    data:[]
@@ -6,7 +6,7 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
-      case LOAD_LIST_FILM_SUCCESS:{
+      case LOAD_DELETE_FILM_SUCCESS:{
           return{
               ...state,
               listFilm: action.payload

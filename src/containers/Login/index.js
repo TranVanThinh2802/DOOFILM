@@ -140,16 +140,16 @@ const Login = (props) => {
           ></input> */}
 
           {errors.password2 && "password không đúng"}
-          
-            <button
-              onClick={handleSubmit(onSubmit)}
-              className={style.submit}
-              type="submit"
-              value=""
-            >
-              singn in
-            </button>
-          
+
+          <button
+            onClick={handleSubmit(onSubmit)}
+            className={style.submit}
+            type="submit"
+            value=""
+          >
+            singn in
+          </button>
+
           {/* {isLoading && (
             <button
               onClick={handleSubmit(onSubmit)}

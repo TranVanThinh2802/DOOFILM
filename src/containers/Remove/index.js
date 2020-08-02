@@ -1,69 +1,71 @@
-import React, { Component } from 'react'
-import style from './style.module.css'
-import {useSelector, useDispatch} from 'react-redux'
+import React, { Component } from "react";
+import style from "./style.module.css";
+import { useSelector, useDispatch } from "react-redux";
 import { Route, Link } from "react-router-dom";
 import axios from "axios";
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faPen, faTrash} from '@fortawesome/free-solid-svg-icons'
-import {loadListFilmAction} from '../../Redux/Action/filmActions'
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { loadListFilmAction } from "../../Redux/Action/filmActions";
 import { Pagination } from "@material-ui/lab";
 
+class Remove extends Component {
+  // constructor(props){
+  //     super(props);
+  //     this.state = {
+  //         product: []
+  //     }
+  // }
 
-
-class Remove extends Component{
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         product: []
-    //     }
-    // }
-    
-    // componentDidMount(){
-    //     axios({
-    //         method: 'GET',
-    //         url: 'https://5ee0c4b130deff0016c3f5df.mockapi.io/DooFilm',
-    //         data: null
-    //     }).then(res =>{
-    //         console.log(res);
-    //         this.setState({
-    //             product:res.data
-    //         })
-    //     }).then(err =>{
-    //         console.log(err);
-    //     });
-    // }
-    render(){
-        // var {product} = this.state;
-        return(
-            <div className={style.right}>
-      {/* <Link to="/Admin/Add" className={style.btnFilm}>
+  // componentDidMount(){
+  //     axios({
+  //         method: 'GET',
+  //         url: 'https://5ee0c4b130deff0016c3f5df.mockapi.io/DooFilm',
+  //         data: null
+  //     }).then(res =>{
+  //         console.log(res);
+  //         this.setState({
+  //             product:res.data
+  //         })
+  //     }).then(err =>{
+  //         console.log(err);
+  //     });
+  // }
+  render() {
+    // var {product} = this.state;
+    return (
+      <div className={style.right}>
+        {/* <Link to="/Admin/Add" className={style.btnFilm}>
         {" "}
         Thêm Phim
       </Link> */}
 
-      <TableContainer className={style.HTDS} component={Paper}>
-        <Table className={style.table} size="small" aria-label="a dense table">
-          <TableHead>
-            <TableRow>
-              <TableCell>STT</TableCell>
-              <TableCell align="right">Tên Phim</TableCell>
-              <TableCell align="right">Hình ảnh</TableCell>
-              <TableCell align="right">Thể loại</TableCell>
-              <TableCell align="right">Ngôn ngữ phim</TableCell>
-              <TableCell align="right">Nội Dung</TableCell>
-              <TableCell align="right">Đánh giá</TableCell>
-              <TableCell align="right">Quốc gia</TableCell>
-              <TableCell align="right">Hành động</TableCell>
-            </TableRow>
-          </TableHead>
-          {/* <TableBody>
+        <TableContainer className={style.HTDS} component={Paper}>
+          <Table
+            className={style.table}
+            size="small"
+            aria-label="a dense table"
+          >
+            <TableHead>
+              <TableRow>
+                <TableCell>STT</TableCell>
+                <TableCell align="right">Tên Phim</TableCell>
+                <TableCell align="right">Hình ảnh</TableCell>
+                <TableCell align="right">Thể loại</TableCell>
+                <TableCell align="right">Ngôn ngữ phim</TableCell>
+                <TableCell align="right">Nội Dung</TableCell>
+                <TableCell align="right">Đánh giá</TableCell>
+                <TableCell align="right">Quốc gia</TableCell>
+                <TableCell align="right">Hành động</TableCell>
+              </TableRow>
+            </TableHead>
+            {/* <TableBody>
             {listFilm.map((item) => (
               <TableRow key={item.name}>
                 <TableCell component="th" scope="Add">
@@ -88,15 +90,14 @@ class Remove extends Component{
               </TableRow>
             ))}
           </TableBody> */}
-        </Table>
-      </TableContainer>
-      <div className={style.pagination}>
-        <Pagination count={10} color="secondary" />
+          </Table>
+        </TableContainer>
+        <div className={style.pagination}>
+          <Pagination count={10} color="secondary" />
+        </div>
       </div>
-    </div>
-        )
-    }
+    );
+  }
 }
-
 
 export default Remove;

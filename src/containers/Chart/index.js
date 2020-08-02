@@ -84,8 +84,11 @@ const CChart = () => {
     []
   );
   return (
-    <div style = {{boxShadow:'0px 6px 14px 1px', padding:'25px'}}  className="chart">
-      <div >
+    <div
+      style={{ boxShadow: "0px 6px 14px 1px", padding: "25px" }}
+      className="chart"
+    >
+      <div>
         {/* <h1 style = {{width:'100%'}}>DOOFILM</h1>
 			<CanvasJSChart options = {options} 		
 			/> */}

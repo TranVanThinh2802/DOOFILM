@@ -47,6 +47,21 @@ export const loadFindFilmApi = async data =>{
   }
 };
 
+export const loadDeleteFilmApi = async data =>{
+  try{
+    const result = await axios(`phim/xoa-phim`,{
+      params: data,
+      method: 'GET',
+      headers: {
+        Accept: 'application/json'
+      },
+    });
+    return result;
+  }catch(error){
+    return Promise.reject(error);
+  }
+}
+
 export const loadLoginApi = async data =>{
   try{
     const result = await axios(`quan-tri-vien/login`,{
@@ -65,11 +80,11 @@ export const loadLoginApi = async data =>{
 
 export const loadAddFilmApi = async data =>{
   try{
-    const result = await axios(`nguoi-dung/them-phim`,{
+    const result = await axios(`phim/them-phim`,{
       method: 'POST',
       data:data,
       headers:{
-        Accept: 'application/json',
+        Accept: 'application/json' ,
       },
     });
     return result;
@@ -78,22 +93,6 @@ export const loadAddFilmApi = async data =>{
   }
 }
 
-// var url = "https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable"
-
-// export const loadfileApi = async data =>{
-//   try{
-//     const result = await (url,{
-//       method: 'POST',
-//       data:data,
-//       headers:{
-//         Accept: 'application/json',
-//       },
-//     });
-//     return result;
-//   }catch(error){
-//     return Promise.reject(error)
-//   }
-// }
 
 
 

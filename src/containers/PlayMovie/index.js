@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-
-
 function PlayMovie() {
   return (
     <div className={style.main}>

@@ -2,17 +2,17 @@ import {takeLatest, call, put, delay} from 'redux-saga/effects';
 import {
   LOAD_ADD_FILM_REQUEST
 } from '../../Constant/actionTypes';
-import {loadFilmApi} from '../../Apis/Film/loadFilmApi'
+import {loadAddFilmApi} from '../../Apis/Film/loadFilmApi'
 import {
-    addfilmActions
-} from '../../Action/addfilmActions';
+  loadAddFilmSuccessAction} from '../../Action/addfilmActions';
 
 function* requestAction(action) {
   let {payload} = action;
   try {
-    const response = yield call(loadFilmApi, payload);// goi api
+    const response = yield call(loadAddFilmApi, payload);// goi api
     console.log(response.data, "Response")
-    yield put(addfilmActions(response.data))
+    yield put(loadAddFilmSuccessAction(response.data))
+    console.log("addfilm")
   } catch (err) {
         console.log("error")
   }
