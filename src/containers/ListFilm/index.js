@@ -72,14 +72,15 @@ const ListFilm = () => {
                     <source src={item.link_server} type="video/mp4"></source>
                   </video>
                 </TableCell>
-                <TableCell align="right">
+                <TableCell className = {style.trashListFilm} align="right">
                   <FontAwesomeIcon
                     style={{ marginRight: "5px" }}
                     icon={faPen}
                   ></FontAwesomeIcon>
-                  <button onClick={() => handleClick(item)}>
+                  {/* <button onClick={() => handleClick(item)}>
                   <i class="fas fa-trash"></i>
-                  </button>
+                  </button> */}
+                  <i onClick={()=>{handleClick(item)}} class="fas fa-trash"></i>
                 </TableCell>
               </TableRow>
             ))}

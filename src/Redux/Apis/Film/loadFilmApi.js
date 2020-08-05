@@ -16,6 +16,21 @@ export const loadFilmApi = async data => {
   }
 };
 
+export const loadListFilmDeleteApi = async data =>{
+  try{
+    const result = await axios(`phim/ds-xoa-phim`,{
+      params: data,
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+    return result;
+  }catch(error){
+    return Promise.reject(error)
+  }
+};
+
 export const loadUserApi = async data => {
   try {
     const result = await axios(`admin`, {
@@ -46,6 +61,11 @@ export const loadFindFilmApi = async data =>{
     return Promise.reject(error);
   }
 };
+
+
+
+
+
 
 export const loadDeleteFilmApi = async data =>{
   try{
