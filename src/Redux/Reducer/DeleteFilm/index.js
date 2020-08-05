@@ -1,7 +1,8 @@
 import {LOAD_DELETE_FILM_SUCCESS} from '../../Constant/actionTypes'
 
 const initialState = {
-   data:[]
+   
+  data:[]
 };
 
 const userReducer = (state = initialState, action) => {

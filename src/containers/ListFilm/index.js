@@ -28,7 +28,7 @@ const ListFilm = () => {
 
   const handleClick = (item) => {
     console.log("da xoa", item);
-    dispatch(loadDeleteFilmAction({ id: item.id }));
+    dispatch(loadDeleteFilmAction({id: item.id}));
   };
 
   return (
@@ -78,7 +78,7 @@ const ListFilm = () => {
                     icon={faPen}
                   ></FontAwesomeIcon>
                   <button onClick={() => handleClick(item)}>
-                    <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
+                  <i class="fas fa-trash"></i>
                   </button>
                 </TableCell>
               </TableRow>

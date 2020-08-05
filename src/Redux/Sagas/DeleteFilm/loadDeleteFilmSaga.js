@@ -10,7 +10,7 @@ function* requestAction(action) {
     console.log(response.data, "Response");
     yield put(loadDeleteFilmSuccessAction(response.data));
   } catch (err) {
-    console.log("error");
+    console.log("errordelete");
   }
 }
 

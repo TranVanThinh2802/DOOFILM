@@ -51,7 +51,7 @@ export const loadDeleteFilmApi = async data =>{
   try{
     const result = await axios(`phim/xoa-phim`,{
       params: data,
-      method: 'GET',
+      method: 'POST',
       headers: {
         Accept: 'application/json'
       },

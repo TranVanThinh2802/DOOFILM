@@ -82,7 +82,7 @@ function CustomMain() {
         {/* <ItemFilm /> */}
         <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
         {/* thay DataFilm = listFilm.data.map sẽ lấy được database từ serve */}
-          {listFilm.data.map((item, index) => (
+          {DataFilm.map((item, index) => (
             <GridListTile key = {index}>
               <ItemFilm
                 nameFilm={item.ten_phim}
@@ -100,7 +100,7 @@ function CustomMain() {
         </div>
 
         <div className = {style.login}>
-        <button className = "btn btn-primary hw"><Link style = {{color:"white"}} to = '/Login'>Login</Link></button>
+        <button className = "btn btn-primary hw"><Link style = {{color:"white"}} to = '/UserLogin'>Login</Link></button>
         </div>
       </div>
     </div>

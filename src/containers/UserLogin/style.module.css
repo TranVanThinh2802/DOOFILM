@@ -1,0 +1,13 @@
+.userLogin{
+    width: 50%;
+    margin: 0 auto;
+    transform: translate(0%, 100%);
+    background: lightblue;
+}
+
+.filmUserLogin{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10%;
+}
