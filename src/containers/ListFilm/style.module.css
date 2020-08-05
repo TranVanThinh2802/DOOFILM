@@ -30,3 +30,10 @@
     left: 300%;
     width: 150%;
 }
+
+.trashListFilm i:hover{
+    color: orange;
+    cursor:pointer;
+    font-size: 20px;
+    transition: 1s;
+}

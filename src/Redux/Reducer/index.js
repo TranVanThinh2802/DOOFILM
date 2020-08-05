@@ -4,6 +4,7 @@ import {DESTROY_SESSION} from '../Constant/actionTypes';
 import Film from './Film';
 import User from './User';
 import Login from './Login';
+import ListDeleteFilm from './ListDeleteFilm'
 import Generic from './Generic'
 
 
@@ -11,7 +12,8 @@ const appReducer = combineReducers({
     film: Film,
     user: User,
     login: Login,
-    generic: Generic
+    generic: Generic,
+    listDeleteFilm: ListDeleteFilm
 
 });
 

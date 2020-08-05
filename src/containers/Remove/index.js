@@ -13,17 +13,17 @@ import {
 } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { loadDeleteFilmAction, loadListFilmAction } from "Redux/Action";
+import { loadListFilmDeleteAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
 
-const ListFilm = () => {
+const Remove = () => {
   const [Add, setAdd] = useState([]);
   const dispatch = useDispatch();
   const { listFilm } = useSelector(function (state) {
-    return state.film;
+    return state.listDeleteFilm;
   });
   useEffect(() => {
-    dispatch(loadListFilmAction());
+    dispatch(loadListFilmDeleteAction());
   }, []);
 
   // const handleClick = (item) => {
@@ -33,10 +33,10 @@ const ListFilm = () => {
 
   return (
     <div className={style.right}>
-      <Link to="/Admin/Add" className={style.btnFilm}>
+      {/* <Link to="/Admin/Add" className={style.btnFilm}>
         {" "}
         Thêm Phim
-      </Link>
+      </Link> */}
 
       <TableContainer className={style.HTDS} component={Paper}>
         <Table className={style.table} size="small" aria-label="a dense table">
@@ -55,13 +55,13 @@ const ListFilm = () => {
           </TableHead>
           <TableBody>
             {listFilm.data.map((item) => (
-              <TableRow key={item.name}>
+              <TableRow key={item.ten_phim}>
                 <TableCell component="th" scope="Add">
                   {item.id}
                 </TableCell>
                 <TableCell align="right">{item.ten_phim}</TableCell>
                 <TableCell align="right">
-                  <img className={style.avatar} src = {item.poster}></img>
+                  <img className={style.avatar} src={item.poster}></img>
                 </TableCell>
                 <TableCell align="right">{item.quoc_gia_id}</TableCell>
                 <TableCell align="right">{item.thoi_luong}</TableCell>
@@ -77,9 +77,9 @@ const ListFilm = () => {
                     style={{ marginRight: "5px" }}
                     icon={faPen}
                   ></FontAwesomeIcon>
-                  <button onClick={() => handleClick(item)}>
+                  {/* <button onClick={() => handleClick(item)}>
                   <i class="fas fa-trash"></i>
-                  </button>
+                  </button> */}
                 </TableCell>
               </TableRow>
             ))}
@@ -93,4 +93,4 @@ const ListFilm = () => {
   );
 };
 
-export default ListFilm;
+export default Remove;
