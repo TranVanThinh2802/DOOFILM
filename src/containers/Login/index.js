@@ -105,13 +105,15 @@ const Login = (props) => {
 
   return (
     <div className={style.loginBox}>
-      <form>
+      <form className = {style.backgroundAdmin}>
         <div className={style.left}>
-          <h1 className={style.singup}>Sign in</h1>
-          <input
+        <img style = {{height:'114px', borderRadius:'100%', marginBottom:'7%', width:'114px', marginLeft:'19%'}} src = "imgs/logo1.png" />
+
+          <h1 className={style.singupAdmin}>Admin login</h1>
+          <input style = {{borderRadius:'6px', outline:'none', height:'30px', paddingLeft:'8px'}}
             className={style.txtEmail}
             type="text"
-            placeholder="Email"
+            placeholder="Nhập email"
             name="email"
             ref={register({ required: true, maxLength: 50 })}
           ></input>
@@ -119,9 +121,9 @@ const Login = (props) => {
           {errors.email?.type === "maxLength" && "email của bạn quá dài"}
           <input
             className={style.txtPassword}
-            style={{ display: "flex" }}
+            style={{ display: "flex",borderRadius:'6px', outline:'none', height:'30px', paddingLeft:'8px' }}
             type="password"
-            placeholder="Password"
+            placeholder="Nhập password"
             name="mat_khau"
             ref={register({ required: true, min: 5, maxLength: 80 })}
           ></input>
@@ -142,12 +144,13 @@ const Login = (props) => {
           {errors.password2 && "password không đúng"}
 
           <button
+          style = {{outline:'none'}}
             onClick={handleSubmit(onSubmit)}
-            className={style.submit}
+            className={style.submitAdmin}
             type="submit"
             value=""
           >
-            singn in
+            <i style = {{marginRight:'8px'}} class="far fa-paper-plane"></i>singn in
           </button>
 
           {/* {isLoading && (
@@ -170,7 +173,9 @@ const Login = (props) => {
           )} */}
           {/* <Link className = {style.register} to = "/Register">Register</Link> */}
         </div>
-        <div className={style.right}>
+
+            {/*Login MXH */}
+        {/* <div className={style.right}>
           <div className={style.loginwith}>
             Sign in with
             <br />
@@ -188,8 +193,10 @@ const Login = (props) => {
           >
             {googleData}
           </button>
-        </div>
-        <div className={style.or}>OR</div>
+        </div> */}
+            {/* */}
+
+        {/* <div className={style.or}>OR</div> */}
       </form>
     </div>
   );

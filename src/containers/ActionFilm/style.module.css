@@ -1,7 +1,7 @@
 .action{
     position: absolute;
-    top: 9%;
-    left: 20%;
+    top: 15%;
+    left: 30%;
 }
 .comment{
     background: lightcoral;
@@ -10,4 +10,10 @@
     position: absolute;
     top: 100%;
     left: 20%;
+}
+
+.ActionFilmTitle{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
 }

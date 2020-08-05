@@ -1,6 +1,6 @@
 import AllFilm from "../../containers/AllFilm";
 import Features from "../../containers/Features";
-import Film from "../../containers/Film";
+import UserLogin from "../../containers/UserLogin";
 import Home from "../../containers/Home";
 import MyList from "../../containers/MyList";
 import Seris from "../../containers/Seris";
@@ -44,8 +44,8 @@ const Router = [
     component: Features,
   },
   {
-    path: "/Film",
-    component: Film,
+    path: "/UserLogin",
+    component: UserLogin,
   },
   {
     path: "/Home",

@@ -18,13 +18,20 @@ body {
 }
 .left {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -5%;
+    left: 25%;
     box-sizing: border-box;
     padding: 40px;
     width: 300px;
     height: 400px;
 }
+
+.singupAdmin{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 6%;
+}
+
 .singup input[type="text"],
 .singup input[type="password"] {
     display: block ;
@@ -48,7 +55,7 @@ body {
     transition: 0.2s ease;
 }
 
-button[type="submit"] {
+.submitAdmin {
     margin-top: 28px;
     width: 120px;
     height: 32px;
@@ -61,6 +68,8 @@ button[type="submit"] {
     text-transform: uppercase;
     transition: 0.1s ease;
     cursor: pointer;
+    border-radius: 10px;
+    margin-left: 39px;
 }
 
 button[type="submit"]:hover,
@@ -147,4 +156,10 @@ button[type="submit"]:focus {
 .register:hover{
     color: white;
     opacity: 0.7;
+}
+
+.backgroundAdmin{
+    height: 100%;
+    background:url(https://8degreethemes.com/demo/plugins/wp-custom-admin-login/wp-content/uploads/2018/03/wcal-bg-background-1.jpg);
+    background-size: contain;
 }

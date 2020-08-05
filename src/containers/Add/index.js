@@ -7,33 +7,48 @@ import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import { useDispatch, useSelector } from "react-redux";
 import { loadAddFilmAction } from "../../Redux/Action/addfilmActions";
+import ImageUploader from "react-images-upload";
 
-const Add = () => {
+const Add = (props) => {
   const dispatch = useDispatch();
   const { register, handleSubmit, watch, errors } = useForm();
+  // const [pictures, setPictures] = useState([]);
+  const [image, setImage] = useState({ file: "", raw: "" });
+
+  // const onDrop = (picture) => {
+  //   console.log(picture);
+
+  //   setPictures([...pictures, picture]);
+  // };
 
   const onSubmit = (data) => {
     let bodyFormData = new FormData();
-    Object.keys(data).forEach(key => {
-      console.log('sssss')
+    Object.keys(data).forEach((key) => {
       bodyFormData.append(key, data[key]);
-    })
+    });
+
+    const formData = new FormData();
+    formData.append("image", {
+      uri: image.file,
+      type: "image/jpg",
+      name: "image.jpg",
+    });
 
     dispatch(loadAddFilmAction(data));
   };
-
-  
-
-  // let fileSelectedHandler = event =>{
-  //   console.log(event.target.files[0])
-  // }
 
   const onSave = (e) => {
     e.preventDefault();
     console.log(this.state);
   };
   const handleChange = (e) => {
-    console.log(e);
+
+    if (e.target.files.length) {
+      setImage({
+        file: URL.createObjectURL(e.target.files[0]),
+      });
+      
+    }
   };
 
   const sweetalert = (data) => {
@@ -49,7 +64,10 @@ const Add = () => {
 
   return (
     <div className={style.right}>
-      <div style = {{maxWidth:"60%"}} className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div
+        style={{ maxWidth: "60%" }}
+        className="col-xs-6 col-sm-6 col-md-6 col-lg-6"
+      >
         <form style={{ boxShadow: "0px 6px 14px 1px", padding: "25px" }}>
           <h2>Thêm Phim</h2>
           <div style={{ background: "white" }}>
@@ -67,15 +85,29 @@ const Add = () => {
             <div className={style.inputAdd}>
               <label>
                 <i class="fas fa-images"></i>Chọn hình ảnh
+                {image.file ? (
+                  <img src={image.file} alt="dummy" width="50" height="50" />
+                ) : (
+                  ""
+                )}
               </label>
               <input
                 className="d-flex mb-3"
-                name="poster"
+                name="poster" 
                 // onChange={fileSelectedHandler}
+                onChange={handleChange}
                 type="file"
                 multiple="true"
                 ref={register({ required: true })}
               />
+              {/* <ImageUploader
+                {...props}
+                name = "poster"
+                withIcon={true}
+                onChange={onDrop}
+                imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                maxFileSize={5242880}
+              /> */}
             </div>
             <div className={style.inputAdd}>
               <label>
@@ -193,32 +225,6 @@ const Add = () => {
 
     //-------------------------------------------------
 
-    //     <div className={style.formAdd}>
-    //         <MDBContainer>
-    //   <MDBRow>
-    //     <MDBCol md="6">
-    //       <form>
-    //         <p className="h5 text-center mb-4">Write to us</p>
-    //         <div className="grey-text">
-    //           <MDBInput icon="user"  label="Your name"  group type="text" validate error="wrong"
-    //             success="right"/>
-    //           <MDBInput label="Your email" icon="envelope" group type="email" validate error="wrong"
-    //             success="right" />
-    //           <MDBInput label="Subject" icon="tag" group type="text" validate error="wrong" success="right" />
-    //           <MDBInput type="textarea" rows="2" label="Your message" icon="pencil-alt" />
-    //         </div>
-    //         <div className="text-center">
-    //           <MDBBtn outline color="secondary">
-    //             Send
-    //             <MDBIcon far icon="paper-plane" className="ml-1" />
-    //           </MDBBtn>
-    //         </div>
-    //       </form>
-    //     </MDBCol>
-    //   </MDBRow>
-    // </MDBContainer>
-
-    //     </div>
   );
 };
 

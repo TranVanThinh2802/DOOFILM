@@ -78,7 +78,7 @@ giao dien moi */
     top: 3%;
     left: -250px;
     width: 250px;
-    height: 153%;
+    height: 97%;
     background: #042331;
     transition: all .5s ease;
 }
@@ -137,6 +137,6 @@ section{
     background: url(https://thumbs.dreamstime.com/z/cinema-event-background-vector-seamless-pattern-flat-movie-background-cinema-attributes-film-strip-camera-reel-masks-popcorn-129374847.jpg);
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: 0vh;
     transition: all .5s;
 }
