@@ -85,29 +85,22 @@ const Add = (props) => {
             <div className={style.inputAdd}>
               <label>
                 <i class="fas fa-images"></i>Chọn hình ảnh
-                {image.file ? (
+                {/* {image.file ? (
                   <img src={image.file} alt="dummy" width="50" height="50" />
                 ) : (
                   ""
-                )}
+                )} */}
               </label>
               <input
                 className="d-flex mb-3"
                 name="poster" 
+                placeholder="chon hinh anh"
                 // onChange={fileSelectedHandler}
-                onChange={handleChange}
-                type="file"
-                multiple="true"
+                // onChange={handleChange}
+                // type="file"
+                // multiple="true"
                 ref={register({ required: true })}
               />
-              {/* <ImageUploader
-                {...props}
-                name = "poster"
-                withIcon={true}
-                onChange={onDrop}
-                imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-                maxFileSize={5242880}
-              /> */}
             </div>
             <div className={style.inputAdd}>
               <label>

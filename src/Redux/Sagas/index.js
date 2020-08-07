@@ -6,6 +6,7 @@ import {AddfilmSagas} from './Addfilm'
 import {FindFilmSagas} from './FindFilm'
 import {DeleteFilm} from './DeleteFilm'
 import {ListFilmDeleteSagas} from './ListFilmDelete'
+import {RestoreFilm} from './RestoreFilm'
 
 export function* rootSagas(){
     yield all([
@@ -15,6 +16,7 @@ export function* rootSagas(){
         AddfilmSagas(),
         FindFilmSagas(),
         DeleteFilm(),
-        ListFilmDeleteSagas()
+        ListFilmDeleteSagas(),
+        RestoreFilm()
     ]);
 }

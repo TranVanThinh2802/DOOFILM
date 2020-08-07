@@ -69,7 +69,7 @@ export const loadFindFilmApi = async data =>{
 
 export const loadDeleteFilmApi = async data =>{
   try{
-    const result = await axios(`phim/xoa-phim`,{
+    const result = await axios(`phim/xoa-phim` ,{
       params: data,
       method: 'POST',
       headers: {
@@ -81,6 +81,23 @@ export const loadDeleteFilmApi = async data =>{
     return Promise.reject(error);
   }
 }
+
+
+export const loadRestoreFilmApi = async data=>{
+  try{
+    const result = await axios(`phim/khoi-phuc-phim`,{
+      params: data,
+      method: 'POST',
+      headers: {
+        Accept: 'application/json'
+      },
+    })
+    return result;
+  }catch(error){
+    return Promise.reject(error)
+  }
+}
+
 
 export const loadLoginApi = async data =>{
   try{

@@ -7,3 +7,4 @@ export * from './uploadfileAction';
 export * from './userAction'
 export * from './generic';
 export * from './listFilmDeleteActions'
+export * from './restoreFilmActions'

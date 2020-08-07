@@ -82,7 +82,7 @@ function CustomMain() {
         {/* <ItemFilm /> */}
         <GridList className={style.list_film} cellHeight={"auto"} cols={4}>
         {/* thay DataFilm = listFilm.data.map sẽ lấy được database từ serve */}
-          {DataFilm.map((item, index) => (
+          {listFilm.data.map((item, index) => (
             <GridListTile key = {index}>
               <ItemFilm
                 nameFilm={item.ten_phim}
