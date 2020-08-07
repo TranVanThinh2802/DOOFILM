@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { loadListFilmDeleteAction } from "Redux/Action";
+import { loadListFilmDeleteAction, loadRestoreFilmAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
 
 const Remove = () => {
@@ -26,10 +26,10 @@ const Remove = () => {
     dispatch(loadListFilmDeleteAction());
   }, []);
 
-  // const handleClick = (item) => {
-  //   console.log("da xoa", item);
-  //   dispatch(loadDeleteFilmAction({id: item.id}));
-  // };
+  const handleClick = (item) => {
+    console.log("da xoa", item);
+    dispatch(loadRestoreFilmAction({id: item.id}));
+  };
 
   return (
     <div className={style.right}>
@@ -72,11 +72,12 @@ const Remove = () => {
                     <source src={item.link_server} type="video/mp4"></source>
                   </video>
                 </TableCell>
-                <TableCell align="right">
-                  <FontAwesomeIcon
+                <TableCell className = {style.trashRestoreRemove} align="right">
+                <i title = "Khôi phục phim" onClick ={()=>{handleClick(item)}} class="fas fa-trash-restore"></i>
+                  {/* <FontAwesomeIcon
                     style={{ marginRight: "5px" }}
                     icon={faPen}
-                  ></FontAwesomeIcon>
+                  ></FontAwesomeIcon> */}
                   {/* <button onClick={() => handleClick(item)}>
                   <i class="fas fa-trash"></i>
                   </button> */}

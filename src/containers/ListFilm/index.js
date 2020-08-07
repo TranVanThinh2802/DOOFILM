@@ -12,7 +12,7 @@ import {
   Paper,
 } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faPen} from "@fortawesome/free-solid-svg-icons";
 import { loadDeleteFilmAction, loadListFilmAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
 
@@ -28,7 +28,8 @@ const ListFilm = () => {
 
   const handleClick = (item) => {
     console.log("da xoa", item);
-    dispatch(loadDeleteFilmAction({id: item.id}));
+    dispatch(loadDeleteFilmAction({ id: item.id }));
+    alert("Bạn đã xóa phim");
   };
 
   return (
@@ -61,26 +62,30 @@ const ListFilm = () => {
                 </TableCell>
                 <TableCell align="right">{item.ten_phim}</TableCell>
                 <TableCell align="right">
-                  <img className={style.avatar} src = {item.poster}></img>
+                  {/* <img className={style.avatar} src={item.poster}></img> */}
+                  <iframe src = {item.poster}></iframe>
                 </TableCell>
                 <TableCell align="right">{item.quoc_gia_id}</TableCell>
                 <TableCell align="right">{item.thoi_luong}</TableCell>
                 <TableCell align="right">{item.dien_vien}</TableCell>
                 <TableCell align="right">{item.nam_san_xuat}</TableCell>
-                <TableCell align="right">
-                  <video controls autoPlay="true">
+                <TableCell align="right"> 
+                <iframe src = {item.link_server}></iframe>            {/* <video controls autoPlay="true">
                     <source src={item.link_server} type="video/mp4"></source>
-                  </video>
+                  </video> */}
                 </TableCell>
-                <TableCell className = {style.trashListFilm} align="right">
+                <TableCell className={style.trashListFilm} align="right">
                   <FontAwesomeIcon
                     style={{ marginRight: "5px" }}
                     icon={faPen}
                   ></FontAwesomeIcon>
-                  {/* <button onClick={() => handleClick(item)}>
-                  <i class="fas fa-trash"></i>
-                  </button> */}
-                  <i onClick={()=>{handleClick(item)}} class="fas fa-trash"></i>
+                  <i
+                    title="Xóa phim"
+                    onClick={() => {
+                      handleClick(item);
+                    }}
+                    class="fas fa-trash"
+                  ></i>
                 </TableCell>
               </TableRow>
             ))}
