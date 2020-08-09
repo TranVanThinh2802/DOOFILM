@@ -7,8 +7,9 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 function CustomMyList(props) {
 
     return (
+        <a href = 'PlayMovie'>
         <span className={style.box}>
-            <a href = 'PlayMovie'><img src={props.image}></img></a>
+            <iframe src={props.image} style = {{width:'100%', height:'300px'}}></iframe>
             <p className={style.infor_film}>{props.content}</p>
             <div className={style.infor}>
                 <div className={style.title}>
@@ -24,6 +25,7 @@ function CustomMyList(props) {
                 </div>
             </div>
         </span>
+        </a>
     )
 }
 

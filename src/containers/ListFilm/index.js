@@ -46,9 +46,9 @@ const ListFilm = () => {
               <TableCell>STT</TableCell>
               <TableCell align="right">Tên phim</TableCell>
               <TableCell align="right">Hình ảnh</TableCell>
-              <TableCell align="right">Thể loại</TableCell>
+              {/* <TableCell align="right">Thể loại</TableCell> */}
               <TableCell align="right">Thời lượng</TableCell>
-              <TableCell align="right">Diễn viên</TableCell>
+              {/* <TableCell align="right">Diễn viên</TableCell> */}
               <TableCell align="right">Năm sản xuất</TableCell>
               <TableCell align="right">Link</TableCell>
               <TableCell align="right">Hành động</TableCell>
@@ -65,9 +65,9 @@ const ListFilm = () => {
                   {/* <img className={style.avatar} src={item.poster}></img> */}
                   <iframe src = {item.poster}></iframe>
                 </TableCell>
-                <TableCell align="right">{item.quoc_gia_id}</TableCell>
+                {/* <TableCell align="right">{item.loai_phim_id}</TableCell> */}
                 <TableCell align="right">{item.thoi_luong}</TableCell>
-                <TableCell align="right">{item.dien_vien}</TableCell>
+                {/* <TableCell align="right">{item.dien_vien}</TableCell> */}
                 <TableCell align="right">{item.nam_san_xuat}</TableCell>
                 <TableCell align="right"> 
                 <iframe src = {item.link_server}></iframe>            {/* <video controls autoPlay="true">
