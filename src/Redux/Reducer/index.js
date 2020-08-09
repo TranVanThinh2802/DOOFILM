@@ -7,6 +7,7 @@ import Login from './Login';
 import ListDeleteFilm from './ListDeleteFilm'
 import Generic from './Generic'
 import RestoreFilm from './RestoreFilm'
+import pageListFilm from './pageListFilm'
 
 
 const appReducer = combineReducers({
@@ -15,7 +16,8 @@ const appReducer = combineReducers({
     login: Login,
     generic: Generic,
     listDeleteFilm: ListDeleteFilm,
-    restoreFil: RestoreFilm
+    restoreFil: RestoreFilm,
+    pageListFilm: pageListFilm
 
 });
 

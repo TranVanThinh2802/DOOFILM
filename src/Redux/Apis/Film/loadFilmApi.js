@@ -5,7 +5,7 @@ export const loadFilmApi = async data => {
   try {
     const result = await axios(`phim`, {
       method: 'GET',
-
+      params: data,
       headers: {
         Accept: 'application/json',
       },
