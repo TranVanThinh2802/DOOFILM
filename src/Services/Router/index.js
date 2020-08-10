@@ -76,7 +76,7 @@ const Router = [
     component: Documents,
   },
   {
-    path: "/PlayMovie",
+    path: "/Film/:id",
     component: PlayMovie,
   },
   {

@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import style from "./style.module.css";
 import { Route } from "react-router-dom";
 import axios from "axios";
@@ -7,14 +7,15 @@ import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import { useDispatch, useSelector } from "react-redux";
 import { loadAddFilmAction } from "../../Redux/Action/addfilmActions";
-import ImageUploader from "react-images-upload";
 
 const Add = (props) => {
   const dispatch = useDispatch();
   const { register, handleSubmit, watch, errors } = useForm();
   // const [pictures, setPictures] = useState([]);
   const [image, setImage] = useState({ file: "", raw: "" });
-
+  const {
+    alert: { code, message, type },
+  } = useSelector((state) => state.generic);
   // const onDrop = (picture) => {
   //   console.log(picture);
 
@@ -53,14 +54,21 @@ const Add = (props) => {
 
   const sweetalert = (data) => {
     swal({
-      title: "Good job!",
-      text: "You clicked the button!",
-      icon: "success",
+      title: type,
+      text: message,
+      icon: "",
       buttons: true,
       dangerMode: true,
     });
-    console.log(data);
   };
+
+  useEffect(() => {
+    if (code !== 0) {
+      sweetalert();
+    } else {
+     
+    }
+  }, [code]);
 
   return (
     <div className={style.right}>

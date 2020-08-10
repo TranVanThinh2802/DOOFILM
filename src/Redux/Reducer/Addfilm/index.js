@@ -1,7 +1,8 @@
-import {LOAD_ADD_FIM_SUCCESS} from '../../Constant/actionTypes'
+import {LOAD_ADD_FIM_SUCCESS, UPDATE_SHOWALERT} from '../../Constant/actionTypes'
 
 const initialState = {
-      data: []
+      data: [],
+      showAlert: false,
 };
 
 // Redux: Counter Reducer
@@ -12,6 +13,12 @@ const userReducer = (state = initialState, action) => {
               ...state,
               listFilm: action.payload
           }
+      }
+      case UPDATE_SHOWALERT:{
+        return{
+          ...state,
+          showAlert: action.payload
+        }
       }
       default: {
         return state;

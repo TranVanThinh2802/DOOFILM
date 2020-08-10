@@ -33,4 +33,10 @@ a:hover{
     color: yellowgreen;
 }
 
+.PlayMovietitle{
+    margin-top: 5%;
+    background: white;
+    min-height: 100px;
+}
+
 

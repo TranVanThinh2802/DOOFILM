@@ -1,5 +1,9 @@
 body{
     /* background: gray; */
+    
+}
+iframe{
+    /* width: 100%; */
 }
 .slideshow{
     position: absolute;

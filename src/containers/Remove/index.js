@@ -28,16 +28,11 @@ const Remove = () => {
 
   const handleClick = (item) => {
     console.log("da xoa", item);
-    dispatch(loadRestoreFilmAction({id: item.id}));
+    dispatch(loadRestoreFilmAction({ id: item.id }));
   };
 
   return (
     <div className={style.right}>
-      {/* <Link to="/Admin/Add" className={style.btnFilm}>
-        {" "}
-        Thêm Phim
-      </Link> */}
-
       <TableContainer className={style.HTDS} component={Paper}>
         <Table className={style.table} size="small" aria-label="a dense table">
           <TableHead>
@@ -61,7 +56,8 @@ const Remove = () => {
                 </TableCell>
                 <TableCell align="right">{item.ten_phim}</TableCell>
                 <TableCell align="right">
-                  <img className={style.avatar} src={item.poster}></img>
+                  {/* <img className={style.avatar} src={item.poster}></img> */}
+                  <iframe width = '100%' src={item.poster}></iframe>
                 </TableCell>
                 <TableCell align="right">{item.quoc_gia_id}</TableCell>
                 <TableCell align="right">{item.thoi_luong}</TableCell>
@@ -72,15 +68,14 @@ const Remove = () => {
                     <source src={item.link_server} type="video/mp4"></source>
                   </video>
                 </TableCell>
-                <TableCell className = {style.trashRestoreRemove} align="right">
-                <i title = "Khôi phục phim" onClick ={()=>{handleClick(item)}} class="fas fa-trash-restore"></i>
-                  {/* <FontAwesomeIcon
-                    style={{ marginRight: "5px" }}
-                    icon={faPen}
-                  ></FontAwesomeIcon> */}
-                  {/* <button onClick={() => handleClick(item)}>
-                  <i class="fas fa-trash"></i>
-                  </button> */}
+                <TableCell className={style.trashRestoreRemove} align="right">
+                  <i
+                    title="Khôi phục phim"
+                    onClick={() => {
+                      handleClick(item);
+                    }}
+                    class="fas fa-trash-restore"
+                  ></i>
                 </TableCell>
               </TableRow>
             ))}

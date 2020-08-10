@@ -10,7 +10,7 @@ import {
 import ItemFilm from "../../Components/ItemFilm";
 import { GridList, GridListTile } from "@material-ui/core";
 import DataFilm from "./data";
-import { Pagination, Autocomplete, PaginationItem  } from "@material-ui/lab";
+import { Pagination, Autocomplete, PaginationItem } from "@material-ui/lab";
 import TextField from "@material-ui/core/TextField";
 import Datafilm from "./datafilm";
 import Combobox from "../../Components/ComboBox";
@@ -18,17 +18,18 @@ import DatanStylefilm from "./stylefilm";
 import Datangongu from "./datangongu";
 import Sapxep from "./sapxep";
 import Datadanhgia from "./datadanhgia";
-import { Link } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
 import {
   loadListFilmAction,
   getFilmAction,
 } from "../../Redux/Action/filmActions";
 import { loadFindFilmAction } from "../../Redux/Action/findFilmAction";
+import PlayMovie from "../../containers/PlayMovie";
 
 function CustomMain() {
   const dispatch = useDispatch();
 
-  const limit = 1;
+  const limit = 8;
 
   // call API film từ serve
   const {
@@ -45,6 +46,20 @@ function CustomMain() {
     return state.pageListFilm;
   });
 
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handleChange = (event, page) => {
+    dispatch(
+      getFilmAction(
+        {
+          page,
+          limit,
+        },
+        true
+      )
+    );
+  };
+
   useEffect(() => {
     dispatch(
       getFilmAction(
@@ -56,18 +71,6 @@ function CustomMain() {
       )
     );
   }, []);
-
-  const handleNextPage = () => {
-    dispatch(
-      getFilmAction(
-        {
-          page: page + 1,
-          limit,
-        },
-        true
-      )
-    );
-  };
 
   //--------------
 
@@ -114,6 +117,7 @@ function CustomMain() {
           {data.map((item, index) => (
             <GridListTile key={index}>
               <ItemFilm
+                id={item.id}
                 nameFilm={item.ten_phim}
                 image={item.poster}
                 content={item.tieu_de}
@@ -126,13 +130,12 @@ function CustomMain() {
 
         <div className={style.pagination}>
           <Pagination
-          onClick = {handleNextPage}
             color="secondary"
-            count = {last_page}
-            // page = {page+1}
+            count={last_page}
+            onChange={handleChange}
+            page={page}
           />
         </div>
-
         <div className={style.login}>
           <button className="btn btn-primary hw">
             <Link style={{ color: "white" }} to="/UserLogin">
