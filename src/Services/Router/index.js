@@ -88,7 +88,7 @@ const Router = [
     component: Login,
   },
   {
-    path: "/ActionFilm",
+    path: "/Action/:id",
     component: ActionFilm,
   },
   {

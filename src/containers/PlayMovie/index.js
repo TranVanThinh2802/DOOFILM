@@ -1,140 +1,133 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import CustomHeader from "../../Components/CustomHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link, useParams } from "react-router-dom";
-import {detailFilmAction} from '../../Redux/Action/detailFilmActions'
+import { detailFilmAction } from "../../Redux/Action/detailFilmActions";
 // import list from "@containers/Features/data";
 import { useSelector, useDispatch } from "react-redux";
-import{Box} from '@material-ui/core'
-
-
-
+import { Box } from "@material-ui/core";
 
 function PlayMovie(props) {
   const dispatch = useDispatch();
-  let {id} = useParams();
+  let { id } = useParams();
   const [dataFilm, setDataFilm] = useState({});
-  
 
-  useEffect(()=>{
-    //dispatch gui payload la id  
-    dispatch(detailFilmAction(id, function(data){
-      // code ==200 chay function
-      // update lai DataFilm
+  useEffect(() => {
+    //dispatch gui payload la id
+    dispatch(
+      detailFilmAction(id, function (data) {
+        // code ==200 chay function
+        // update lai DataFilm
         setDataFilm(data);
-      }
-    ));
-  },[])
-  
+      })
+    );
+  }, []);
 
-    useEffect(()=>{
-      console.log(dataFilm, "change")
-    },[dataFilm])
+  useEffect(() => {
+    console.log(dataFilm, "change");
+  }, [dataFilm]);
 
-    console.log(id)
+  console.log(id);
 
-    return (
+  return (
     <div className={style.main}>
       <div className={style.left}>
         <CustomHeader />
       </div>
+      <Box className={style.PlayMovieFilm}>
+        <iframe src={dataFilm.link_server} width="640" height="480"></iframe>
+      </Box>
       <div className={style.right}>
-      <div className="row">
-        <div className="col-sm-4">
-          <div className="card" style={{ width: "21rem" }}>
-            <iframe
-              src = {dataFilm.poster}
-              style={{ height: "450px" }}
-              className="card-img-top"
-            ></iframe>
-            <div
-              className=" card-body d-flex position-absolute bg"
-              style={{
-                top: "82.5%",
-                background: "rgba(0, 0, 0, 0.5)",
-                width: "100%",
-                borderRadius: "8px",
-              }}
-            >
-              <a className="btn btn-success" style={{ marginRight: "10px" }}>
-                <Link to="/">Dowload</Link>
-              </a>
-              <a className="btn btn-danger" style={{ marginRight: "10px" }}>
-                <Link to="/">Trailer</Link>
-              </a>
-              <a className="btn btn-info">
-                <Link to="/ActionFilm">Xem phim</Link>
-              </a>
-             
-            </div>
-          </div>
-          <Box boxShadow = {3} p= {2} mb = {5} className = {style.PlayMovietitle}>
-          <Box color = "#FF9900">NỘI DUNG PHIM</Box>
-            <p>{dataFilm.tieu_de}</p>
-          </Box>
-        </div>
-        
-        <div className=" titleFilm col-sm-4 " style={{ marginLeft: "70px" }}>
-          <div className="card" style={{ width: "21rem" }}>
-            <div className="card-body">
-              <h3>{dataFilm.ten_phim}</h3>
-              <p>Thời lượng: {dataFilm.thoi_luong} phút</p>
-              <p>Năm sản xuất: {dataFilm.nam_san_xuat}</p>
-              <p>Quốc gia: {dataFilm.ten_quoc_gia}</p>
-              <p>Kiểu phim: {dataFilm.kieu_phim}</p>
-              <p>Đạo diễn:Updating....</p>
-              <p>Diễn viên:Updating...</p>
-              <p>Thể loại: {dataFilm.the_loai_phim}</p>
-              <div className="d-flex like">
-                <a
-                  className="btn btn-primary"
-                  style={{ marginRight: "10px" }}
-                >
-                  <FontAwesomeIcon
-                    style={{ marginRight: "5px", color: "white" }}
-                    icon={faThumbsUp}
-                  ></FontAwesomeIcon>
-                  <Link to="">Thích</Link>
-                </a>
-                <a className="btn btn-primary">
-                  <Link to="">Chia sẻ</Link>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="card d-flex" style={{ width: "21rem" }}>
-            <div className="card-body">
-              <p
+        {/* <div className="row"> */}
+          <div className="col-sm-4">
+            <div  style={{ width: "21rem" }}>
+              <iframe
+                style={{ border: "none" }}
+                src={dataFilm.poster}
+                style={{ height: "450px" }}
+                className="card-img-top"
+              ></iframe>
+              <div
+                className=" card-body d-flex position-absolute bg"
                 style={{
-                  color: "yellowgreen",
-                  fontSize: "20px",
-                  fontWeight: "600",
+                  top: "82.5%",
+                  // background: "rgba(0, 0, 0, 0.5)",
+                  width: "100%",
+                  borderRadius: "8px",
                 }}
-              >
-                Đánh giá Phim
-              </p>
-              <div className={style.start}>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <p className={style.raiting} style={{ marginLeft: "10px" }}>
-                  
+              ></div>
+            </div>
+          </div>
+
+          <div className=" titleFilm col-sm-4 " style={{ marginLeft: "3%" }}>
+            <div  style={{ width: "21rem", marginTop:'15%'  }}>
+              <div className="card-body">
+                <h3 style = {{padding:'5px'}}>{dataFilm.ten_phim}</h3>
+
+                <div className="d-flex like">
+                  <a className="btn btn-primary">
+                    <Link to="">Dowload</Link>
+                  </a>
+                </div>
+                <Box pt = {2}>
+                  Nội dung
+                  <Box pt = {2}>{dataFilm.tieu_de}</Box>
+                </Box>
+              </div>
+            </div>
+            <div></div>
+            <div
+              className="d-flex"
+              style={{ width: "21rem" }}
+            >
+              <div className="card-body">
+                <p
+                  style={{
+                    color: "yellowgreen",
+                    fontSize: "20px",
+                    fontWeight: "600",
+                  }}
+                >
+                  Đánh giá Phim
                 </p>
+                <div className={style.start}>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                  <p
+                    className={style.raiting}
+                    style={{ marginLeft: "10px" }}
+                  ></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+          <div className="col-sm-4">
+            <div style={{ width: "21rem", paddingTop: "25%", marginLeft:'5%' }}>
+              <p className = {style.dataFilmtitle}>Thời lượng: 
+                  <span className = {style.dataFilmspan}>{dataFilm.thoi_luong} phút</span>
+              </p>
+              <p className = {style.dataFilmtitle}>Năm sản xuất: <span className = {style.dataFilmspan}>{dataFilm.nam_san_xuat}</span></p>
+              <p className = {style.dataFilmtitle}>Quốc gia: <span className = {style.dataFilmspan}>{dataFilm.ten_quoc_gia}</span></p>
+              <p className = {style.dataFilmtitle}>Kiểu phim: <span className = {style.dataFilmspan}>{dataFilm.kieu_phim}</span></p>
+              <p className = {style.dataFilmtitle}>Đạo diễn:<span className = {style.dataFilmspan}>Updating....</span></p>
+              <p className = {style.dataFilmtitle}>Diễn viên:<span className = {style.dataFilmspan}>Updating...</span></p>
+              <p className = {style.dataFilmtitle}>Thể loại: <span className = {style.dataFilmspan}>{dataFilm.the_loai_phim}</span></p>
+            </div>
+          </div>
+        {/* </div> */}
       </div>
-      </div>
+      
     </div>
   );
 }
