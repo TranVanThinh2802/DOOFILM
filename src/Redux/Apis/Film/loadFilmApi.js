@@ -16,6 +16,20 @@ export const loadFilmApi = async data => {
   }
 };
 
+export const detailFilmApi = async data => {
+  try {
+    const result = await axios(`phim/${data}`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+    return result;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
 export const loadListFilmDeleteApi = async data =>{
   try{
     const result = await axios(`phim/ds-xoa-phim`,{
@@ -61,7 +75,6 @@ export const loadFindFilmApi = async data =>{
     return Promise.reject(error);
   }
 };
-
 
 
 

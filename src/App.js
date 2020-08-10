@@ -20,7 +20,6 @@ function App(props) {
 
   React.useEffect(()=>{
     if(location !== "/Login" ){
-      console.log("asd")
     }
     if(location === "/Admin"){
       history.push("/Login")

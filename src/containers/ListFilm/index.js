@@ -15,6 +15,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen} from "@fortawesome/free-solid-svg-icons";
 import { loadDeleteFilmAction, loadListFilmAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
+import swal from "sweetalert";
+
 
 const ListFilm = () => {
   const [Add, setAdd] = useState([]);
@@ -29,8 +31,30 @@ const ListFilm = () => {
   const handleClick = (item) => {
     console.log("da xoa", item);
     dispatch(loadDeleteFilmAction({ id: item.id }));
-    alert("Bạn đã xóa phim");
+    
   };
+
+  const {
+    alert: { code, message, type },
+  } = useSelector((state) => state.generic);
+
+  const sweetalert = (data) => {
+    swal({
+      title: type,
+      text: message,
+      icon: "",
+      buttons: true,
+      dangerMode: true,
+    });
+  };
+
+  // useEffect(() => {
+  //   if (code !== 0) {
+  //     sweetalert();
+  //   } else {
+     
+  //   }
+  // }, [code]);
 
   return (
     <div className={style.right}>
@@ -63,7 +87,7 @@ const ListFilm = () => {
                 <TableCell align="right">{item.ten_phim}</TableCell>
                 <TableCell align="right">
                   {/* <img className={style.avatar} src={item.poster}></img> */}
-                  <iframe src = {item.poster}></iframe>
+                  <iframe width = '100%' src = {item.poster}></iframe>
                 </TableCell>
                 {/* <TableCell align="right">{item.loai_phim_id}</TableCell> */}
                 <TableCell align="right">{item.thoi_luong}</TableCell>

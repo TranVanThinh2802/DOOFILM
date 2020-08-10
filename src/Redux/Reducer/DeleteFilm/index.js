@@ -1,8 +1,8 @@
-import {LOAD_DELETE_FILM_SUCCESS} from '../../Constant/actionTypes'
+import {LOAD_DELETE_FILM_SUCCESS, UPDATE_SHOWALERT} from '../../Constant/actionTypes'
 
 const initialState = {
-   
-  data:[]
+  data:[],
+  showAlert: false,
 };
 
 const userReducer = (state = initialState, action) => {
@@ -12,6 +12,12 @@ const userReducer = (state = initialState, action) => {
               ...state,
               listFilm: action.payload
           }
+      }
+      case UPDATE_SHOWALERT:{
+        return{
+          ...state,
+          showAlert: action.payload
+        }
       }
       default: {
         return state;

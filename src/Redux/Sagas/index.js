@@ -7,6 +7,7 @@ import {FindFilmSagas} from './FindFilm'
 import {DeleteFilm} from './DeleteFilm'
 import {ListFilmDeleteSagas} from './ListFilmDelete'
 import {RestoreFilm} from './RestoreFilm'
+import {DetailFilmSagas} from './DetailFilm'
 
 
 export function* rootSagas(){
@@ -18,6 +19,7 @@ export function* rootSagas(){
         FindFilmSagas(),
         DeleteFilm(),
         ListFilmDeleteSagas(),
-        RestoreFilm()
+        RestoreFilm(),
+        DetailFilmSagas()
     ]);
 }
