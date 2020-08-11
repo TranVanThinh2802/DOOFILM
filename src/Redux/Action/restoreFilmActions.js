@@ -1,4 +1,4 @@
-import {LOAD_RESTORE_REQUEST, LOAD_RESTORE_SUCCESS} from '../Constant/actionTypes'
+import {LOAD_RESTORE_REQUEST, LOAD_RESTORE_SUCCESS, UPDATE_SHOWALERT} from '../Constant/actionTypes'
 
 export const loadRestoreFilmAction = (payload)=>{
     return{
@@ -10,6 +10,13 @@ export const loadRestoreFilmAction = (payload)=>{
 export const loadRestoreFilmSuccessAction = (payload)=>{
     return{
         type: LOAD_RESTORE_SUCCESS,
+        payload: payload// paramster
+    }
+}
+
+export const showalertaction = (payload)=>{
+    return{
+        type: UPDATE_SHOWALERT,
         payload: payload// paramster
     }
 }

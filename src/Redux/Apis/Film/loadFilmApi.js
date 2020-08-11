@@ -98,7 +98,7 @@ export const loadDeleteFilmApi = async data =>{
 
 export const loadRestoreFilmApi = async data=>{
   try{
-    const result = await axios(`phim/khoi-phuc-phim`,{
+    const result = await axios(`phim/khoi-phuc-phim/${data.id}`,{
       params: data,
       method: 'POST',
       headers: {

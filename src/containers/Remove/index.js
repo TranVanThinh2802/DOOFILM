@@ -11,10 +11,9 @@ import {
   TableBody,
   Paper,
 } from "@material-ui/core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { loadListFilmDeleteAction, loadRestoreFilmAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
+import swal from "sweetalert";
 
 const Remove = () => {
   const [Add, setAdd] = useState([]);
@@ -31,6 +30,28 @@ const Remove = () => {
     dispatch(loadRestoreFilmAction({ id: item.id }));
   };
 
+  const {
+    alert: { code, message, type },
+  } = useSelector((state) => state.generic);
+
+  const sweetalert = (data) => {
+    swal({
+      title: type,
+      text:'Khôi phục phim thành công',
+      icon: "",
+      buttons: true,
+      dangerMode: true,
+    });
+  };
+
+  useEffect(() => {
+    if (code !== 0) {
+      sweetalert();
+    } else {
+     
+    }
+  }, [code]);
+
   return (
     <div className={style.right}>
       <TableContainer className={style.HTDS} component={Paper}>
@@ -40,9 +61,9 @@ const Remove = () => {
               <TableCell>STT</TableCell>
               <TableCell align="right">Tên phim</TableCell>
               <TableCell align="right">Hình ảnh</TableCell>
-              <TableCell align="right">Thể loại</TableCell>
+              {/* <TableCell align="right">Thể loại</TableCell> */}
               <TableCell align="right">Thời lượng</TableCell>
-              <TableCell align="right">Diễn viên</TableCell>
+              {/* <TableCell align="right">Diễn viên</TableCell> */}
               <TableCell align="right">Năm sản xuất</TableCell>
               <TableCell align="right">Link</TableCell>
               <TableCell align="right">Hành động</TableCell>
@@ -59,14 +80,15 @@ const Remove = () => {
                   {/* <img className={style.avatar} src={item.poster}></img> */}
                   <iframe width = '100%' src={item.poster}></iframe>
                 </TableCell>
-                <TableCell align="right">{item.quoc_gia_id}</TableCell>
+                {/* <TableCell align="right">{item.quoc_gia_id}</TableCell> */}
                 <TableCell align="right">{item.thoi_luong}</TableCell>
-                <TableCell align="right">{item.dien_vien}</TableCell>
+                {/* <TableCell align="right">{item.dien_vien}</TableCell> */}
                 <TableCell align="right">{item.nam_san_xuat}</TableCell>
                 <TableCell align="right">
-                  <video controls autoPlay="true">
+                  {/* <video controls autoPlay="true">
                     <source src={item.link_server} type="video/mp4"></source>
-                  </video>
+                  </video> */}
+                  <iframe width = '100%' src = {item.link_server}></iframe>
                 </TableCell>
                 <TableCell className={style.trashRestoreRemove} align="right">
                   <i

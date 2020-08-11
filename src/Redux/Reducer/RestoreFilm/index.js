@@ -1,9 +1,9 @@
-import {LOAD_RESTORE_SUCCESS} from '../../Constant/actionTypes'
+import {LOAD_RESTORE_SUCCESS, UPDATE_SHOWALERT} from '../../Constant/actionTypes'
 
 
 const initialState = {
-   
-    data:[]
+    data:[],
+    showAlert: false,
   };
 
   const userReducer = (state = initialState, action) => {
@@ -13,6 +13,12 @@ const initialState = {
               ...state,
               listFilm: action.payload
           }
+      }
+      case UPDATE_SHOWALERT:{
+        return{
+          ...state,
+          showAlert: action.payload
+        }
       }
       default: {
         return state;
