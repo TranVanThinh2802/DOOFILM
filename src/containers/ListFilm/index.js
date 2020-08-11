@@ -41,20 +41,20 @@ const ListFilm = () => {
   const sweetalert = (data) => {
     swal({
       title: type,
-      text: message,
+      text: 'xóa phim thành công',
       icon: "",
       buttons: true,
       dangerMode: true,
     });
   };
 
-  // useEffect(() => {
-  //   if (code !== 0) {
-  //     sweetalert();
-  //   } else {
+  useEffect(() => {
+    if (code !== 0) {
+      sweetalert();
+    } else {
      
-  //   }
-  // }, [code]);
+    }
+  }, [code]);
 
   return (
     <div className={style.right}>

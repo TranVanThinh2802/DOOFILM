@@ -63,11 +63,11 @@
   }
   @keyframes content_film{
     from{
-      bottom: -1000%;
+      bottom: 0%;
       
     }
     to{
-      bottom: -500%;
+      bottom: 600%;
     }
   }
   .box{
@@ -77,6 +77,7 @@
     display: block;
     animation: content_film 2s;
     animation-fill-mode: both;
+    margin-left: 10px;
   }
   
   
