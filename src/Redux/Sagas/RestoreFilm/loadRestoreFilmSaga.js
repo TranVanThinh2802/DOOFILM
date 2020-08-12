@@ -3,7 +3,7 @@ import { LOAD_RESTORE_REQUEST } from "../../Constant/actionTypes";
 import { loadRestoreFilmApi } from "../../Apis/Film/loadFilmApi";
 import {loadRestoreFilmSuccessAction} from '../../Action/restoreFilmActions'
 import { updateAlertAction } from "../../Action/generic/index";
-
+import {daterestoretaction} from '../../Action/updateRestoreFilmActions'
 function* requestAction(action) {
   let { payload,responseUI } = action;
   try {
@@ -13,6 +13,7 @@ function* requestAction(action) {
     const { code, message_vn: message, data } = response.data;
     if (code === 200) {
       yield put(loadRestoreFilmSuccessAction(data));
+      yield put(daterestoretaction(action.payload.id))
       yield responseUI ? responseUI() : null;
       
     }

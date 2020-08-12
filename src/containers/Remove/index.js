@@ -12,7 +12,7 @@ import {
   Paper,
   Box,
 } from "@material-ui/core";
-import { loadListFilmDeleteAction, loadRestoreFilmAction } from "Redux/Action";
+import { loadListFilmDeleteAction, loadRestoreFilmAction, updateRestoreFilmAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
 import swal from "sweetalert";
 import { Button } from "rsuite";
@@ -30,11 +30,16 @@ const Remove = () => {
   const handleClick = (item) => {
     console.log("da xoa", item);
     dispatch(loadRestoreFilmAction({ id: item.id }));
+    
   };
+
+
 
   const {
     alert: { code, message, type },
   } = useSelector((state) => state.generic);
+
+  
 
   // const sweetalert = (data) => {
   //   swal({
