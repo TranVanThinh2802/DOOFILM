@@ -10,10 +10,12 @@ import {
   TableCell,
   TableBody,
   Paper,
+  Box,
 } from "@material-ui/core";
 import { loadListFilmDeleteAction, loadRestoreFilmAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
 import swal from "sweetalert";
+import { Button } from "rsuite";
 
 const Remove = () => {
   const [Add, setAdd] = useState([]);
@@ -34,26 +36,49 @@ const Remove = () => {
     alert: { code, message, type },
   } = useSelector((state) => state.generic);
 
-  const sweetalert = (data) => {
-    swal({
-      title: type,
-      text:'Khôi phục phim thành công',
-      icon: "",
-      buttons: true,
-      dangerMode: true,
-    });
-  };
+  // const sweetalert = (data) => {
+  //   swal({
+  //     title: type,
+  //     text:'Khôi phục phim thành công',
+  //     icon: "",
+  //     buttons: true,
+  //     dangerMode: true,
+  //   });
+  // };
 
-  useEffect(() => {
-    if (code !== 0) {
-      sweetalert();
-    } else {
-     
-    }
-  }, [code]);
+  // useEffect(() => {
+  //   if (code !== 0) {
+  //     sweetalert();
+  //   } else {
+
+  //   }
+  // }, [code]);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className={style.right}>
+      {isLoading ? (
+        <div className={style.RemoveAlert}>
+          <i class="far fa-check-circle"></i>
+          <Box className={style.titleRemove}>Khôi phục phim thành công </Box>
+          <Button
+            style={{
+              background: "none",
+              color: "#00AA00",
+              border: "solid 1px #00AA00",
+            }}
+            className={style.closeRemoveAlert}
+            onClick={() => {
+              setIsLoading(false);
+            }}
+          >
+            Ok
+          </Button>
+        </div>
+      ) : (
+        ""
+      )}
       <TableContainer className={style.HTDS} component={Paper}>
         <Table className={style.table} size="small" aria-label="a dense table">
           <TableHead>
@@ -76,25 +101,44 @@ const Remove = () => {
                   {item.id}
                 </TableCell>
                 <TableCell align="right">{item.ten_phim}</TableCell>
-                <TableCell align="right">
+                <TableCell align="right" style={{ position: "relative" }}>
                   {/* <img className={style.avatar} src={item.poster}></img> */}
-                  <iframe width = '100%' src={item.poster}></iframe>
+                  <iframe
+                    width="100%"
+                    src={item.poster}
+                    frameborder="0"
+                    scrolling="no"
+                    seamless=""
+                  ></iframe>
+                  <div style={{ position: "absolute", opacity: "0", top: "0" }}>
+                    &nbsp;
+                  </div>
                 </TableCell>
                 {/* <TableCell align="right">{item.quoc_gia_id}</TableCell> */}
                 <TableCell align="right">{item.thoi_luong}</TableCell>
                 {/* <TableCell align="right">{item.dien_vien}</TableCell> */}
                 <TableCell align="right">{item.nam_san_xuat}</TableCell>
-                <TableCell align="right">
+                <TableCell align="right" style={{ position: "relative" }}>
                   {/* <video controls autoPlay="true">
                     <source src={item.link_server} type="video/mp4"></source>
                   </video> */}
-                  <iframe width = '100%' src = {item.link_server}></iframe>
+                  <iframe
+                    width="100%"
+                    src={item.link_server}
+                    frameborder="0"
+                    scrolling="no"
+                    seamless=""
+                  ></iframe>
+                  <div style={{ position: "absolute", opacity: "0", top: "0" }}>
+                    &nbsp;
+                  </div>
                 </TableCell>
                 <TableCell className={style.trashRestoreRemove} align="right">
                   <i
                     title="Khôi phục phim"
                     onClick={() => {
                       handleClick(item);
+                      setIsLoading(true);
                     }}
                     class="fas fa-trash-restore"
                   ></i>

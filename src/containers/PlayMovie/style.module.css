@@ -9,7 +9,7 @@ iframe{
     top: 95%;
     left: 10%;
     display: flex;
-    background: #D1D1D1;
+    /* background: #D1D1D1; */
     margin-bottom: 5%;
 }
 .main{
@@ -58,5 +58,7 @@ a:hover{
 .dataFilmspan{
     padding-left: 25px;
 }
+
+
 
 

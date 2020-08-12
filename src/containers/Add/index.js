@@ -65,6 +65,7 @@ const Add = (props) => {
   useEffect(() => {
     if (code !== 0) {
       sweetalert();
+      swal.close()
     } else {
      
     }

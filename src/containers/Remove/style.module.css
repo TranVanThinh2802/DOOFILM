@@ -37,3 +37,42 @@
     font-size: 20px;
     transition: 1s;
 }
+
+.RemoveAlert{
+    width: 50%;
+    background: white;
+    margin: 0 auto;
+    position: absolute;
+    top: 20%;
+    left: 27%;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0px 0px 15px 15px gray;
+}
+
+.RemoveAlert i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin-top: 5%;
+    color: #00AA00;
+}
+
+.titleRemove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-size: 30px;
+}
+
+.closeRemoveAlert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 3% auto;
+    transition: 1s;
+}
