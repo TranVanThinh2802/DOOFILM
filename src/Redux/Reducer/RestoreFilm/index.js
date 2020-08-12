@@ -1,9 +1,11 @@
-import {LOAD_RESTORE_SUCCESS, UPDATE_SHOWALERT} from '../../Constant/actionTypes'
+import {LOAD_RESTORE_SUCCESS, UPDATE_SHOWALERT, REMOVE_LISTFILM_DELETED} from '../../Constant/actionTypes'
+import { id } from 'date-fns/locale';
 
 
 const initialState = {
     data:[],
     showAlert: false,
+    listFilm: []
   };
 
   const userReducer = (state = initialState, action) => {
@@ -14,6 +16,7 @@ const initialState = {
               listFilm: action.payload
           }
       }
+      
       case UPDATE_SHOWALERT:{
         return{
           ...state,
