@@ -36,6 +36,11 @@
   .name{
     margin-bottom: 0px !important;
   }
+
+  .name:hover{
+    color: orange;
+  }
+
   .title{
     font-size: 15px;
     font-weight: bold;
@@ -67,12 +72,12 @@
       
     }
     to{
-      bottom: 600%;
+      bottom: 80%;
     }
   }
-  .box{
+  /* .box{
     position: relative;
-  }
+  } */
   .box:hover .infor_film{
     display: block;
     animation: content_film 2s;
@@ -81,4 +86,8 @@
   }
   
   
-  
+  /* .itemFilmIframe{
+    height: 300px; 
+     margin-left: -20px;
+    width: 100%;
+  } */

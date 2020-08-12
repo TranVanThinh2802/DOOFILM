@@ -10,16 +10,20 @@ import {
   TableCell,
   TableBody,
   Paper,
+  Collapse,
+  IconButton,
 } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
+import { CloseIcon } from "@material-ui/icons/Close";
+import { SweetAlert } from "react-bootstrap-sweetalert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen} from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { loadDeleteFilmAction, loadListFilmAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
 import swal from "sweetalert";
-
+import { cancel } from "redux-saga/effects";
 
 const ListFilm = () => {
-  const [Add, setAdd] = useState([]);
   const dispatch = useDispatch();
   const { listFilm } = useSelector(function (state) {
     return state.film;
@@ -31,30 +35,32 @@ const ListFilm = () => {
   const handleClick = (item) => {
     console.log("da xoa", item);
     dispatch(loadDeleteFilmAction({ id: item.id }));
-    
   };
 
   const {
     alert: { code, message, type },
   } = useSelector((state) => state.generic);
 
-  const sweetalert = (data) => {
-    swal({
-      title: type,
-      text: 'xóa phim thành công',
-      icon: "",
-      buttons: true,
-      dangerMode: true,
-    });
-  };
+  // const sweetalert = (data) => {
+  //   swal({
+  //     // title: type,
+  //     text: 'xóa phim thành công',
+  //     // icon: "",
+  //     // buttons: true,
+  //     // dangerMode: true,
+  //   }
+  //   );
 
-  useEffect(() => {
-    if (code !== 0) {
-      sweetalert();
-    } else {
-     
-    }
-  }, [code]);
+  // };
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  // useEffect(() => {
+  //   if (code !== 0) {
+
+  //   } else {
+  //   }
+  // }, [code]);
 
   return (
     <div className={style.right}>
@@ -85,18 +91,36 @@ const ListFilm = () => {
                   {item.id}
                 </TableCell>
                 <TableCell align="right">{item.ten_phim}</TableCell>
-                <TableCell align="right">
+                <TableCell align="right" style={{ position: "relative" }}>
                   {/* <img className={style.avatar} src={item.poster}></img> */}
-                  <iframe width = '100%' src = {item.poster}></iframe>
+                  <iframe
+                    width="100%"
+                    src={item.poster}
+                    frameBorder="0"
+                    scrolling="no"
+                    seamless=""
+                  ></iframe>
+                  <div style={{ position: "absolute", opacity: "0", top: "0" }}>
+                    &nbsp;
+                  </div>
                 </TableCell>
                 {/* <TableCell align="right">{item.loai_phim_id}</TableCell> */}
                 <TableCell align="right">{item.thoi_luong}</TableCell>
                 {/* <TableCell align="right">{item.dien_vien}</TableCell> */}
                 <TableCell align="right">{item.nam_san_xuat}</TableCell>
-                <TableCell align="right"> 
-                <iframe src = {item.link_server}></iframe>            {/* <video controls autoPlay="true">
+                <TableCell align="right" style={{ position: "relative" }}>
+                  <iframe
+                    src={item.link_server}
+                    frameborder="0"
+                    scrolling="no"
+                    seamless=""
+                  ></iframe>{" "}
+                  {/* <video controls autoPlay="true">
                     <source src={item.link_server} type="video/mp4"></source>
                   </video> */}
+                  <div style={{ position: "absolute", opacity: "0", top: "0" }}>
+                    &nbsp;
+                  </div>
                 </TableCell>
                 <TableCell className={style.trashListFilm} align="right">
                   <FontAwesomeIcon
