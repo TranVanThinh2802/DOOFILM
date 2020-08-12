@@ -12,6 +12,8 @@ import {
   Paper,
   Collapse,
   IconButton,
+  Box,
+  Button,
 } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { CloseIcon } from "@material-ui/icons/Close";
@@ -68,6 +70,30 @@ const ListFilm = () => {
         {" "}
         Thêm Phim
       </Link>
+
+      {isLoading ? (
+        <div className={style.listFilmAlert}>
+          <i class="far fa-check-circle"></i>
+          <Box className={style.titleListFilm}>Xóa phim thành công </Box>
+          <Button
+            style={{
+              background: "none",
+              color: "#00AA00",
+              left: '44%',
+              fontSize:'30px',
+              outline:'none'
+              }}
+            className={style.closeListFilmAlert}
+            onClick={() => {
+              setIsLoading(false);
+            }}
+          >
+            Ok
+          </Button>
+        </div>
+      ) : (
+        ""
+      )}
 
       <TableContainer className={style.HTDS} component={Paper}>
         <Table className={style.table} size="small" aria-label="a dense table">
@@ -131,6 +157,7 @@ const ListFilm = () => {
                     title="Xóa phim"
                     onClick={() => {
                       handleClick(item);
+                      setIsLoading(true);
                     }}
                     class="fas fa-trash"
                   ></i>
