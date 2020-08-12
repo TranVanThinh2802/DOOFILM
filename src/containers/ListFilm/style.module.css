@@ -38,3 +38,41 @@
     transition: 1s;
 }
 
+.listFilmAlert{
+    width: 200%;
+    background: white;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 300%;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0px 0px 15px 15px gray;
+}
+
+.listFilmAlert i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin-top: 5%;
+    color: #00AA00;
+}
+
+.titleListFilm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-size: 30px;
+}
+
+.closeListFilmAlert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 3% auto;
+    transition: 1s;
+}
