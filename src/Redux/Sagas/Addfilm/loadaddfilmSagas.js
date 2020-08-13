@@ -1,11 +1,11 @@
 import { takeLatest, call, put, delay } from "redux-saga/effects";
-import { LOAD_ADD_FILM_REQUEST } from "../../Constant/actionTypes";
-import { loadAddFilmApi } from "../../Apis/Film/loadFilmApi";
+import { CREATE_FILM_REQUEST } from "../../Constant/actionTypes";
+import { loadAddFilmApi } from "../../Apis";
 import {
-  loadAddFilmSuccessAction,
+  createFilmSuccessAction,
   showalertaction,
-} from "../../Action/addfilmActions";
-import { updateAlertAction } from "../../Action/generic/index";
+  updateAlertAction,
+} from "../../Action";
 
 function* requestAction(action) {
   yield put(showalertaction(true));
@@ -13,11 +13,11 @@ function* requestAction(action) {
   try {
     const response = yield call(loadAddFilmApi, payload); // goi api
     // console.log(response.data, "Response")
-    // yield put(loadAddFilmSuccessAction(response.data))
+    // yield put(createFilmSuccessAction(response.data))
     // console.log("addfilm")
     const { code, message_vn: message, data } = response.data;
     if (code === 200) {
-      yield put(loadAddFilmSuccessAction(data));
+      yield put(createFilmSuccessAction(data));
       yield responseUI ? responseUI() : null;
       
     }
@@ -33,7 +33,7 @@ function* requestAction(action) {
 }
 
 function* loadAddFilmSagas() {
-  yield takeLatest(LOAD_ADD_FILM_REQUEST, requestAction);
+  yield takeLatest(CREATE_FILM_REQUEST, requestAction);
 }
 
 export default loadAddFilmSagas;

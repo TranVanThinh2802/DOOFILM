@@ -12,7 +12,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { loadListUserAction } from "../../Redux/Action/userAction";
+import { loadListUserAction } from "../../Redux/Action";
 import { Pagination } from "@material-ui/lab";
 
 const User = () => {

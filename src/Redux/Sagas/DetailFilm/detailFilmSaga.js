@@ -2,10 +2,10 @@ import {takeLatest, call, put, delay} from 'redux-saga/effects';
 import {
   DETAIL_FILM_REQUEST
 } from '../../Constant/actionTypes';
-import {detailFilmApi} from '../../Apis/Film/loadFilmApi'
+import {detailFilmApi} from '../../Apis'
 import {
     detailFilmSuccessAction
-} from '../../Action/detailFilmActions';
+} from '../../Action';
 
 function* requestAction(action) {
   let {payload, responseUI} = action;

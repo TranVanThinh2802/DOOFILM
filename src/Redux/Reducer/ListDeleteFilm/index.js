@@ -1,10 +1,8 @@
-import {LOAD_LIST_FILM_DELETE_SUCCESS, REMOVE_LISTFILM_DELETED} from '../../Constant/actionTypes'
+import {LOAD_LIST_FILM_DELETE_SUCCESS, REMOVE_LISTFILM_DELETED, LOAD_RESTORE_SUCCESS} from '../../Constant/actionTypes'
 
 // Initial State
 const initialState = {
-    listFilm: {
-      data: []
-    }
+    listFilm: []
 };
 // Redux: Counter Reducer
 const userReducer = (state = initialState, action) => {
@@ -12,18 +10,20 @@ const userReducer = (state = initialState, action) => {
     case LOAD_LIST_FILM_DELETE_SUCCESS:{
         return{
             ...state,
-            listFilm: {
-              data: action.payload
-            }
+            listFilm: action.payload
             // {...state.listFilm, ...action.payload }
         }
+    }
+    case LOAD_RESTORE_SUCCESS:{
+      return{
+          ...state,
+          listFilm: state.listFilm.filter(item => item.id !== action.payload.id)
+      }
     }
     case REMOVE_LISTFILM_DELETED: {
       return{
         ...state,
-        listFilm:{
-          data: state.listFilm.data.filter(item=>item.id != action.payload)
-        }
+        listFilm: state.listFilm.data.filter(item=>item.id != action.payload)
       }
     }
     default: {

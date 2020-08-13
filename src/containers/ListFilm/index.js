@@ -10,20 +10,14 @@ import {
   TableCell,
   TableBody,
   Paper,
-  Collapse,
-  IconButton,
   Box,
   Button,
 } from "@material-ui/core";
-import { Alert } from "@material-ui/lab";
-import { CloseIcon } from "@material-ui/icons/Close";
-import { SweetAlert } from "react-bootstrap-sweetalert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { loadDeleteFilmAction, loadListFilmAction } from "Redux/Action";
+import { getListFilmDeletedAction, loadListFilmAction } from "Redux/Action";
 import { Pagination } from "@material-ui/lab";
-import swal from "sweetalert";
-import { cancel } from "redux-saga/effects";
+
 
 const ListFilm = () => {
   const dispatch = useDispatch();
@@ -35,39 +29,18 @@ const ListFilm = () => {
   }, []);
 
   const handleClick = (item) => {
-    console.log("da xoa", item);
-    dispatch(loadDeleteFilmAction({ id: item.id }));
+    dispatch(getListFilmDeletedAction(item));
   };
 
   const {
     alert: { code, message, type },
   } = useSelector((state) => state.generic);
 
-  // const sweetalert = (data) => {
-  //   swal({
-  //     // title: type,
-  //     text: 'xóa phim thành công',
-  //     // icon: "",
-  //     // buttons: true,
-  //     // dangerMode: true,
-  //   }
-  //   );
-
-  // };
-
   const [isLoading, setIsLoading] = useState(false);
-
-  // useEffect(() => {
-  //   if (code !== 0) {
-
-  //   } else {
-  //   }
-  // }, [code]);
 
   return (
     <div className={style.right}>
       <Link to="/Admin/Add" className={style.btnFilm}>
-        {" "}
         Thêm Phim
       </Link>
 
@@ -79,10 +52,10 @@ const ListFilm = () => {
             style={{
               background: "none",
               color: "#00AA00",
-              left: '44%',
-              fontSize:'30px',
-              outline:'none'
-              }}
+              left: "44%",
+              fontSize: "30px",
+              outline: "none",
+            }}
             className={style.closeListFilmAlert}
             onClick={() => {
               setIsLoading(false);

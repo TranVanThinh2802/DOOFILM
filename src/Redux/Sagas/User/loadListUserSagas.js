@@ -1,22 +1,15 @@
-import {takeLatest, call, put, delay} from 'redux-saga/effects';
-import {
-  LOAD_LIST_USER_REQUEST
-} from '../../Constant/actionTypes';
-import {loadUserApi} from '../../Apis/Film/loadFilmApi'
-import {
-  loadListUserSuccessAction
-} from '../../Action/userAction';
+import { takeLatest, call, put, delay } from "redux-saga/effects";
+import { LOAD_LIST_USER_REQUEST } from "../../Constant/actionTypes";
+import { loadUserApi } from "../../Apis";
+import { loadListUserSuccessAction } from "../../Action";
 
 function* requestAction(action) {
-  let {payload} = action;
+  let { payload } = action;
   try {
-    const response = yield call(loadUserApi, payload);// goi api
-    console.log(response.data.data.data, "Response")
-    yield put(loadListUserSuccessAction(response.data.data))
-
-    
+    const response = yield call(loadUserApi, payload); // goi api
+    yield put(loadListUserSuccessAction(response.data.data));
   } catch (err) {
-        console.log("error")
+    console.log(err);
   }
 }
 

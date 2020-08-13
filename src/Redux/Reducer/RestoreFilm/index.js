@@ -10,12 +10,7 @@ const initialState = {
 
   const userReducer = (state = initialState, action) => {
     switch (action.type) {
-      case LOAD_RESTORE_SUCCESS:{
-          return{
-              ...state,
-              listFilm: action.payload
-          }
-      }
+      
       
       case UPDATE_SHOWALERT:{
         return{

@@ -5,7 +5,7 @@ import FormControl from "@material-ui/core/FormControl";
 import style from "./style.module.css";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-import { loadLoginAction } from "../../Redux/Action/loginAction";
+import { loadLoginAction } from "../../Redux/Action";
 import { useDispatch, useSelector } from "react-redux";
 import {
   BrowserRouter as Router,

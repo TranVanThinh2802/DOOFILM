@@ -1,7 +1,7 @@
 import { takeLatest, call, put, delay } from "redux-saga/effects";
 import { LOAD_LIST_FILM_DELETE_REQUEST } from "../../Constant/actionTypes";
-import { loadListFilmDeleteApi } from "../../Apis/Film/loadFilmApi";
-import { loadListFilmDeleteSuccessAction } from "../../Action/listFilmDeleteActions";
+import { loadListFilmDeleteApi } from "../../Apis";
+import { loadListFilmDeleteSuccessAction } from "../../Action";
 
 function* requestAction(action) {
   let { payload } = action;

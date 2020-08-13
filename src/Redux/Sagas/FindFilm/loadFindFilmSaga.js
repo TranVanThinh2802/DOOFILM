@@ -4,19 +4,18 @@ import {
 } from '../../Constant/actionTypes';
 import {loadFindFilmApi} from '../../Apis'
 import {
-  loadListFilmSuccessAction
+  findFilmSuccessAction
 } from '../../Action';
 
 function* requestAction(action) {
   let {payload} = action;
   try {
     const response = yield call(loadFindFilmApi, payload);// goi api
-    console.log(response.data.data.data, "Response")
-    yield put(loadListFilmSuccessAction(response.data.data))
+    yield put(findFilmSuccessAction(response.data.data))
 
     
   } catch (err) {
-        console.log("error")
+    console.log("error");
   }
 }
 
