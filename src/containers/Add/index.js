@@ -6,13 +6,14 @@ import ListFilm from "../ListFilm";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import { useDispatch, useSelector } from "react-redux";
-import { loadAddFilmAction } from "../../Redux/Action/addfilmActions";
+import { createFilmAction } from "../../Redux/Action";
 
 const Add = (props) => {
   const dispatch = useDispatch();
   const { register, handleSubmit, watch, errors } = useForm();
   // const [pictures, setPictures] = useState([]);
   const [image, setImage] = useState({ file: "", raw: "" });
+  const [isLoading, setIsLoading] = useState(false)
   const {
     alert: { code, message, type },
   } = useSelector((state) => state.generic);
@@ -35,7 +36,7 @@ const Add = (props) => {
       name: "image.jpg",
     });
 
-    dispatch(loadAddFilmAction(data));
+    dispatch(createFilmAction(data));
   };
 
   const onSave = (e) => {
@@ -51,25 +52,27 @@ const Add = (props) => {
       
     }
   };
+  const showAlert =()=>{
+    alert('them phim thanh cong')
+  }
+  // const sweetalert = (data) => {
+  //   swal({
+  //     title: type,
+  //     text: message,
+  //     icon: "",
+  //     buttons: true,
+  //     dangerMode: true,
+  //   });
+  // };
 
-  const sweetalert = (data) => {
-    swal({
-      title: type,
-      text: message,
-      icon: "",
-      buttons: true,
-      dangerMode: true,
-    });
-  };
-
-  useEffect(() => {
-    if (code !== 0) {
-      sweetalert();
-      swal.close()
-    } else {
+  // useEffect(() => {
+  //   if (code !== 0) {
+  //     sweetalert();
+  //     swal.close()
+  //   } else {
      
-    }
-  }, [code]);
+  //   }
+  // }, [code]);
 
   return (
     <div className={style.right}>
@@ -182,7 +185,7 @@ const Add = (props) => {
             </div>
             <div className={style.inputAdd}>
               <label>
-                <i class="fas fa-link"></i>Nhập link trailer
+                <i class="fas fa-link"></i>Nhập link dowload
               </label>
               <input
                 placeholder="Nhập link trailer"
@@ -219,7 +222,7 @@ const Add = (props) => {
             className="btn btn-success"
             type="submit"
             value="Đăng phim"
-            onClick={handleSubmit(onSubmit)}
+            onClick={()=>{handleSubmit(onSubmit);setIsLoading(showAlert())}}
           />
         </form>
       </div>

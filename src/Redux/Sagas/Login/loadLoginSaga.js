@@ -1,10 +1,7 @@
 import { takeLatest, call, put, delay } from "redux-saga/effects";
 import { LOAD_LOGIN_REQUEST } from "../../Constant/actionTypes";
-import { loadLoginApi } from "../../Apis/Film/loadFilmApi";
-import {
-  loadLoginSuccessAction,
-  showalertaction,
-} from "../../Action/loginAction";
+import { loadLoginApi } from "../../Apis";
+import { loadLoginSuccessAction, showalertaction } from "../../Action";
 import { updateAlertAction } from "../../Action/generic/index";
 
 function* requestAction(action) {

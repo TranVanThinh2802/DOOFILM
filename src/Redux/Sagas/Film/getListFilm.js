@@ -1,9 +1,9 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import {
-  GET_LIST_FILM_REQUEST,
   GET_LIST_FILM_SUCCESS,
   UPDATE_LOADING_LIST_FILM,
   UPDATE_REFRESHING_LIST_FILM,
+  LOAD_LIST_FILM_REQUEST,
 } from "../../Constant/actionTypes";
 import {loadFilmApi} from '../../Apis/index'
 
@@ -42,7 +42,7 @@ function* requestAction(action) {
 }
 
 function* getListFilm() {
-    yield takeLatest(GET_LIST_FILM_REQUEST, requestAction);
+    yield takeLatest(LOAD_LIST_FILM_REQUEST, requestAction);
   }
   
   export default getListFilm;

@@ -4,7 +4,7 @@ import CustomHeader from "../../Components/CustomHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link, useParams } from "react-router-dom";
-import { detailFilmAction } from "../../Redux/Action/detailFilmActions";
+import { detailFilmAction } from "../../Redux/Action";
 // import list from "@containers/Features/data";
 import { useSelector, useDispatch } from "react-redux";
 import { Box } from "@material-ui/core";
@@ -109,9 +109,9 @@ function PlayMovie(props) {
               <h3 style={{ padding: "5px" }}>{dataFilm.ten_phim}</h3>
 
               <div className="d-flex like">
-                <a className="btn btn-primary">
-                  <Link to="">Dowload</Link>
-                </a>
+                <div className={style.dowloadFilm}>
+                  <a className = {style.dowloadFilm} target="_blank" href = {dataFilm.link_trailer}>Dowload</a>
+                </div>
               </div>
               <Box pt={2}>
                 Nội dung

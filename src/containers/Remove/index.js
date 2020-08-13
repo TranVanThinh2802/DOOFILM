@@ -29,7 +29,7 @@ const Remove = () => {
 
   const handleClick = (item) => {
     console.log("da xoa", item);
-    dispatch(loadRestoreFilmAction({ id: item.id }));
+    dispatch(loadRestoreFilmAction(item));
     
   };
 
@@ -100,7 +100,7 @@ const Remove = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {listFilm.data.map((item) => (
+            {listFilm.map((item) => (
               <TableRow key={item.ten_phim}>
                 <TableCell component="th" scope="Add">
                   {item.id}

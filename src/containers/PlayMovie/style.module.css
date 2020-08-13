@@ -59,6 +59,15 @@ a:hover{
     padding-left: 25px;
 }
 
+.dowloadFilm{
+    color: white;
+    padding: 10px;
+    background: blue;
+    border-radius: 10px;
+}
 
-
-
+.dowloadFilm:hover{
+    color: white;
+    background: #3366FF;
+    transition: 0.5s;
+}

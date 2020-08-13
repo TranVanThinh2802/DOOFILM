@@ -22,8 +22,8 @@ import { Link, Switch, Route } from "react-router-dom";
 import {
   loadListFilmAction,
   getFilmAction,
-} from "../../Redux/Action/filmActions";
-import { loadFindFilmAction } from "../../Redux/Action/findFilmAction";
+} from "../../Redux/Action";
+import { loadFindFilmAction } from "../../Redux/Action";
 import PlayMovie from "../../containers/PlayMovie";
 
 function CustomMain() {
@@ -46,9 +46,9 @@ function CustomMain() {
     return state.pageListFilm;
   });
 
-  const [currentPage, setCurrentPage] = useState(1);
 
   const handleChange = (event, page) => {
+    console.log(page)
     dispatch(
       getFilmAction(
         {

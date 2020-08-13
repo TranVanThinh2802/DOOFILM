@@ -1,36 +1,30 @@
 import { takeLatest, call, put, delay } from "redux-saga/effects";
-import { LOAD_DELETE_FIM_REQUEST } from "../../Constant/actionTypes";
-import { loadDeleteFilmApi } from "../../Apis/Film/loadFilmApi";
-import { loadDeleteFilmSuccessAction,showalertaction } from "../../Action/deleteAction";
-import { updateAlertAction } from "../../Action/generic/index";
-
+import { GET_LIST_FILM_DELETED_REQUEST } from "../../Constant/actionTypes";
+import { loadDeleteFilmApi } from "../../Apis";
+import {
+  showalertaction,
+  removeItemListFilmExitAction,
+} from "../../Action";
 
 function* requestAction(action) {
-  yield put(showalertaction(true));
-  let { payload,responseUI } = action;
+  let { payload } = action;
   try {
     const response = yield call(loadDeleteFilmApi, payload); // goi api
-    // console.log(response.data, "Response");
-    // yield put(loadDeleteFilmSuccessAction(response.data));
+    console.log(response)
     const { code, message_vn: message, data } = response.data;
     if (code === 200) {
-      yield put(loadDeleteFilmSuccessAction(data));
-      yield responseUI ? responseUI() : null;
-      
+      //xoa 1 phan tu
+      yield put(removeItemListFilmExitAction(action.payload));
     }
-      yield put(
-        updateAlertAction({
-          code,
-          message,
-        })
-      );
+  
+    yield put(showalertaction(true));
   } catch (err) {
     console.log(err);
   }
 }
 
 function* loadListSagas() {
-  yield takeLatest(LOAD_DELETE_FIM_REQUEST, requestAction);
+  yield takeLatest(GET_LIST_FILM_DELETED_REQUEST, requestAction);
 }
 
 export default loadListSagas;

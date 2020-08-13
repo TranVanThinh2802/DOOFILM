@@ -1,18 +1,25 @@
-import {UPDATE_IS_LOADING, UPDATE_ALERT} from '../../Constant/actionTypes';
+import * as Types from '../../Constant/actionTypes';
 
 
 
 
 export const updateIsLoadingAction = (payload) =>{
     return{
-        type: UPDATE_IS_LOADING,
+        type: Types.UPDATE_IS_LOADING,
         payload: payload
     }
 };
 
 export const updateAlertAction = (payload)=>{
     return{
-        type:UPDATE_ALERT,
+        type: Types.UPDATE_ALERT,
         payload: payload
     }
 };
+
+export const showalertaction = (payload)=>{
+    return{
+        type: Types.UPDATE_SHOWALERT,
+        payload: payload// paramster
+    }
+}

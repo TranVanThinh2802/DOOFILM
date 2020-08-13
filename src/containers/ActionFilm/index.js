@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import CustomHeader from "../../Components/CustomHeader";
 import { Box } from "@material-ui/core";
-import {detailFilmAction} from '../../Redux/Action/detailFilmActions'
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -16,13 +15,7 @@ function ActionFilm() {
   
 
   useEffect(()=>{
-    //dispatch gui payload la id  
-    dispatch(detailFilmAction(id, function(data){
-      // code ==200 chay function
-      // update lai DataFilm
-        setDataFilm(data);
-      }
-    ));
+    
   },[])
   
 

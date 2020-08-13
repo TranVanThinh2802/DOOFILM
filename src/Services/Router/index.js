@@ -1,24 +1,21 @@
-import AllFilm from "../../containers/AllFilm";
-import Features from "../../containers/Features";
-import UserLogin from "../../containers/UserLogin";
-import Home from "../../containers/Home";
-import MyList from "../../containers/MyList";
-import Seris from "../../containers/Seris";
-import Shorsy from "../../containers/Shorsy";
-import Show from "../../containers/Show";
-import About from "../../containers/About";
-import Documents from "../../containers/Documents";
-import PlayMovie from "../../containers/PlayMovie";
-import Admin from "../../containers/Admin";
-import { Route } from "react-router-dom";
-import Add from "../../containers/Add";
-import Remove from "../../containers/Remove";
-import Fix from "../../containers/Fix";
-import Login from "../../containers/Login";
-import ListFilm from "../../containers/ListFilm";
-import ActionFilm from "../../containers/ActionFilm"
-import Register from '../../containers/Register'
-
+import {
+  AllFilm,
+  Features,
+  UserLogin,
+  Home,
+  MyList,
+  Seris,
+  Shorsy,
+  SlideShow,
+  Show,
+  About,
+  Documents,
+  PlayMovie,
+  Admin,
+  Login,
+  ActionFilm,
+  Register,
+} from '../../containers';
 
 const Router = [
   {
@@ -94,7 +91,7 @@ const Router = [
   {
     path: "/Register",
     component: Register,
-  }
+  },
 ];
 
 export default Router;

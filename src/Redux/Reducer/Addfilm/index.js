@@ -1,4 +1,4 @@
-import {LOAD_ADD_FIM_SUCCESS, UPDATE_SHOWALERT} from '../../Constant/actionTypes'
+import {CREATE_FILM_SUCCESS, UPDATE_SHOWALERT} from '../../Constant/actionTypes'
 
 const initialState = {
       data: [],
@@ -8,7 +8,7 @@ const initialState = {
 // Redux: Counter Reducer
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
-      case LOAD_ADD_FIM_SUCCESS:{
+      case CREATE_FILM_SUCCESS:{
           return{
               ...state,
               listFilm: action.payload

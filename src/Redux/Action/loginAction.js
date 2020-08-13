@@ -18,10 +18,4 @@ export const loadLoginSuccessAction = (payload)=>{
     }
 }
 
-export const showalertaction = (payload)=>{
-    return{
-        type: UPDATE_SHOWALERT,
-        payload: payload// paramster
-    }
-}
 
