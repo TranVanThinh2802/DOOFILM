@@ -72,7 +72,7 @@ function PlayMovie(props) {
               style={{ border: "none" }}
               src={dataFilm.poster}
               style={{ height: "450px" }}
-              width = '21rem'
+              width="21rem"
               className="card-img-top"
               frameBorder="0"
               scrolling="no"
@@ -104,23 +104,38 @@ function PlayMovie(props) {
         </div>
 
         <div className=" titleFilm col-sm-4 " style={{ marginLeft: "3%" }}>
-          <div style={{ width: "21rem", marginTop: "15%" }}>
+          <div style={{ width: "23rem", marginTop: "15%" }}>
             <div className="card-body">
-              <h3 style={{ padding: "5px" }}>{dataFilm.ten_phim}</h3>
+              <h3
+                style={{
+                  padding: "5px",
+                  fontWeight: "800",
+                  fontSize: "35px",
+                  textTransform: "uppercase",
+                }}
+              >
+                {dataFilm.ten_phim}
+              </h3>
 
               <div className="d-flex like">
                 <div className={style.dowloadFilm}>
-                  <a className = {style.dowloadFilm} target="_blank" href = {dataFilm.link_trailer}>Dowload</a>
+                  <a
+                    className={style.dowloadFilm}
+                    target="_blank"
+                    href={dataFilm.link_trailer}
+                  >
+                    Dowload
+                  </a>
                 </div>
               </div>
-              <Box pt={2}>
+              <Box pt={2} fontSize="20px" fontWeight="200">
                 Nội dung
-                <Box pt={2}>{dataFilm.tieu_de}</Box>
               </Box>
+              <Box pt={2}>{dataFilm.tieu_de}</Box>
             </div>
           </div>
-          <div></div>
-          <div className="d-flex" style={{ width: "21rem" }}>
+
+          {/* <div className="d-flex" style={{ width: "21rem" }}>
             <div className="card-body">
               <p
                 style={{
@@ -145,11 +160,11 @@ function PlayMovie(props) {
                 <p className={style.raiting} style={{ marginLeft: "10px" }}></p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="col-sm-4">
-          <div style={{ width: "21rem", paddingTop: "25%", marginLeft: "5%" }}>
+          <div style={{ width: "13rem", paddingTop: "25%", marginLeft: "5%" }}>
             <p className={style.dataFilmtitle}>
               Thời lượng:
               <span className={style.dataFilmspan}>
@@ -186,7 +201,6 @@ function PlayMovie(props) {
             </p>
           </div>
         </div>
-        {/* </div> */}
       </div>
     </div>
   );

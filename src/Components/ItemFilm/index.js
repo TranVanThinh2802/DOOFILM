@@ -9,11 +9,18 @@ function CustomMyList(props) {
   return (
     <Link to={`/Film/${props.id}`}>
       <span className={style.box} >
-      <iframe
-          src={props.image}
-          style={{ width: "100%", height: "350px" }}
-        ></iframe>
-        {/* <div style = {{width:"100%", height:'300px', position:"absolute", opacity:"0", right:'0px', top:'0px'}}></div> */}
+     <div style = {{width:'100%', height:'360px', position:'relative'}}>
+        <iframe
+            frameBorder = "0"
+            allowTransparency = "true"
+            scrolling = "no"
+            seamless = ""
+            src={props.image}
+            style={{ width: "100%", height: "350px", border:'none', backgroundColor:'lightgray' }}
+          ></iframe>
+        <div style = {{width:"100%", height:'50px', position:"absolute", opacity:"0", right:'0px', top:'0px'}}>&nbsp;</div>
+
+     </div>
         <p className={style.infor_film}>{props.content}</p>
         <div className={style.infor}>
           <div className={style.title}>

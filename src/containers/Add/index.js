@@ -11,71 +11,31 @@ import { createFilmAction } from "../../Redux/Action";
 const Add = (props) => {
   const dispatch = useDispatch();
   const { register, handleSubmit, watch, errors } = useForm();
-  // const [pictures, setPictures] = useState([]);
-  const [image, setImage] = useState({ file: "", raw: "" });
-  const [isLoading, setIsLoading] = useState(false)
+  const [input, setInput] = useState(0)
   const {
     alert: { code, message, type },
   } = useSelector((state) => state.generic);
-  // const onDrop = (picture) => {
-  //   console.log(picture);
-
-  //   setPictures([...pictures, picture]);
-  // };
+  
 
   const onSubmit = (data) => {
-    let bodyFormData = new FormData();
-    Object.keys(data).forEach((key) => {
-      bodyFormData.append(key, data[key]);
-    });
-
-    const formData = new FormData();
-    formData.append("image", {
-      uri: image.file,
-      type: "image/jpg",
-      name: "image.jpg",
-    });
-
-    dispatch(createFilmAction(data));
+    
+    // dispatch(createFilmAction(data));
+    alert('Đăng phim thành công')
+    
+    
   };
 
   const onSave = (e) => {
     e.preventDefault();
     console.log(this.state);
   };
-  const handleChange = (e) => {
+  
 
-    if (e.target.files.length) {
-      setImage({
-        file: URL.createObjectURL(e.target.files[0]),
-      });
-      
-    }
-  };
-  const showAlert =()=>{
-    alert('them phim thanh cong')
-  }
-  // const sweetalert = (data) => {
-  //   swal({
-  //     title: type,
-  //     text: message,
-  //     icon: "",
-  //     buttons: true,
-  //     dangerMode: true,
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   if (code !== 0) {
-  //     sweetalert();
-  //     swal.close()
-  //   } else {
-     
-  //   }
-  // }, [code]);
 
   return (
     <div className={style.right}>
+    {/* <p>{input}</p>
+    <button onClick = {()=>setInput(input + 1)} >click me</button> */}
       <div
         style={{ maxWidth: "60%" }}
         className="col-xs-6 col-sm-6 col-md-6 col-lg-6"
@@ -92,26 +52,20 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="ten_phim"
                 ref={register({ required: true })}
+                {...input}
               ></input>
             </div>
             <div className={style.inputAdd}>
               <label>
-                <i class="fas fa-images"></i>Chọn hình ảnh
-                {/* {image.file ? (
-                  <img src={image.file} alt="dummy" width="50" height="50" />
-                ) : (
-                  ""
-                )} */}
+                <i class="fas fa-images"></i>Nhập link hình ảnh
+                
               </label>
               <input
                 className="d-flex mb-3"
                 name="poster" 
-                placeholder="chon hinh anh"
-                // onChange={fileSelectedHandler}
-                // onChange={handleChange}
-                // type="file"
-                // multiple="true"
+                placeholder="Nhập link hình ảnh"
                 ref={register({ required: true })}
+
               />
             </div>
             <div className={style.inputAdd}>
@@ -134,6 +88,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="loai_phim_id"
                 ref={register({ required: true })}
+
               ></input>
             </div>
 
@@ -146,6 +101,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="quoc_gia_id"
                 ref={register({ required: true })}
+
               />
             </div>
             {errors.exampleRequired && <span>This field is required</span>}
@@ -159,6 +115,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="dien_vien_id"
                 ref={register({ required: true })}
+
               />
             </div>
             <div className={style.inputAdd}>
@@ -170,6 +127,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="thoi_luong"
                 ref={register({ required: true })}
+
               />
             </div>
             <div className={style.inputAdd}>
@@ -181,6 +139,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="link_server"
                 ref={register({ required: true })}
+
               />
             </div>
             <div className={style.inputAdd}>
@@ -192,6 +151,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="link_trailer"
                 ref={register({ required: true })}
+
               />
             </div>
             <div className={style.inputAdd}>
@@ -203,6 +163,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="tieu_de"
                 ref={register({ required: true })}
+
               />
             </div>
             <div className={style.inputAdd}>
@@ -214,6 +175,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="nam_san_xuat"
                 ref={register({ required: true })}
+
               />
             </div>
           </div>
@@ -222,7 +184,7 @@ const Add = (props) => {
             className="btn btn-success"
             type="submit"
             value="Đăng phim"
-            onClick={()=>{handleSubmit(onSubmit);setIsLoading(showAlert())}}
+            onClick={handleSubmit(onSubmit)}
           />
         </form>
       </div>
