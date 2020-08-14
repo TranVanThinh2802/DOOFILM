@@ -14,9 +14,11 @@
     border: none;
     width: 80%;
     position: relative;
-    left: 20%;
+    left: 5%;
+    top: 11%;
     background: none;
-    color: white;
+    color: black;
+    font-size: 15px;
   }
   .search{
       display: inline-block;
@@ -41,7 +43,7 @@
   .icon_search{
     position: absolute;
     z-index: 10;
-    top: 0.7%;
+    top: 1.4%;
     left: 23.5%;
     color: black;
   }

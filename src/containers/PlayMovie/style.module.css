@@ -52,11 +52,13 @@ a:hover{
 
 .dataFilmtitle{
     color: black;
-
+    font-weight: 600;
 }
 
 .dataFilmspan{
     padding-left: 25px;
+    font-weight: normal;
+    float: right;
 }
 
 .dowloadFilm{

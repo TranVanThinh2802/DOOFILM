@@ -4,8 +4,6 @@ import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
-  faAngleLeft,
-  faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import ItemFilm from "../../Components/ItemFilm";
 import { GridList, GridListTile } from "@material-ui/core";
@@ -19,10 +17,7 @@ import Datangongu from "./datangongu";
 import Sapxep from "./sapxep";
 import Datadanhgia from "./datadanhgia";
 import { Link, Switch, Route } from "react-router-dom";
-import {
-  loadListFilmAction,
-  getFilmAction,
-} from "../../Redux/Action";
+import { loadListFilmAction, getFilmAction } from "../../Redux/Action";
 import { loadFindFilmAction } from "../../Redux/Action";
 import PlayMovie from "../../containers/PlayMovie";
 
@@ -46,9 +41,8 @@ function CustomMain() {
     return state.pageListFilm;
   });
 
-
   const handleChange = (event, page) => {
-    console.log(page)
+    console.log(page);
     dispatch(
       getFilmAction(
         {
@@ -106,7 +100,7 @@ function CustomMain() {
             <Combobox className="navChild" data={Datafilm} nameCbb="Thể loại" />
             <Combobox nameCbb="Ngôn ngữ" data={Datangongu} />
             <Combobox nameCbb="Kiểu Phim" data={DatanStylefilm} />
-            <Combobox nameCbb="Đánh giá" data={Datadanhgia} />
+            {/* <Combobox nameCbb="Đánh giá" data={Datadanhgia} /> */}
             <Combobox nameCbb="Sắp Xếp" data={Sapxep} />
           </div>
         </div>
