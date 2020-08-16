@@ -19,7 +19,7 @@ const Add = (props) => {
 
   const onSubmit = (data) => {
     
-    // dispatch(createFilmAction(data));
+    dispatch(createFilmAction(data));
     alert('Đăng phim thành công')
     
     

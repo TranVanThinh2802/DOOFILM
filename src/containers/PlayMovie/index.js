@@ -8,11 +8,15 @@ import { detailFilmAction } from "../../Redux/Action";
 // import list from "@containers/Features/data";
 import { useSelector, useDispatch } from "react-redux";
 import { Box } from "@material-ui/core";
+import { useForm } from "react-hook-form";
+
 
 function PlayMovie(props) {
   const dispatch = useDispatch();
   let { id } = useParams();
   const [dataFilm, setDataFilm] = useState({});
+  const { register, handleSubmit, watch, errors } = useForm();
+
 
   useEffect(() => {
     //dispatch gui payload la id
@@ -30,6 +34,13 @@ function PlayMovie(props) {
   }, [dataFilm]);
 
   console.log(id);
+
+  // const dowload = () =>{
+    
+  //    `https://drive.google.com/u/0/uc?id=${dataFilm.link_trailer}&export=download`
+  //   // alert("vo day")
+
+  // }
 
   return (
     <div className={style.main}>
@@ -120,9 +131,10 @@ function PlayMovie(props) {
               <div className="d-flex like">
                 <div className={style.dowloadFilm}>
                   <a
-                    className={style.dowloadFilm}
-                    target="_blank"
-                    href={dataFilm.link_trailer}
+                    // className={style.dowloadFilm}
+                    // target="_blank"
+                     href={`https://drive.google.com/u/0/uc?id=${dataFilm.link_trailer}&export=download`}
+                   
                   >
                     Dowload
                   </a>
