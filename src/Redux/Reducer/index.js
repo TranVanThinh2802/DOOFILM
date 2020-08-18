@@ -8,6 +8,7 @@ import ListDeleteFilm from './ListDeleteFilm'
 import Generic from './Generic'
 import RestoreFilm from './RestoreFilm'
 import pageListFilm from './pageListFilm'
+import FindFilm from './FindFilm'
 
 
 const appReducer = combineReducers({
@@ -17,8 +18,8 @@ const appReducer = combineReducers({
     generic: Generic,
     listDeleteFilm: ListDeleteFilm,
     restoreFil: RestoreFilm,
-    pageListFilm: pageListFilm
-
+    pageListFilm: pageListFilm,
+    findFilm: FindFilm
 });
 
 const rootReducer = (state, action) => {

@@ -58,11 +58,18 @@ export const detailFilmSuccessAction = (payload)=>{
         payload: payload,
     }
 }
-
+// tìm kiếm phim
 export const loadFindFilmAction = (payload)=>{
     return{
         type: Types.LOAD_FIND_FILM_REQUEST,
         payload: payload// paramster
+    }
+}
+
+export const updateListFind = (payload) =>{
+    return{
+        type: Types.UPDATE_LIST_FIND,
+        payload,
     }
 }
 

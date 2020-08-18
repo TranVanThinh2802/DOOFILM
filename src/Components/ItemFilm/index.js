@@ -18,6 +18,7 @@ function CustomMyList(props) {
             src={props.image}
             style={{ width: "100%", height: "350px", border:'none', backgroundColor:'lightgray' }}
           ></iframe>
+          {/* <img src = {props.image}></img> */}
         <div style = {{width:"100%", height:'50px', position:"absolute", opacity:"0", right:'0px', top:'0px'}}>&nbsp;</div>
 
      </div>
