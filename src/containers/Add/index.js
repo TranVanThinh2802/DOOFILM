@@ -52,7 +52,7 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="ten_phim"
                 ref={register({ required: true })}
-                {...input}
+                
               ></input>
             </div>
             <div className={style.inputAdd}>

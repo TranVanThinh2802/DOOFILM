@@ -18,7 +18,7 @@ import Sapxep from "./sapxep";
 import Datadanhgia from "./datadanhgia";
 import { Link, Switch, Route } from "react-router-dom";
 import { loadListFilmAction, getFilmAction } from "../../Redux/Action";
-import { loadFindFilmAction } from "../../Redux/Action";
+import { loadFindFilmAction, updateListFind } from "../../Redux/Action";
 import PlayMovie from "../../containers/PlayMovie";
 
 function CustomMain() {
@@ -35,6 +35,7 @@ function CustomMain() {
     isFull,
     curren_page,
     last_page,
+    updateListFind
   } = useSelector(function (state) {
     // return state.film;
     // return state.findFilm
@@ -67,11 +68,39 @@ function CustomMain() {
   }, []);
 
   //--------------
+  // useEffect(()=>{
+  //   dispatch(
+  //     getFilmAction(
+  //       {
+  //         page:1,
+  //         limit,
+  //         key_word:
+  //       },
+  //       true
+  //     )
+  //   );
+  // },[])
+  //----------------
 
   const onChange = (event) => {
-    console.log(event.target.value);
-    dispatch(loadFindFilmAction({ key_word: event.target.value }));
+    const change = (event.target.value);
+  // dispatch(loadFindFilmAction({ key_word: event.target.value }));
+    dispatch(
+      getFilmAction(
+        {
+          page:1,
+          limit,
+          key_word:change,
+        },
+        true
+      ),[]
+    )
   };
+
+  const handleClick = () =>{
+      console.log("asd")
+    
+  }
 
   // useEffect(() => {
   //   console.log(data);
@@ -81,13 +110,14 @@ function CustomMain() {
     <div>
       <div className={style.nav_right}>
         <div className={style.search}>
-          <FontAwesomeIcon
+          <FontAwesomeIcon style = {{cursor:'pointer'}}
             className={style.icon_search}
             icon={faSearch}
+            onClick = {handleClick}
           ></FontAwesomeIcon>{" "}
           <input
             className={style.finFm}
-            placeholder="Find movie, TV shows"
+            placeholder="Tìm tên phim, diễn viên"
             type={"text"}
             onChange={onChange}
           ></input>
@@ -97,11 +127,11 @@ function CustomMain() {
             <h1 style={{ fontWeight: "800" }} className={style.homePage}>
               DOOFILM
             </h1>
-            <Combobox className="navChild" data={Datafilm} nameCbb="Thể loại" />
+            {/* <Combobox className="navChild" data={Datafilm} nameCbb="Thể loại" />
             <Combobox nameCbb="Ngôn ngữ" data={Datangongu} />
             <Combobox nameCbb="Kiểu Phim" data={DatanStylefilm} />
-            {/* <Combobox nameCbb="Đánh giá" data={Datadanhgia} /> */}
-            <Combobox nameCbb="Sắp Xếp" data={Sapxep} />
+            <Combobox nameCbb="Đánh giá" data={Datadanhgia} />
+            <Combobox nameCbb="Sắp Xếp" data={Sapxep} /> */}
           </div>
         </div>
 
@@ -121,7 +151,6 @@ function CustomMain() {
             </GridListTile>
           ))}
         </GridList>
-
         <div className={style.pagination}>
           <Pagination
             color="secondary"
