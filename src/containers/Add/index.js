@@ -11,31 +11,33 @@ import { createFilmAction } from "../../Redux/Action";
 const Add = (props) => {
   const dispatch = useDispatch();
   const { register, handleSubmit, watch, errors } = useForm();
-  const [input, setInput] = useState(0)
+  const [input, setInput] = useState()
   const {
     alert: { code, message, type },
   } = useSelector((state) => state.generic);
   
 
   const onSubmit = (data) => {
-    
     dispatch(createFilmAction(data));
     alert('Đăng phim thành công')
-    
-    
   };
 
   const onSave = (e) => {
     e.preventDefault();
     console.log(this.state);
   };
+
   
+  const click = () =>{
+    setInput("a")
+  }
 
 
   return (
     <div className={style.right}>
-    {/* <p>{input}</p>
-    <button onClick = {()=>setInput(input + 1)} >click me</button> */}
+    {/* <p>{input}</p> */}
+    {/* <input></input>
+    <button onClick = {()=>setInput(click)} >click me</button> */}
       <div
         style={{ maxWidth: "60%" }}
         className="col-xs-6 col-sm-6 col-md-6 col-lg-6"
@@ -52,7 +54,6 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="ten_phim"
                 ref={register({ required: true })}
-                
               ></input>
             </div>
             <div className={style.inputAdd}>
@@ -75,11 +76,23 @@ const Add = (props) => {
               <input
                 placeholder="Nhập kiểu phim"
                 className="d-flex mb-3"
+                aria-invalid={errors.kieu_phim_id <0 && errors.kieu_phim_id>3 ? "true" : "false"}
                 name="kieu_phim_id"
                 ref={register({ required: true })}
               ></input>
+              {/* { errors.kieu_phim_id && (
+          <span style = {{position:"absolute", top:"0", left:'0'}} role="alert">
+            This field is required
+          </span>
+        )
+      } */}
+              <div className = {style.addTheLoai}>
+                <p className = {style.nameaaa}>id: Kiểu phim</p>
+                <p className = {style.nameaaa}>1: Phim bộ</p>
+                <p className = {style.nameaaa}>2: Phim lẻ</p>
+              </div>
             </div>
-            <div className={style.inputAdd}>
+            <div style = {{position:"relative"}} className={style.inputAdd}>
               <label>
                 <i class="fas fa-pen"></i>Nhập loại phim
               </label>
@@ -88,8 +101,13 @@ const Add = (props) => {
                 className="d-flex mb-3"
                 name="loai_phim_id"
                 ref={register({ required: true })}
-
               ></input>
+              <div className = {style.addTheLoai}>
+                <p className = {style.nameaaa}>id: Thể loại</p>
+                <p className = {style.nameaaa}>1: Kinh dị</p>
+                <p className = {style.nameaaa}>2: Song hồn</p>
+              </div>
+              
             </div>
 
             <div className={style.inputAdd}>
@@ -103,6 +121,10 @@ const Add = (props) => {
                 ref={register({ required: true })}
 
               />
+              <div className = {style.addTheLoai}>
+                <p className = {style.nameaaa}>id: Quốc gia</p>
+                <p className = {style.nameaaa}>1: Việt Nam</p>
+              </div>
             </div>
             {errors.exampleRequired && <span>This field is required</span>}
 
@@ -144,10 +166,10 @@ const Add = (props) => {
             </div>
             <div className={style.inputAdd}>
               <label>
-                <i class="fas fa-link"></i>Nhập link dowload
+                <i class="fas fa-link"></i>Nhập id film
               </label>
               <input
-                placeholder="Nhập link trailer"
+                placeholder="Nhập id film"
                 className="d-flex mb-3"
                 name="link_trailer"
                 ref={register({ required: true })}

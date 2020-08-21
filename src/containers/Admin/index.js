@@ -140,7 +140,7 @@ function Admin(props) {
               ))}
             </a>
           </li>
-          <li>
+          {/* <li>
             <a className={style.adminFunction}>
               <i style={{ marginRight: "16px" }} className="fas fa-tools"></i>
               {Object.values(children).map((route, i) => (
@@ -149,7 +149,7 @@ function Admin(props) {
                 </Link>
               ))}
             </a>
-          </li>
+          </li> */}
           <li>
             <a className={style.adminFunction}>
               <i style={{ marginRight: "16px" }} className="fas fa-list"></i>

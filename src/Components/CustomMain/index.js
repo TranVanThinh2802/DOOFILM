@@ -97,10 +97,9 @@ function CustomMain() {
     )
   };
 
-  const handleClick = () =>{
-      console.log("asd")
-    
-  }
+  // const handleClick = () =>{
+  //     console.log("asd")
+  // }
 
   // useEffect(() => {
   //   console.log(data);
@@ -110,14 +109,14 @@ function CustomMain() {
     <div>
       <div className={style.nav_right}>
         <div className={style.search}>
-          <FontAwesomeIcon style = {{cursor:'pointer'}}
+          {/* <FontAwesomeIcon style = {{cursor:'pointer'}}
             className={style.icon_search}
             icon={faSearch}
             onClick = {handleClick}
-          ></FontAwesomeIcon>{" "}
+          ></FontAwesomeIcon>{" "} */}
           <input
             className={style.finFm}
-            placeholder="Tìm tên phim, diễn viên"
+            placeholder="Tìm: tên phim bạn thích"
             type={"text"}
             onChange={onChange}
           ></input>

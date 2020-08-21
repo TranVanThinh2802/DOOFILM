@@ -67,7 +67,7 @@ function CustomHeader() {
                     <FontAwesomeIcon icon={faFilm}></FontAwesomeIcon>
                   </NavIcon>
                   <NavText>
-                    <Link to="/Seris">Seris</Link>
+                    <Link to="/Seris">Series</Link>
                   </NavText>
                 </NavItem>
                 <NavItem style={{ marginTop: "20px" }} eventKey="MyList">
@@ -110,14 +110,14 @@ function CustomHeader() {
                     <Link to="/Show">Chương trình TV</Link>
                   </NavText>
                 </NavItem>
-                <NavItem style={{ marginTop: "20px" }} eventKey="About">
+                {/* <NavItem style={{ marginTop: "20px" }} eventKey="About">
                   <NavIcon>
                     <FontAwesomeIcon icon={faTablet}></FontAwesomeIcon>
                   </NavIcon>
                   <NavText>
                     <Link to="/About">Về chúng tôi</Link>
                   </NavText>
-                </NavItem>
+                </NavItem> */}
               </SideNav.Nav>
             </SideNav>
           </React.Fragment>

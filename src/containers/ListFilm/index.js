@@ -84,10 +84,10 @@ const ListFilm = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {listFilm.data.map((item) => (
+            {listFilm.data.map((item, index) => (
               <TableRow key={item.name}>
                 <TableCell component="th" scope="Add">
-                  {item.id}
+                  {index + 1}
                 </TableCell>
                 <TableCell align="right">{item.ten_phim}</TableCell>
                 <TableCell align="right" style={{ position: "relative" }}>

@@ -109,7 +109,7 @@ const Login = (props) => {
         <div className={style.left}>
         <img style = {{height:'114px', borderRadius:'100%', marginBottom:'7%', width:'114px', marginLeft:'19%'}} src = "imgs/logo1.png" />
 
-          <h1 className={style.singupAdmin}>Admin login</h1>
+          <h1 className={style.singupAdmin}>Admin</h1>
           <input style = {{borderRadius:'6px', outline:'none', height:'30px', paddingLeft:'8px'}}
             className={style.txtEmail}
             type="text"
@@ -150,7 +150,7 @@ const Login = (props) => {
             type="submit"
             value=""
           >
-            <i style = {{marginRight:'8px'}} class="far fa-paper-plane"></i>singn in
+            <i style = {{marginRight:'8px'}} class="far fa-paper-plane"></i>Đăng nhập
           </button>
 
           {/* {isLoading && (
